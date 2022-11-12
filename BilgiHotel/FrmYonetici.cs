@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,8 @@ namespace BilgiHotel
             InitializeComponent();
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            PanelAc(pnlOdalar);
-        }
-
+        List<KeyValuePair<int, string>> Katlar = new List<KeyValuePair<int, string>>();
+        SqlConnection con = new SqlConnection("Server=.;Database=DB_BilgiHotel;Trusted_Connection=True;");
         private void FrmYonetici_Load(object sender, EventArgs e)
         {
             panels = new List<Panel>(){pnlCalisanlar,pnlOdalar,pnlMusteriler, pnlKampanyalar, pnlSatislar};
@@ -59,6 +57,27 @@ namespace BilgiHotel
         private void tsSatislar_Click(object sender, EventArgs e)
         {
             PanelAc(pnlSatislar);
+        }
+
+        private void tsOdalar_Click(object sender, EventArgs e)
+        {
+            PanelAc(pnlOdalar);
+
+            SqlCommand cmd = new SqlCommand("SELECT katID, katNumarasi FROM Katlar", con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Katlar.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
+            }
+            reader.Close();
+            cmbOdaKat.DataSource = Katlar;
+            cmbOdaKat.ValueMember = "Key";
+            cmbOdaKat.DisplayMember = "Value";
+
+
+
         }
     }
 }

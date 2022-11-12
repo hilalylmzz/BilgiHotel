@@ -41,8 +41,6 @@
             this.dudCiftKisilikYatak = new System.Windows.Forms.DomainUpDown();
             this.dudTekKisilikYatak = new System.Windows.Forms.DomainUpDown();
             this.txtOdaFiyat = new System.Windows.Forms.TextBox();
-            this.cmbOdaNumarası = new System.Windows.Forms.ComboBox();
-            this.cmbOdaKat = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -130,12 +128,29 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtSatisID = new System.Windows.Forms.TextBox();
+            this.txtSatisIndirim = new System.Windows.Forms.TextBox();
+            this.txtOdaID = new System.Windows.Forms.TextBox();
+            this.txtKartID = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.btnOdaEkle = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.cmbOdaKat = new System.Windows.Forms.ComboBox();
+            this.nudOdaNo = new System.Windows.Forms.NumericUpDown();
             this.toolStrip1.SuspendLayout();
             this.pnlOdalar.SuspendLayout();
             this.pnlMusteriler.SuspendLayout();
             this.pnlCalisanlar.SuspendLayout();
             this.pnlKampanyalar.SuspendLayout();
             this.pnlSatislar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -194,7 +209,7 @@
             this.tsOdalar.Name = "tsOdalar";
             this.tsOdalar.Size = new System.Drawing.Size(110, 20);
             this.tsOdalar.Text = "ODALAR";
-            this.tsOdalar.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.tsOdalar.Click += new System.EventHandler(this.tsOdalar_Click);
             // 
             // tsKampanyalar
             // 
@@ -224,13 +239,15 @@
             // 
             // pnlOdalar
             // 
+            this.pnlOdalar.Controls.Add(this.nudOdaNo);
+            this.pnlOdalar.Controls.Add(this.cmbOdaKat);
+            this.pnlOdalar.Controls.Add(this.textBox10);
+            this.pnlOdalar.Controls.Add(this.btnOdaEkle);
             this.pnlOdalar.Controls.Add(this.checkedListBox1);
             this.pnlOdalar.Controls.Add(this.cmbOdaKapasite);
             this.pnlOdalar.Controls.Add(this.dudCiftKisilikYatak);
             this.pnlOdalar.Controls.Add(this.dudTekKisilikYatak);
             this.pnlOdalar.Controls.Add(this.txtOdaFiyat);
-            this.pnlOdalar.Controls.Add(this.cmbOdaNumarası);
-            this.pnlOdalar.Controls.Add(this.cmbOdaKat);
             this.pnlOdalar.Controls.Add(this.label8);
             this.pnlOdalar.Controls.Add(this.label7);
             this.pnlOdalar.Controls.Add(this.label6);
@@ -254,7 +271,7 @@
             "Kablosuz İnternet",
             "Klima",
             "Balkon"});
-            this.checkedListBox1.Location = new System.Drawing.Point(146, 204);
+            this.checkedListBox1.Location = new System.Drawing.Point(147, 204);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(133, 94);
             this.checkedListBox1.TabIndex = 22;
@@ -262,61 +279,45 @@
             // cmbOdaKapasite
             // 
             this.cmbOdaKapasite.FormattingEnabled = true;
-            this.cmbOdaKapasite.Location = new System.Drawing.Point(146, 101);
+            this.cmbOdaKapasite.Location = new System.Drawing.Point(147, 101);
             this.cmbOdaKapasite.Name = "cmbOdaKapasite";
             this.cmbOdaKapasite.Size = new System.Drawing.Size(133, 21);
             this.cmbOdaKapasite.TabIndex = 21;
             // 
             // dudCiftKisilikYatak
             // 
-            this.dudCiftKisilikYatak.Location = new System.Drawing.Point(146, 163);
+            this.dudCiftKisilikYatak.Location = new System.Drawing.Point(147, 163);
             this.dudCiftKisilikYatak.Name = "dudCiftKisilikYatak";
             this.dudCiftKisilikYatak.Size = new System.Drawing.Size(133, 20);
             this.dudCiftKisilikYatak.TabIndex = 13;
             // 
             // dudTekKisilikYatak
             // 
-            this.dudTekKisilikYatak.Location = new System.Drawing.Point(146, 132);
+            this.dudTekKisilikYatak.Location = new System.Drawing.Point(147, 132);
             this.dudTekKisilikYatak.Name = "dudTekKisilikYatak";
             this.dudTekKisilikYatak.Size = new System.Drawing.Size(133, 20);
             this.dudTekKisilikYatak.TabIndex = 12;
             // 
             // txtOdaFiyat
             // 
-            this.txtOdaFiyat.Location = new System.Drawing.Point(146, 73);
+            this.txtOdaFiyat.Location = new System.Drawing.Point(147, 73);
             this.txtOdaFiyat.Name = "txtOdaFiyat";
             this.txtOdaFiyat.Size = new System.Drawing.Size(133, 20);
             this.txtOdaFiyat.TabIndex = 11;
             // 
-            // cmbOdaNumarası
-            // 
-            this.cmbOdaNumarası.FormattingEnabled = true;
-            this.cmbOdaNumarası.Location = new System.Drawing.Point(146, 39);
-            this.cmbOdaNumarası.Name = "cmbOdaNumarası";
-            this.cmbOdaNumarası.Size = new System.Drawing.Size(133, 21);
-            this.cmbOdaNumarası.TabIndex = 10;
-            // 
-            // cmbOdaKat
-            // 
-            this.cmbOdaKat.FormattingEnabled = true;
-            this.cmbOdaKat.Location = new System.Drawing.Point(146, 12);
-            this.cmbOdaKat.Name = "cmbOdaKat";
-            this.cmbOdaKat.Size = new System.Drawing.Size(133, 21);
-            this.cmbOdaKat.TabIndex = 9;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 345);
+            this.label8.Location = new System.Drawing.Point(52, 319);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 7;
-            this.label8.Text = "label8";
+            this.label8.Text = "Oda Açıklama:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 204);
+            this.label7.Location = new System.Drawing.Point(51, 200);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 6;
@@ -325,7 +326,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 170);
+            this.label6.Location = new System.Drawing.Point(13, 166);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 13);
             this.label6.TabIndex = 5;
@@ -334,7 +335,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 139);
+            this.label5.Location = new System.Drawing.Point(9, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 13);
             this.label5.TabIndex = 4;
@@ -343,7 +344,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 81);
+            this.label4.Location = new System.Drawing.Point(69, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 3;
@@ -352,7 +353,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 110);
+            this.label3.Location = new System.Drawing.Point(47, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 2;
@@ -361,7 +362,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 51);
+            this.label2.Location = new System.Drawing.Point(51, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 1;
@@ -370,7 +371,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 20);
+            this.label1.Location = new System.Drawing.Point(79, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
@@ -995,6 +996,18 @@
             // 
             // pnlSatislar
             // 
+            this.pnlSatislar.Controls.Add(this.textBox17);
+            this.pnlSatislar.Controls.Add(this.checkBox1);
+            this.pnlSatislar.Controls.Add(this.dateTimePicker6);
+            this.pnlSatislar.Controls.Add(this.dateTimePicker5);
+            this.pnlSatislar.Controls.Add(this.textBox16);
+            this.pnlSatislar.Controls.Add(this.textBox15);
+            this.pnlSatislar.Controls.Add(this.textBox14);
+            this.pnlSatislar.Controls.Add(this.txtKartID);
+            this.pnlSatislar.Controls.Add(this.txtOdaID);
+            this.pnlSatislar.Controls.Add(this.txtSatisIndirim);
+            this.pnlSatislar.Controls.Add(this.txtSatisID);
+            this.pnlSatislar.Controls.Add(this.button2);
             this.pnlSatislar.Controls.Add(this.label47);
             this.pnlSatislar.Controls.Add(this.label46);
             this.pnlSatislar.Controls.Add(this.label45);
@@ -1014,7 +1027,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(621, 141);
+            this.label47.Location = new System.Drawing.Point(558, 130);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(76, 13);
             this.label47.TabIndex = 10;
@@ -1023,7 +1036,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(619, 107);
+            this.label46.Location = new System.Drawing.Point(556, 96);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(78, 13);
             this.label46.TabIndex = 9;
@@ -1032,7 +1045,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(283, 330);
+            this.label45.Location = new System.Drawing.Point(258, 319);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(40, 13);
             this.label45.TabIndex = 8;
@@ -1041,7 +1054,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(254, 295);
+            this.label44.Location = new System.Drawing.Point(229, 281);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(69, 13);
             this.label44.TabIndex = 7;
@@ -1050,7 +1063,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(600, 218);
+            this.label43.Location = new System.Drawing.Point(537, 207);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(97, 13);
             this.label43.TabIndex = 6;
@@ -1059,7 +1072,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(608, 176);
+            this.label42.Location = new System.Drawing.Point(545, 169);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(89, 13);
             this.label42.TabIndex = 5;
@@ -1068,7 +1081,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(264, 261);
+            this.label41.Location = new System.Drawing.Point(239, 242);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(59, 13);
             this.label41.TabIndex = 4;
@@ -1077,7 +1090,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(270, 215);
+            this.label40.Location = new System.Drawing.Point(245, 204);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(53, 13);
             this.label40.TabIndex = 3;
@@ -1086,7 +1099,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(276, 175);
+            this.label39.Location = new System.Drawing.Point(251, 164);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(47, 13);
             this.label39.TabIndex = 2;
@@ -1095,7 +1108,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(237, 141);
+            this.label38.Location = new System.Drawing.Point(212, 130);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(86, 13);
             this.label38.TabIndex = 1;
@@ -1104,11 +1117,133 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(268, 107);
+            this.label37.Location = new System.Drawing.Point(243, 96);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(55, 13);
             this.label37.TabIndex = 0;
             this.label37.Text = "SATIŞ ID:";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(490, 419);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // txtSatisID
+            // 
+            this.txtSatisID.Location = new System.Drawing.Point(304, 89);
+            this.txtSatisID.Name = "txtSatisID";
+            this.txtSatisID.Size = new System.Drawing.Size(100, 20);
+            this.txtSatisID.TabIndex = 12;
+            // 
+            // txtSatisIndirim
+            // 
+            this.txtSatisIndirim.Location = new System.Drawing.Point(304, 123);
+            this.txtSatisIndirim.Name = "txtSatisIndirim";
+            this.txtSatisIndirim.Size = new System.Drawing.Size(100, 20);
+            this.txtSatisIndirim.TabIndex = 13;
+            // 
+            // txtOdaID
+            // 
+            this.txtOdaID.Location = new System.Drawing.Point(304, 157);
+            this.txtOdaID.Name = "txtOdaID";
+            this.txtOdaID.Size = new System.Drawing.Size(100, 20);
+            this.txtOdaID.TabIndex = 14;
+            // 
+            // txtKartID
+            // 
+            this.txtKartID.Location = new System.Drawing.Point(304, 197);
+            this.txtKartID.Name = "txtKartID";
+            this.txtKartID.Size = new System.Drawing.Size(100, 20);
+            this.txtKartID.TabIndex = 15;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(304, 236);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(100, 20);
+            this.textBox14.TabIndex = 16;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(304, 274);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(100, 20);
+            this.textBox15.TabIndex = 17;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(304, 312);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(100, 20);
+            this.textBox16.TabIndex = 18;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Location = new System.Drawing.Point(640, 86);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker5.TabIndex = 19;
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Location = new System.Drawing.Point(640, 124);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker6.TabIndex = 20;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(641, 166);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(641, 208);
+            this.textBox17.Multiline = true;
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(199, 132);
+            this.textBox17.TabIndex = 22;
+            // 
+            // btnOdaEkle
+            // 
+            this.btnOdaEkle.Location = new System.Drawing.Point(162, 413);
+            this.btnOdaEkle.Name = "btnOdaEkle";
+            this.btnOdaEkle.Size = new System.Drawing.Size(100, 23);
+            this.btnOdaEkle.TabIndex = 23;
+            this.btnOdaEkle.Text = "ODA EKLE";
+            this.btnOdaEkle.UseVisualStyleBackColor = true;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(147, 323);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(132, 71);
+            this.textBox10.TabIndex = 24;
+            // 
+            // cmbOdaKat
+            // 
+            this.cmbOdaKat.FormattingEnabled = true;
+            this.cmbOdaKat.Location = new System.Drawing.Point(147, 10);
+            this.cmbOdaKat.Name = "cmbOdaKat";
+            this.cmbOdaKat.Size = new System.Drawing.Size(133, 21);
+            this.cmbOdaKat.TabIndex = 25;
+            // 
+            // nudOdaNo
+            // 
+            this.nudOdaNo.Location = new System.Drawing.Point(147, 39);
+            this.nudOdaNo.Name = "nudOdaNo";
+            this.nudOdaNo.Size = new System.Drawing.Size(132, 20);
+            this.nudOdaNo.TabIndex = 26;
             // 
             // FrmYonetici
             // 
@@ -1116,11 +1251,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 509);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.pnlOdalar);
+            this.Controls.Add(this.pnlMusteriler);
             this.Controls.Add(this.pnlSatislar);
             this.Controls.Add(this.pnlKampanyalar);
             this.Controls.Add(this.pnlCalisanlar);
-            this.Controls.Add(this.pnlOdalar);
-            this.Controls.Add(this.pnlMusteriler);
             this.Name = "FrmYonetici";
             this.Text = "Yonetici";
             this.Load += new System.EventHandler(this.FrmYonetici_Load);
@@ -1136,6 +1271,7 @@
             this.pnlKampanyalar.PerformLayout();
             this.pnlSatislar.ResumeLayout(false);
             this.pnlSatislar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1151,8 +1287,6 @@
         private System.Windows.Forms.DomainUpDown dudCiftKisilikYatak;
         private System.Windows.Forms.DomainUpDown dudTekKisilikYatak;
         private System.Windows.Forms.TextBox txtOdaFiyat;
-        private System.Windows.Forms.ComboBox cmbOdaNumarası;
-        private System.Windows.Forms.ComboBox cmbOdaKat;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -1244,5 +1378,21 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button btnOdaEkle;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtKartID;
+        private System.Windows.Forms.TextBox txtOdaID;
+        private System.Windows.Forms.TextBox txtSatisIndirim;
+        private System.Windows.Forms.TextBox txtSatisID;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NumericUpDown nudOdaNo;
+        private System.Windows.Forms.ComboBox cmbOdaKat;
     }
 }
