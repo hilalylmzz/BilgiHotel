@@ -379,10 +379,10 @@
             // 
             // pnlMusteriler
             // 
-            this.pnlMusteriler.Controls.Add(this.lbMusteriListele);
             this.pnlMusteriler.Controls.Add(this.txtMusteriTC);
             this.pnlMusteriler.Controls.Add(this.txtAra);
             this.pnlMusteriler.Controls.Add(this.label9);
+            this.pnlMusteriler.Controls.Add(this.lbMusteriListele);
             this.pnlMusteriler.Location = new System.Drawing.Point(114, 3);
             this.pnlMusteriler.Name = "pnlMusteriler";
             this.pnlMusteriler.Size = new System.Drawing.Size(829, 503);
@@ -867,7 +867,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(591, 47);
+            this.button1.Location = new System.Drawing.Point(582, 45);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 23);
             this.button1.TabIndex = 14;
@@ -952,7 +952,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(34, 237);
+            this.label35.Location = new System.Drawing.Point(42, 237);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(117, 13);
             this.label35.TabIndex = 4;
@@ -961,7 +961,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(34, 193);
+            this.label34.Location = new System.Drawing.Point(83, 193);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(76, 13);
             this.label34.TabIndex = 3;
@@ -970,7 +970,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(34, 150);
+            this.label33.Location = new System.Drawing.Point(50, 150);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(109, 13);
             this.label33.TabIndex = 2;
@@ -979,7 +979,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(34, 103);
+            this.label32.Location = new System.Drawing.Point(70, 103);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(89, 13);
             this.label32.TabIndex = 1;
@@ -988,7 +988,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(34, 55);
+            this.label31.Location = new System.Drawing.Point(69, 55);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(90, 13);
             this.label31.TabIndex = 0;
@@ -1215,9 +1215,9 @@
             // 
             // btnOdaEkle
             // 
-            this.btnOdaEkle.Location = new System.Drawing.Point(162, 413);
+            this.btnOdaEkle.Location = new System.Drawing.Point(147, 413);
             this.btnOdaEkle.Name = "btnOdaEkle";
-            this.btnOdaEkle.Size = new System.Drawing.Size(100, 23);
+            this.btnOdaEkle.Size = new System.Drawing.Size(132, 23);
             this.btnOdaEkle.TabIndex = 23;
             this.btnOdaEkle.Text = "ODA EKLE";
             this.btnOdaEkle.UseVisualStyleBackColor = true;
@@ -1251,11 +1251,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 509);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.pnlKampanyalar);
+            this.Controls.Add(this.pnlCalisanlar);
             this.Controls.Add(this.pnlOdalar);
             this.Controls.Add(this.pnlMusteriler);
             this.Controls.Add(this.pnlSatislar);
-            this.Controls.Add(this.pnlKampanyalar);
-            this.Controls.Add(this.pnlCalisanlar);
             this.Name = "FrmYonetici";
             this.Text = "Yonetici";
             this.Load += new System.EventHandler(this.FrmYonetici_Load);

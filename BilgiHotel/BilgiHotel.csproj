@@ -70,6 +70,9 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmResepsiyon.resx">
+      <DependentUpon>FrmResepsiyon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmYonetici.resx">
       <DependentUpon>FrmYonetici.cs</DependentUpon>
     </EmbeddedResource>
