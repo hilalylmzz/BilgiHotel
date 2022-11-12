@@ -25,7 +25,7 @@ namespace BilgiHotel
 
         private void FrmYonetici_Load(object sender, EventArgs e)
         {
-            panels = new List<Panel>(){pnlCalisanlar,pnlOdalar,pnlMusteriler, pnlKampanyalar};
+            panels = new List<Panel>(){pnlCalisanlar,pnlOdalar,pnlMusteriler, pnlKampanyalar, pnlSatislar};
             foreach(Panel panel in panels)
             {
                 panel.Visible = false;
@@ -50,9 +50,15 @@ namespace BilgiHotel
         {
             PanelAc(pnlCalisanlar);
         }
+
         private void tsKampanyalar_Click(object sender, EventArgs e)
         {
             PanelAc(pnlKampanyalar);
+        }
+
+        private void tsSatislar_Click(object sender, EventArgs e)
+        {
+            PanelAc(pnlSatislar);
         }
     }
 }
