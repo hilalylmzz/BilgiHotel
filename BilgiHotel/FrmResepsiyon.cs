@@ -114,7 +114,7 @@ namespace BilgiHotel
             cmbCinsiyet.DataSource = Cinsiyetler;
             cmbCinsiyet.ValueMember = "Key";
             cmbCinsiyet.DisplayMember = "Value";
-
+            con.Close();
         }
 
         private void cbSirketMi_CheckedChanged(object sender, EventArgs e)
@@ -133,8 +133,7 @@ namespace BilgiHotel
         private void btnMusteriAra_Click(object sender, EventArgs e)
         {
             string tcKimlik = txtTCKimlik.Text;
-            SqlCommand cmd = new SqlCommand($"Select musteriAd, musteriSoyad, musteriTelNo, musteriEposta, musteriAdres, musteriFirmaAd, firmaVergiNo from Musteriler Where musteriTC = '{tcKimlik}'", con);
-            cmd.Parameters.AddWithValue("@tckimlik", "musteriTC");
+            SqlCommand cmd = new SqlCommand($"Select musteriAd, musteriSoyad, musteriTelNo, musteriEposta, musteriAdres, musteriFirmaAd, firmaVergiNo, cinsiyetID, musteriSirketMi from Musteriler Where musteriTC = '{tcKimlik}'", con);
             con.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
@@ -146,7 +145,15 @@ namespace BilgiHotel
                 txtMusteriAdres.Text = reader["musteriAdres"].ToString();
                 txtFirmaAdi.Text = reader["musteriFirmaAd"].ToString();
                 txtVergiNo.Text = reader["firmaVergiNo"].ToString();
-
+               // cmbCinsiyet.SelectedValue = (int)reader["cinsiyetID"];
+                if ((bool) reader["musteriSirketMi"])
+                {
+                    cbSirketMi.Checked = true;
+                }
+                else
+                {
+                    cbSirketMi.Checked = false;
+                }
             }
             reader.Close();
             con.Close();
@@ -169,6 +176,8 @@ namespace BilgiHotel
             cmd.Parameters.AddWithValue("@firmaVergiNo", txtVergiNo.Text);
             cmd.Parameters.AddWithValue("@musterisirketMi", cbSirketMi.Checked);
             cmd.Parameters.AddWithValue("@musteriTC", txtTCKimlik.Text);
+
+            cmd.ExecuteNonQuery();
         }
     }
 }
