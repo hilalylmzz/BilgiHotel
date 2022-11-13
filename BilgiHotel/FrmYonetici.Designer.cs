@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmYonetici));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsCalisanlar = new System.Windows.Forms.ToolStripButton();
-            this.tsMusteriler = new System.Windows.Forms.ToolStripButton();
-            this.tsOdalar = new System.Windows.Forms.ToolStripButton();
-            this.tsKampanyalar = new System.Windows.Forms.ToolStripButton();
-            this.tsSatislar = new System.Windows.Forms.ToolStripButton();
             this.pnlOdalar = new System.Windows.Forms.Panel();
+            this.nudOdaNo = new System.Windows.Forms.NumericUpDown();
+            this.cmbOdaKat = new System.Windows.Forms.ComboBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.btnOdaEkle = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.cmbOdaKapasite = new System.Windows.Forms.ComboBox();
             this.dudCiftKisilikYatak = new System.Windows.Forms.DomainUpDown();
@@ -50,10 +48,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMusteriler = new System.Windows.Forms.Panel();
-            this.lbMusteriListele = new System.Windows.Forms.ListBox();
             this.txtMusteriTC = new System.Windows.Forms.TextBox();
             this.txtAra = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.lbMusteriListele = new System.Windows.Forms.ListBox();
             this.pnlCalisanlar = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -116,126 +114,34 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.pnlSatislar = new System.Windows.Forms.Panel();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtSatisID = new System.Windows.Forms.TextBox();
-            this.txtSatisIndirim = new System.Windows.Forms.TextBox();
-            this.txtOdaID = new System.Windows.Forms.TextBox();
-            this.txtKartID = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.btnOdaEkle = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.cmbOdaKat = new System.Windows.Forms.ComboBox();
-            this.nudOdaNo = new System.Windows.Forms.NumericUpDown();
+            this.tsCalisanlar = new System.Windows.Forms.ToolStripButton();
+            this.tsMusteriler = new System.Windows.Forms.ToolStripButton();
+            this.tsOdalar = new System.Windows.Forms.ToolStripButton();
+            this.tsKampanyalar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.pnlOdalar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).BeginInit();
             this.pnlMusteriler.SuspendLayout();
             this.pnlCalisanlar.SuspendLayout();
             this.pnlKampanyalar.SuspendLayout();
-            this.pnlSatislar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.toolStrip1.BackgroundImage = global::BilgiHotel.Properties.Resources._25_Free_Beautiful_Vector_Gradients_For_Your_Next_Design_Project;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsCalisanlar,
             this.tsMusteriler,
             this.tsOdalar,
-            this.tsKampanyalar,
-            this.tsSatislar});
+            this.tsKampanyalar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(111, 509);
+            this.toolStrip1.Size = new System.Drawing.Size(145, 509);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsCalisanlar
-            // 
-            this.tsCalisanlar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tsCalisanlar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsCalisanlar.Image = ((System.Drawing.Image)(resources.GetObject("tsCalisanlar.Image")));
-            this.tsCalisanlar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsCalisanlar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsCalisanlar.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.tsCalisanlar.Name = "tsCalisanlar";
-            this.tsCalisanlar.Size = new System.Drawing.Size(110, 20);
-            this.tsCalisanlar.Text = "ÇALIŞANLAR";
-            this.tsCalisanlar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.tsCalisanlar.Click += new System.EventHandler(this.tsCalisanlar_Click);
-            // 
-            // tsMusteriler
-            // 
-            this.tsMusteriler.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tsMusteriler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsMusteriler.Image = ((System.Drawing.Image)(resources.GetObject("tsMusteriler.Image")));
-            this.tsMusteriler.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsMusteriler.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsMusteriler.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.tsMusteriler.Name = "tsMusteriler";
-            this.tsMusteriler.Size = new System.Drawing.Size(110, 20);
-            this.tsMusteriler.Text = "MÜŞTERİLER";
-            this.tsMusteriler.Click += new System.EventHandler(this.tsMusteriler_Click);
-            // 
-            // tsOdalar
-            // 
-            this.tsOdalar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tsOdalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsOdalar.Image = ((System.Drawing.Image)(resources.GetObject("tsOdalar.Image")));
-            this.tsOdalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsOdalar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsOdalar.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.tsOdalar.Name = "tsOdalar";
-            this.tsOdalar.Size = new System.Drawing.Size(110, 20);
-            this.tsOdalar.Text = "ODALAR";
-            this.tsOdalar.Click += new System.EventHandler(this.tsOdalar_Click);
-            // 
-            // tsKampanyalar
-            // 
-            this.tsKampanyalar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tsKampanyalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsKampanyalar.Image = ((System.Drawing.Image)(resources.GetObject("tsKampanyalar.Image")));
-            this.tsKampanyalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsKampanyalar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsKampanyalar.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.tsKampanyalar.Name = "tsKampanyalar";
-            this.tsKampanyalar.Size = new System.Drawing.Size(110, 20);
-            this.tsKampanyalar.Text = "KAMPANYALAR";
-            this.tsKampanyalar.Click += new System.EventHandler(this.tsKampanyalar_Click);
-            // 
-            // tsSatislar
-            // 
-            this.tsSatislar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tsSatislar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsSatislar.Image = ((System.Drawing.Image)(resources.GetObject("tsSatislar.Image")));
-            this.tsSatislar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsSatislar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsSatislar.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.tsSatislar.Name = "tsSatislar";
-            this.tsSatislar.Size = new System.Drawing.Size(110, 20);
-            this.tsSatislar.Text = "SATIŞLAR";
-            this.tsSatislar.Click += new System.EventHandler(this.tsSatislar_Click);
             // 
             // pnlOdalar
             // 
@@ -256,10 +162,42 @@
             this.pnlOdalar.Controls.Add(this.label3);
             this.pnlOdalar.Controls.Add(this.label2);
             this.pnlOdalar.Controls.Add(this.label1);
-            this.pnlOdalar.Location = new System.Drawing.Point(114, 0);
+            this.pnlOdalar.Location = new System.Drawing.Point(149, 0);
             this.pnlOdalar.Name = "pnlOdalar";
-            this.pnlOdalar.Size = new System.Drawing.Size(832, 509);
+            this.pnlOdalar.Size = new System.Drawing.Size(802, 509);
             this.pnlOdalar.TabIndex = 2;
+            // 
+            // nudOdaNo
+            // 
+            this.nudOdaNo.Location = new System.Drawing.Point(147, 39);
+            this.nudOdaNo.Name = "nudOdaNo";
+            this.nudOdaNo.Size = new System.Drawing.Size(132, 20);
+            this.nudOdaNo.TabIndex = 26;
+            // 
+            // cmbOdaKat
+            // 
+            this.cmbOdaKat.FormattingEnabled = true;
+            this.cmbOdaKat.Location = new System.Drawing.Point(147, 10);
+            this.cmbOdaKat.Name = "cmbOdaKat";
+            this.cmbOdaKat.Size = new System.Drawing.Size(133, 21);
+            this.cmbOdaKat.TabIndex = 25;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(147, 323);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(132, 71);
+            this.textBox10.TabIndex = 24;
+            // 
+            // btnOdaEkle
+            // 
+            this.btnOdaEkle.Location = new System.Drawing.Point(147, 413);
+            this.btnOdaEkle.Name = "btnOdaEkle";
+            this.btnOdaEkle.Size = new System.Drawing.Size(132, 23);
+            this.btnOdaEkle.TabIndex = 23;
+            this.btnOdaEkle.Text = "ODA EKLE";
+            this.btnOdaEkle.UseVisualStyleBackColor = true;
             // 
             // checkedListBox1
             // 
@@ -383,18 +321,10 @@
             this.pnlMusteriler.Controls.Add(this.txtAra);
             this.pnlMusteriler.Controls.Add(this.label9);
             this.pnlMusteriler.Controls.Add(this.lbMusteriListele);
-            this.pnlMusteriler.Location = new System.Drawing.Point(114, 3);
+            this.pnlMusteriler.Location = new System.Drawing.Point(145, 3);
             this.pnlMusteriler.Name = "pnlMusteriler";
             this.pnlMusteriler.Size = new System.Drawing.Size(829, 503);
             this.pnlMusteriler.TabIndex = 24;
-            // 
-            // lbMusteriListele
-            // 
-            this.lbMusteriListele.FormattingEnabled = true;
-            this.lbMusteriListele.Location = new System.Drawing.Point(30, 78);
-            this.lbMusteriListele.Name = "lbMusteriListele";
-            this.lbMusteriListele.Size = new System.Drawing.Size(740, 290);
-            this.lbMusteriListele.TabIndex = 3;
             // 
             // txtMusteriTC
             // 
@@ -420,6 +350,14 @@
             this.label9.Size = new System.Drawing.Size(61, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Müşteri TC:";
+            // 
+            // lbMusteriListele
+            // 
+            this.lbMusteriListele.FormattingEnabled = true;
+            this.lbMusteriListele.Location = new System.Drawing.Point(30, 78);
+            this.lbMusteriListele.Name = "lbMusteriListele";
+            this.lbMusteriListele.Size = new System.Drawing.Size(740, 290);
+            this.lbMusteriListele.TabIndex = 3;
             // 
             // pnlCalisanlar
             // 
@@ -468,9 +406,9 @@
             this.pnlCalisanlar.Controls.Add(this.btnCalisanAra);
             this.pnlCalisanlar.Controls.Add(this.textBox1);
             this.pnlCalisanlar.Controls.Add(this.label10);
-            this.pnlCalisanlar.Location = new System.Drawing.Point(114, 3);
+            this.pnlCalisanlar.Location = new System.Drawing.Point(146, 0);
             this.pnlCalisanlar.Name = "pnlCalisanlar";
-            this.pnlCalisanlar.Size = new System.Drawing.Size(832, 506);
+            this.pnlCalisanlar.Size = new System.Drawing.Size(819, 500);
             this.pnlCalisanlar.TabIndex = 4;
             // 
             // textBox6
@@ -860,9 +798,9 @@
             this.pnlKampanyalar.Controls.Add(this.label33);
             this.pnlKampanyalar.Controls.Add(this.label32);
             this.pnlKampanyalar.Controls.Add(this.label31);
-            this.pnlKampanyalar.Location = new System.Drawing.Point(114, 0);
+            this.pnlKampanyalar.Location = new System.Drawing.Point(144, 0);
             this.pnlKampanyalar.Name = "pnlKampanyalar";
-            this.pnlKampanyalar.Size = new System.Drawing.Size(832, 506);
+            this.pnlKampanyalar.Size = new System.Drawing.Size(802, 506);
             this.pnlKampanyalar.TabIndex = 23;
             // 
             // button1
@@ -994,256 +932,62 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "KAMPANYA ADI:";
             // 
-            // pnlSatislar
+            // tsCalisanlar
             // 
-            this.pnlSatislar.Controls.Add(this.textBox17);
-            this.pnlSatislar.Controls.Add(this.checkBox1);
-            this.pnlSatislar.Controls.Add(this.dateTimePicker6);
-            this.pnlSatislar.Controls.Add(this.dateTimePicker5);
-            this.pnlSatislar.Controls.Add(this.textBox16);
-            this.pnlSatislar.Controls.Add(this.textBox15);
-            this.pnlSatislar.Controls.Add(this.textBox14);
-            this.pnlSatislar.Controls.Add(this.txtKartID);
-            this.pnlSatislar.Controls.Add(this.txtOdaID);
-            this.pnlSatislar.Controls.Add(this.txtSatisIndirim);
-            this.pnlSatislar.Controls.Add(this.txtSatisID);
-            this.pnlSatislar.Controls.Add(this.button2);
-            this.pnlSatislar.Controls.Add(this.label47);
-            this.pnlSatislar.Controls.Add(this.label46);
-            this.pnlSatislar.Controls.Add(this.label45);
-            this.pnlSatislar.Controls.Add(this.label44);
-            this.pnlSatislar.Controls.Add(this.label43);
-            this.pnlSatislar.Controls.Add(this.label42);
-            this.pnlSatislar.Controls.Add(this.label41);
-            this.pnlSatislar.Controls.Add(this.label40);
-            this.pnlSatislar.Controls.Add(this.label39);
-            this.pnlSatislar.Controls.Add(this.label38);
-            this.pnlSatislar.Controls.Add(this.label37);
-            this.pnlSatislar.Location = new System.Drawing.Point(0, 0);
-            this.pnlSatislar.Name = "pnlSatislar";
-            this.pnlSatislar.Size = new System.Drawing.Size(909, 513);
-            this.pnlSatislar.TabIndex = 15;
+            this.tsCalisanlar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsCalisanlar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsCalisanlar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tsCalisanlar.Image = global::BilgiHotel.Properties.Resources.personel;
+            this.tsCalisanlar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsCalisanlar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsCalisanlar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsCalisanlar.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.tsCalisanlar.Name = "tsCalisanlar";
+            this.tsCalisanlar.Size = new System.Drawing.Size(144, 54);
+            this.tsCalisanlar.Text = "ÇALIŞANLAR";
+            this.tsCalisanlar.Click += new System.EventHandler(this.tsCalisanlar_Click);
             // 
-            // label47
+            // tsMusteriler
             // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(558, 130);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(76, 13);
-            this.label47.TabIndex = 10;
-            this.label47.Text = "ÇIKIŞ TARİHİ:";
+            this.tsMusteriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsMusteriler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsMusteriler.Image = global::BilgiHotel.Properties.Resources.musteriler;
+            this.tsMusteriler.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsMusteriler.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsMusteriler.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsMusteriler.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.tsMusteriler.Name = "tsMusteriler";
+            this.tsMusteriler.Size = new System.Drawing.Size(144, 36);
+            this.tsMusteriler.Text = "MÜŞTERİLER";
+            this.tsMusteriler.Click += new System.EventHandler(this.tsMusteriler_Click);
             // 
-            // label46
+            // tsOdalar
             // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(556, 96);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(78, 13);
-            this.label46.TabIndex = 9;
-            this.label46.Text = "GİRİŞ TARİHİ:";
+            this.tsOdalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsOdalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsOdalar.Image = global::BilgiHotel.Properties.Resources.oda;
+            this.tsOdalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsOdalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsOdalar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsOdalar.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.tsOdalar.Name = "tsOdalar";
+            this.tsOdalar.Size = new System.Drawing.Size(144, 54);
+            this.tsOdalar.Text = "ODALAR";
+            this.tsOdalar.Click += new System.EventHandler(this.tsOdalar_Click);
             // 
-            // label45
+            // tsKampanyalar
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(258, 319);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(40, 13);
-            this.label45.TabIndex = 8;
-            this.label45.Text = "FİYAT:";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(229, 281);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(69, 13);
-            this.label44.TabIndex = 7;
-            this.label44.Text = "KDV ORANI:";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(537, 207);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(97, 13);
-            this.label43.TabIndex = 6;
-            this.label43.Text = "SATIŞ AÇIKLAMA:";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(545, 169);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(89, 13);
-            this.label42.TabIndex = 5;
-            this.label42.Text = "SATIŞ AKTİF Mİ:";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(239, 242);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(59, 13);
-            this.label41.TabIndex = 4;
-            this.label41.Text = "PAKET ID:";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(245, 204);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(53, 13);
-            this.label40.TabIndex = 3;
-            this.label40.Text = "KART ID:";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(251, 164);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(47, 13);
-            this.label39.TabIndex = 2;
-            this.label39.Text = "ODA ID:";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(212, 130);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(86, 13);
-            this.label38.TabIndex = 1;
-            this.label38.Text = "SATIŞ İNDİRİM:";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(243, 96);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(55, 13);
-            this.label37.TabIndex = 0;
-            this.label37.Text = "SATIŞ ID:";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(490, 419);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // txtSatisID
-            // 
-            this.txtSatisID.Location = new System.Drawing.Point(304, 89);
-            this.txtSatisID.Name = "txtSatisID";
-            this.txtSatisID.Size = new System.Drawing.Size(100, 20);
-            this.txtSatisID.TabIndex = 12;
-            // 
-            // txtSatisIndirim
-            // 
-            this.txtSatisIndirim.Location = new System.Drawing.Point(304, 123);
-            this.txtSatisIndirim.Name = "txtSatisIndirim";
-            this.txtSatisIndirim.Size = new System.Drawing.Size(100, 20);
-            this.txtSatisIndirim.TabIndex = 13;
-            // 
-            // txtOdaID
-            // 
-            this.txtOdaID.Location = new System.Drawing.Point(304, 157);
-            this.txtOdaID.Name = "txtOdaID";
-            this.txtOdaID.Size = new System.Drawing.Size(100, 20);
-            this.txtOdaID.TabIndex = 14;
-            // 
-            // txtKartID
-            // 
-            this.txtKartID.Location = new System.Drawing.Point(304, 197);
-            this.txtKartID.Name = "txtKartID";
-            this.txtKartID.Size = new System.Drawing.Size(100, 20);
-            this.txtKartID.TabIndex = 15;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(304, 236);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 16;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(304, 274);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 17;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(304, 312);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 20);
-            this.textBox16.TabIndex = 18;
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(640, 86);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker5.TabIndex = 19;
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.Location = new System.Drawing.Point(640, 124);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker6.TabIndex = 20;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(641, 166);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(641, 208);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(199, 132);
-            this.textBox17.TabIndex = 22;
-            // 
-            // btnOdaEkle
-            // 
-            this.btnOdaEkle.Location = new System.Drawing.Point(147, 413);
-            this.btnOdaEkle.Name = "btnOdaEkle";
-            this.btnOdaEkle.Size = new System.Drawing.Size(132, 23);
-            this.btnOdaEkle.TabIndex = 23;
-            this.btnOdaEkle.Text = "ODA EKLE";
-            this.btnOdaEkle.UseVisualStyleBackColor = true;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(147, 323);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(132, 71);
-            this.textBox10.TabIndex = 24;
-            // 
-            // cmbOdaKat
-            // 
-            this.cmbOdaKat.FormattingEnabled = true;
-            this.cmbOdaKat.Location = new System.Drawing.Point(147, 10);
-            this.cmbOdaKat.Name = "cmbOdaKat";
-            this.cmbOdaKat.Size = new System.Drawing.Size(133, 21);
-            this.cmbOdaKat.TabIndex = 25;
-            // 
-            // nudOdaNo
-            // 
-            this.nudOdaNo.Location = new System.Drawing.Point(147, 39);
-            this.nudOdaNo.Name = "nudOdaNo";
-            this.nudOdaNo.Size = new System.Drawing.Size(132, 20);
-            this.nudOdaNo.TabIndex = 26;
+            this.tsKampanyalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsKampanyalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsKampanyalar.Image = global::BilgiHotel.Properties.Resources.kampanya;
+            this.tsKampanyalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsKampanyalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsKampanyalar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsKampanyalar.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.tsKampanyalar.Name = "tsKampanyalar";
+            this.tsKampanyalar.Size = new System.Drawing.Size(144, 54);
+            this.tsKampanyalar.Text = "KAMPANYALAR";
+            this.tsKampanyalar.Click += new System.EventHandler(this.tsKampanyalar_Click);
             // 
             // FrmYonetici
             // 
@@ -1251,11 +995,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 509);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.pnlKampanyalar);
-            this.Controls.Add(this.pnlCalisanlar);
             this.Controls.Add(this.pnlOdalar);
             this.Controls.Add(this.pnlMusteriler);
-            this.Controls.Add(this.pnlSatislar);
+            this.Controls.Add(this.pnlKampanyalar);
+            this.Controls.Add(this.pnlCalisanlar);
             this.Name = "FrmYonetici";
             this.Text = "Yonetici";
             this.Load += new System.EventHandler(this.FrmYonetici_Load);
@@ -1263,15 +1006,13 @@
             this.toolStrip1.PerformLayout();
             this.pnlOdalar.ResumeLayout(false);
             this.pnlOdalar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).EndInit();
             this.pnlMusteriler.ResumeLayout(false);
             this.pnlMusteriler.PerformLayout();
             this.pnlCalisanlar.ResumeLayout(false);
             this.pnlCalisanlar.PerformLayout();
             this.pnlKampanyalar.ResumeLayout(false);
             this.pnlKampanyalar.PerformLayout();
-            this.pnlSatislar.ResumeLayout(false);
-            this.pnlSatislar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1349,7 +1090,6 @@
         private System.Windows.Forms.CheckBox cbCalisanAktifMi;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ToolStripButton tsKampanyalar;
-        private System.Windows.Forms.ToolStripButton tsSatislar;
         private System.Windows.Forms.Panel pnlKampanyalar;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
@@ -1366,32 +1106,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnKampanyaGuncelle;
         private System.Windows.Forms.Button btnKampanyaBul;
-        private System.Windows.Forms.Panel pnlSatislar;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button btnOdaEkle;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox txtKartID;
-        private System.Windows.Forms.TextBox txtOdaID;
-        private System.Windows.Forms.TextBox txtSatisIndirim;
-        private System.Windows.Forms.TextBox txtSatisID;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.NumericUpDown nudOdaNo;
         private System.Windows.Forms.ComboBox cmbOdaKat;
     }

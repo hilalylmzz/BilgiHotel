@@ -63,6 +63,16 @@ namespace BilgiHotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _25_Free_Beautiful_Vector_Gradients_For_Your_Next_Design_Project {
+            get {
+                object obj = ResourceManager.GetObject("25 Free Beautiful Vector Gradients For Your Next Design Project", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap af8bc73c5f1c06034aa4d051a7c78fa1 {
             get {
                 object obj = ResourceManager.GetObject("af8bc73c5f1c06034aa4d051a7c78fa1", resourceCulture);
@@ -76,6 +86,76 @@ namespace BilgiHotel.Properties {
         internal static System.Drawing.Bitmap afdba5cbc4597fa43d4befa0600812d0 {
             get {
                 object obj = ResourceManager.GetObject("afdba5cbc4597fa43d4befa0600812d0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ayarlar {
+            get {
+                object obj = ResourceManager.GetObject("ayarlar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calisanlar {
+            get {
+                object obj = ResourceManager.GetObject("calisanlar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calisanlar11 {
+            get {
+                object obj = ResourceManager.GetObject("calisanlar11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reserve_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reserve-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reserve_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reserve-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kampanya {
+            get {
+                object obj = ResourceManager.GetObject("kampanya", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +183,46 @@ namespace BilgiHotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap musteriler {
+            get {
+                object obj = ResourceManager.GetObject("musteriler", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap oda {
+            get {
+                object obj = ResourceManager.GetObject("oda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap odalar {
+            get {
+                object obj = ResourceManager.GetObject("odalar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap personel {
+            get {
+                object obj = ResourceManager.GetObject("personel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_transparent_computer_icons_padlock_icon_design_padlock_technic_desktop_wallpaper_computer_icons {
             get {
                 object obj = ResourceManager.GetObject("png-transparent-computer-icons-padlock-icon-design-padlock-technic-desktop-wallpa" +
@@ -117,6 +237,16 @@ namespace BilgiHotel.Properties {
         internal static System.Drawing.Bitmap sifreicon {
             get {
                 object obj = ResourceManager.GetObject("sifreicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yenirezervasyon {
+            get {
+                object obj = ResourceManager.GetObject("yenirezervasyon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -23,7 +23,7 @@ namespace BilgiHotel
         SqlConnection con = new SqlConnection("Server=.;Database=DB_BilgiHotel;Trusted_Connection=True;");
         private void FrmYonetici_Load(object sender, EventArgs e)
         {
-            panels = new List<Panel>(){pnlCalisanlar,pnlOdalar,pnlMusteriler, pnlKampanyalar, pnlSatislar};
+            panels = new List<Panel>(){pnlCalisanlar,pnlOdalar,pnlMusteriler, pnlKampanyalar};
             foreach(Panel panel in panels)
             {
                 panel.Visible = false;
@@ -54,10 +54,7 @@ namespace BilgiHotel
             PanelAc(pnlKampanyalar);
         }
 
-        private void tsSatislar_Click(object sender, EventArgs e)
-        {
-            PanelAc(pnlSatislar);
-        }
+    
 
         private void tsOdalar_Click(object sender, EventArgs e)
         {

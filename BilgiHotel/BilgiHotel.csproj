@@ -117,5 +117,44 @@
   <ItemGroup>
     <None Include="Resources\af8bc73c5f1c06034aa4d051a7c78fa1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ayarlar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\odalar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yenirezervasyon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musteriler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reserve-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kampanya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calisanlar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calisanlar11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reserve-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25 Free Beautiful Vector Gradients For Your Next Design Project.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

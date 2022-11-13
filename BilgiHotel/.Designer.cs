@@ -30,11 +30,11 @@
         {
             System.Windows.Forms.Button button1;
             this.gbLogin = new System.Windows.Forms.GroupBox();
-            this.lblSifremiUnuttum = new System.Windows.Forms.Label();
+            this.txtKullaniciAdi = new System.Windows.Forms.TextBox();
             this.btnGiris = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtKullaniciSifre = new System.Windows.Forms.TextBox();
-            this.txtKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.linkSifremiUnuttum = new System.Windows.Forms.LinkLabel();
             button1 = new System.Windows.Forms.Button();
             this.gbLogin.SuspendLayout();
             this.SuspendLayout();
@@ -52,28 +52,27 @@
             // gbLogin
             // 
             this.gbLogin.BackColor = System.Drawing.Color.Transparent;
-            this.gbLogin.Controls.Add(this.lblSifremiUnuttum);
+            this.gbLogin.Controls.Add(this.linkSifremiUnuttum);
+            this.gbLogin.Controls.Add(this.txtKullaniciAdi);
             this.gbLogin.Controls.Add(this.btnGiris);
             this.gbLogin.Controls.Add(this.button2);
             this.gbLogin.Controls.Add(button1);
             this.gbLogin.Controls.Add(this.txtKullaniciSifre);
-            this.gbLogin.Controls.Add(this.txtKullaniciAdi);
-            this.gbLogin.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.gbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gbLogin.ForeColor = System.Drawing.Color.Black;
             this.gbLogin.Location = new System.Drawing.Point(311, 127);
             this.gbLogin.Name = "gbLogin";
             this.gbLogin.Size = new System.Drawing.Size(254, 276);
-            this.gbLogin.TabIndex = 0;
+            this.gbLogin.TabIndex = 8;
             this.gbLogin.TabStop = false;
             this.gbLogin.Text = "Kullanıcı Giriş";
             // 
-            // lblSifremiUnuttum
+            // txtKullaniciAdi
             // 
-            this.lblSifremiUnuttum.AutoSize = true;
-            this.lblSifremiUnuttum.Location = new System.Drawing.Point(119, 172);
-            this.lblSifremiUnuttum.Name = "lblSifremiUnuttum";
-            this.lblSifremiUnuttum.Size = new System.Drawing.Size(81, 13);
-            this.lblSifremiUnuttum.TabIndex = 5;
-            this.lblSifremiUnuttum.Text = "Şifremi Unuttum";
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(109, 91);
+            this.txtKullaniciAdi.Name = "txtKullaniciAdi";
+            this.txtKullaniciAdi.Size = new System.Drawing.Size(100, 20);
+            this.txtKullaniciAdi.TabIndex = 0;
             // 
             // btnGiris
             // 
@@ -82,7 +81,7 @@
             this.btnGiris.Location = new System.Drawing.Point(88, 203);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(75, 28);
-            this.btnGiris.TabIndex = 4;
+            this.btnGiris.TabIndex = 2;
             this.btnGiris.Text = "GİRİŞ YAP";
             this.btnGiris.UseVisualStyleBackColor = false;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
@@ -105,22 +104,26 @@
             this.txtKullaniciSifre.Size = new System.Drawing.Size(100, 20);
             this.txtKullaniciSifre.TabIndex = 1;
             // 
-            // txtKullaniciAdi
+            // linkSifremiUnuttum
             // 
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(109, 87);
-            this.txtKullaniciAdi.Name = "txtKullaniciAdi";
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(100, 20);
-            this.txtKullaniciAdi.TabIndex = 0;
-            this.txtKullaniciAdi.Text = "H";
+            this.linkSifremiUnuttum.AutoSize = true;
+            this.linkSifremiUnuttum.LinkColor = System.Drawing.Color.Black;
+            this.linkSifremiUnuttum.Location = new System.Drawing.Point(117, 177);
+            this.linkSifremiUnuttum.Name = "linkSifremiUnuttum";
+            this.linkSifremiUnuttum.Size = new System.Drawing.Size(81, 13);
+            this.linkSifremiUnuttum.TabIndex = 7;
+            this.linkSifremiUnuttum.TabStop = true;
+            this.linkSifremiUnuttum.Text = "Şifremi Unuttum";
             // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BilgiHotel.Properties.Resources.af8bc73c5f1c06034aa4d051a7c78fa1;
+            this.BackgroundImage = global::BilgiHotel.Properties.Resources._25_Free_Beautiful_Vector_Gradients_For_Your_Next_Design_Project;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(887, 538);
             this.Controls.Add(this.gbLogin);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Name = "login";
             this.Text = "LOGIN";
@@ -134,10 +137,10 @@
 
         private System.Windows.Forms.GroupBox gbLogin;
         private System.Windows.Forms.TextBox txtKullaniciSifre;
-        private System.Windows.Forms.TextBox txtKullaniciAdi;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnGiris;
-        private System.Windows.Forms.Label lblSifremiUnuttum;
+        private System.Windows.Forms.TextBox txtKullaniciAdi;
+        private System.Windows.Forms.LinkLabel linkSifremiUnuttum;
     }
 }
 
