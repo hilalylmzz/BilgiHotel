@@ -310,5 +310,25 @@ namespace BilgiHotel
             reader.Close();
             con.Close();
         }
+
+        private void btnSifreGuncelle_Click(object sender, EventArgs e)
+        {
+            
+            SqlCommand cmd = new SqlCommand($"Select kullaniciID from Kullanicilar Where kullaniciSifre='{txtEskiSifre.Text}' and kullaniciEPosta='{txtKullaniciEPosta.Text}'", con);
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if(reader.Read())
+            {
+                reader.Close();
+                SqlCommand komut = new SqlCommand($"Update Kullanicilar SET kullaniciSifre='{txtYeniSifre.Text}' where kullaniciEPosta='{txtKullaniciEPosta.Text}'",con);
+
+                if(komut.ExecuteNonQuery() >0)
+                {
+                    MessageBox.Show("Şifre Güncellendi");
+                }
+            }
+            con.Close();
+        }
     }
 }

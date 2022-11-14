@@ -48,9 +48,9 @@
             this.btnBosOdalar = new System.Windows.Forms.Button();
             this.pnlAyarlar = new System.Windows.Forms.Panel();
             this.btnSifreGuncelle = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtYeniSifre = new System.Windows.Forms.TextBox();
+            this.txtEskiSifre = new System.Windows.Forms.TextBox();
+            this.txtKullaniciEPosta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -292,9 +292,9 @@
             // pnlAyarlar
             // 
             this.pnlAyarlar.Controls.Add(this.btnSifreGuncelle);
-            this.pnlAyarlar.Controls.Add(this.textBox3);
-            this.pnlAyarlar.Controls.Add(this.textBox2);
-            this.pnlAyarlar.Controls.Add(this.textBox1);
+            this.pnlAyarlar.Controls.Add(this.txtYeniSifre);
+            this.pnlAyarlar.Controls.Add(this.txtEskiSifre);
+            this.pnlAyarlar.Controls.Add(this.txtKullaniciEPosta);
             this.pnlAyarlar.Controls.Add(this.label5);
             this.pnlAyarlar.Controls.Add(this.label4);
             this.pnlAyarlar.Controls.Add(this.label3);
@@ -311,30 +311,33 @@
             this.btnSifreGuncelle.TabIndex = 6;
             this.btnSifreGuncelle.Text = "ŞİFRE GÜNCELLE";
             this.btnSifreGuncelle.UseVisualStyleBackColor = true;
+            this.btnSifreGuncelle.Click += new System.EventHandler(this.btnSifreGuncelle_Click);
             // 
-            // textBox3
+            // txtYeniSifre
             // 
-            this.textBox3.Location = new System.Drawing.Point(157, 207);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(143, 21);
-            this.textBox3.TabIndex = 5;
+            this.txtYeniSifre.Location = new System.Drawing.Point(157, 207);
+            this.txtYeniSifre.Multiline = true;
+            this.txtYeniSifre.Name = "txtYeniSifre";
+            this.txtYeniSifre.PasswordChar = '*';
+            this.txtYeniSifre.Size = new System.Drawing.Size(143, 21);
+            this.txtYeniSifre.TabIndex = 5;
             // 
-            // textBox2
+            // txtEskiSifre
             // 
-            this.textBox2.Location = new System.Drawing.Point(157, 139);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(143, 21);
-            this.textBox2.TabIndex = 4;
+            this.txtEskiSifre.Location = new System.Drawing.Point(157, 139);
+            this.txtEskiSifre.Multiline = true;
+            this.txtEskiSifre.Name = "txtEskiSifre";
+            this.txtEskiSifre.PasswordChar = '*';
+            this.txtEskiSifre.Size = new System.Drawing.Size(143, 21);
+            this.txtEskiSifre.TabIndex = 4;
             // 
-            // textBox1
+            // txtKullaniciEPosta
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 66);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 21);
-            this.textBox1.TabIndex = 3;
+            this.txtKullaniciEPosta.Location = new System.Drawing.Point(157, 66);
+            this.txtKullaniciEPosta.Multiline = true;
+            this.txtKullaniciEPosta.Name = "txtKullaniciEPosta";
+            this.txtKullaniciEPosta.Size = new System.Drawing.Size(143, 21);
+            this.txtKullaniciEPosta.TabIndex = 3;
             // 
             // label5
             // 
@@ -791,9 +794,9 @@
         private System.Windows.Forms.Panel pnlAyarlar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSifreGuncelle;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtYeniSifre;
+        private System.Windows.Forms.TextBox txtEskiSifre;
+        private System.Windows.Forms.TextBox txtKullaniciEPosta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripButton tsMusteriler;
