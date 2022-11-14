@@ -161,6 +161,7 @@ namespace BilgiHotel
 
         private void btnMusteriKaydet_Click(object sender, EventArgs e)
         {
+            con.Open();
             SqlCommand cmd = new SqlCommand("sp_MusteriEkleme", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@musteriAd", txtMusteriAd.Text);
@@ -176,8 +177,50 @@ namespace BilgiHotel
             cmd.Parameters.AddWithValue("@firmaVergiNo", txtVergiNo.Text);
             cmd.Parameters.AddWithValue("@musterisirketMi", cbSirketMi.Checked);
             cmd.Parameters.AddWithValue("@musteriTC", txtTCKimlik.Text);
+            cmd.Parameters.AddWithValue("@musteriAciklama", txtMusteriAciklama.Text);
+            cmd.Parameters.AddWithValue("@musteriAktifMi", cbMusteriAktifMi.Checked);
 
-            cmd.ExecuteNonQuery();
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Müşteri Eklendi");
+            }
+            else
+            {
+                MessageBox.Show("Müşteri Eklenemedi");
+            }
+            con.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_MusteriGüncelleme", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@musteriAd", txtMusteriAd.Text);
+            cmd.Parameters.AddWithValue("@musteriSoyad", txtMusteriSoyad.Text);
+            cmd.Parameters.AddWithValue("@musteriTelNo", txtMusteriTelNo.Text);
+            cmd.Parameters.AddWithValue("@musteriEPosta", txtMusteriEPosta.Text);
+            cmd.Parameters.AddWithValue("@musteriAdres", txtMusteriAdres.Text);
+            cmd.Parameters.AddWithValue("@ulkeID", cmbUlkeler.SelectedValue);
+            cmd.Parameters.AddWithValue("@sehirID", cmbSehirler.SelectedValue);
+            cmd.Parameters.AddWithValue("@cinsiyetID", cmbCinsiyet.SelectedValue);
+            cmd.Parameters.AddWithValue("@dilID", cmbMusteriDil.SelectedValue);
+            cmd.Parameters.AddWithValue("@musteriFirmaAd", txtFirmaAdi.Text);
+            cmd.Parameters.AddWithValue("@firmaVergiNo", txtVergiNo.Text);
+            cmd.Parameters.AddWithValue("@musterisirketMi", cbSirketMi.Checked);
+            cmd.Parameters.AddWithValue("@musteriTC", txtTCKimlik.Text);
+            cmd.Parameters.AddWithValue("@musteriAciklama", txtMusteriAciklama.Text);
+            cmd.Parameters.AddWithValue("@musteriAktifMi", cbMusteriAktifMi.Checked);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Müşteri bilgileri güncellendi");
+            }
+            else
+            {
+                MessageBox.Show("Müşteri bilgileri güncellenemedi");
+            }
+            con.Close();
         }
     }
 }

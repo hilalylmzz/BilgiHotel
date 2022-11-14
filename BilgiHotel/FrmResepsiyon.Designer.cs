@@ -88,6 +88,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cbMusteriAktifMi = new System.Windows.Forms.CheckBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtMusteriAciklama = new System.Windows.Forms.TextBox();
             this.tsResepsiyon.SuspendLayout();
             this.pnlRezervasyon.SuspendLayout();
             this.gbGirisCikisTarihleri.SuspendLayout();
@@ -386,6 +390,10 @@
             // pnlMusteriler
             // 
             this.pnlMusteriler.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlMusteriler.Controls.Add(this.txtMusteriAciklama);
+            this.pnlMusteriler.Controls.Add(this.label20);
+            this.pnlMusteriler.Controls.Add(this.cbMusteriAktifMi);
+            this.pnlMusteriler.Controls.Add(this.label19);
             this.pnlMusteriler.Controls.Add(this.button2);
             this.pnlMusteriler.Controls.Add(this.btnMusteriKaydet);
             this.pnlMusteriler.Controls.Add(this.gbSirketBilgileri);
@@ -425,6 +433,7 @@
             this.button2.TabIndex = 53;
             this.button2.Text = "GÜNCELLE";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnMusteriKaydet
             // 
@@ -442,9 +451,9 @@
             this.gbSirketBilgileri.Controls.Add(this.txtFirmaAdi);
             this.gbSirketBilgileri.Controls.Add(this.label18);
             this.gbSirketBilgileri.Controls.Add(this.label17);
-            this.gbSirketBilgileri.Location = new System.Drawing.Point(371, 216);
+            this.gbSirketBilgileri.Location = new System.Drawing.Point(384, 337);
             this.gbSirketBilgileri.Name = "gbSirketBilgileri";
-            this.gbSirketBilgileri.Size = new System.Drawing.Size(219, 142);
+            this.gbSirketBilgileri.Size = new System.Drawing.Size(219, 86);
             this.gbSirketBilgileri.TabIndex = 51;
             this.gbSirketBilgileri.TabStop = false;
             this.gbSirketBilgileri.Text = "Şirket Bilgileri";
@@ -487,7 +496,7 @@
             // cbSirketMi
             // 
             this.cbSirketMi.AutoSize = true;
-            this.cbSirketMi.Location = new System.Drawing.Point(469, 182);
+            this.cbSirketMi.Location = new System.Drawing.Point(482, 303);
             this.cbSirketMi.Name = "cbSirketMi";
             this.cbSirketMi.Size = new System.Drawing.Size(48, 17);
             this.cbSirketMi.TabIndex = 50;
@@ -498,7 +507,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(368, 182);
+            this.label15.Location = new System.Drawing.Point(367, 303);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(88, 13);
             this.label15.TabIndex = 49;
@@ -523,7 +532,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(402, 117);
+            this.label16.Location = new System.Drawing.Point(392, 117);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(63, 13);
             this.label16.TabIndex = 46;
@@ -532,7 +541,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(434, 151);
+            this.label14.Location = new System.Drawing.Point(433, 151);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(22, 13);
             this.label14.TabIndex = 45;
@@ -589,7 +598,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(419, 91);
+            this.label13.Location = new System.Drawing.Point(409, 91);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(46, 13);
             this.label13.TabIndex = 38;
@@ -683,6 +692,42 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Müşteri Adı:";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(19, 371);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 13);
+            this.label19.TabIndex = 54;
+            this.label19.Text = "Müşteri Aktif Mi:";
+            // 
+            // cbMusteriAktifMi
+            // 
+            this.cbMusteriAktifMi.AutoSize = true;
+            this.cbMusteriAktifMi.Location = new System.Drawing.Point(107, 370);
+            this.cbMusteriAktifMi.Name = "cbMusteriAktifMi";
+            this.cbMusteriAktifMi.Size = new System.Drawing.Size(47, 17);
+            this.cbMusteriAktifMi.TabIndex = 55;
+            this.cbMusteriAktifMi.Text = "Aktif";
+            this.cbMusteriAktifMi.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(402, 179);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 13);
+            this.label20.TabIndex = 56;
+            this.label20.Text = "Açıklama:";
+            // 
+            // txtMusteriAciklama
+            // 
+            this.txtMusteriAciklama.Location = new System.Drawing.Point(469, 179);
+            this.txtMusteriAciklama.Multiline = true;
+            this.txtMusteriAciklama.Name = "txtMusteriAciklama";
+            this.txtMusteriAciklama.Size = new System.Drawing.Size(121, 109);
+            this.txtMusteriAciklama.TabIndex = 57;
+            // 
             // FrmResepsiyon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -775,5 +820,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox cbMusteriAktifMi;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtMusteriAciklama;
+        private System.Windows.Forms.Label label20;
     }
 }
