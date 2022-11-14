@@ -162,7 +162,7 @@ namespace BilgiHotel
         private void btnMusteriKaydet_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_MusteriEkleme", con);
+            SqlCommand cmd = new SqlCommand("sp_MusteriEkle", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@musteriAd", txtMusteriAd.Text);
             cmd.Parameters.AddWithValue("@musteriSoyad", txtMusteriSoyad.Text);
@@ -180,7 +180,7 @@ namespace BilgiHotel
             cmd.Parameters.AddWithValue("@musteriAciklama", txtMusteriAciklama.Text);
             cmd.Parameters.AddWithValue("@musteriAktifMi", cbMusteriAktifMi.Checked);
 
-            if (cmd.ExecuteNonQuery() > 0)
+            if (cmd.ExecuteNonQuery() >0)
             {
                 MessageBox.Show("Müşteri Eklendi");
             }
@@ -188,6 +188,7 @@ namespace BilgiHotel
             {
                 MessageBox.Show("Müşteri Eklenemedi");
             }
+         
             con.Close();
         }
 
