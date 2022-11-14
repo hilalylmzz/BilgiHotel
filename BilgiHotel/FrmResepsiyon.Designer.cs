@@ -44,11 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlROdalar = new System.Windows.Forms.Panel();
             this.btnCikisYapacakOdalar = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.btnTemizlenecekOda = new System.Windows.Forms.Button();
             this.btnBosOdalar = new System.Windows.Forms.Button();
-            this.lvBosOdalarListesi = new System.Windows.Forms.ListView();
             this.pnlAyarlar = new System.Windows.Forms.Panel();
             this.btnSifreGuncelle = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -58,6 +55,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlMusteriler = new System.Windows.Forms.Panel();
+            this.txtMusteriAciklama = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cbMusteriAktifMi = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnMusteriKaydet = new System.Windows.Forms.Button();
             this.gbSirketBilgileri = new System.Windows.Forms.GroupBox();
@@ -88,10 +89,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.cbMusteriAktifMi = new System.Windows.Forms.CheckBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtMusteriAciklama = new System.Windows.Forms.TextBox();
+            this.btnMusteriSil = new System.Windows.Forms.Button();
+            this.lbBosOdalar = new System.Windows.Forms.ListBox();
+            this.lbTemizlenecekOdalar = new System.Windows.Forms.ListBox();
+            this.lbCikisYapacakOdalar = new System.Windows.Forms.ListBox();
             this.tsResepsiyon.SuspendLayout();
             this.pnlRezervasyon.SuspendLayout();
             this.gbGirisCikisTarihleri.SuspendLayout();
@@ -248,12 +249,12 @@
             // 
             // pnlROdalar
             // 
+            this.pnlROdalar.Controls.Add(this.lbCikisYapacakOdalar);
+            this.pnlROdalar.Controls.Add(this.lbTemizlenecekOdalar);
+            this.pnlROdalar.Controls.Add(this.lbBosOdalar);
             this.pnlROdalar.Controls.Add(this.btnCikisYapacakOdalar);
-            this.pnlROdalar.Controls.Add(this.listView2);
-            this.pnlROdalar.Controls.Add(this.listView1);
             this.pnlROdalar.Controls.Add(this.btnTemizlenecekOda);
             this.pnlROdalar.Controls.Add(this.btnBosOdalar);
-            this.pnlROdalar.Controls.Add(this.lvBosOdalarListesi);
             this.pnlROdalar.Location = new System.Drawing.Point(169, 0);
             this.pnlROdalar.Name = "pnlROdalar";
             this.pnlROdalar.Size = new System.Drawing.Size(632, 450);
@@ -268,24 +269,6 @@
             this.btnCikisYapacakOdalar.Text = "Çıkış Yapacak Odalar";
             this.btnCikisYapacakOdalar.UseVisualStyleBackColor = true;
             // 
-            // listView2
-            // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(458, 57);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(160, 370);
-            this.listView2.TabIndex = 4;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(241, 57);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(160, 370);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // btnTemizlenecekOda
             // 
             this.btnTemizlenecekOda.Location = new System.Drawing.Point(262, 27);
@@ -294,6 +277,7 @@
             this.btnTemizlenecekOda.TabIndex = 2;
             this.btnTemizlenecekOda.Text = "Temizlenecek Odalar";
             this.btnTemizlenecekOda.UseVisualStyleBackColor = true;
+            this.btnTemizlenecekOda.Click += new System.EventHandler(this.btnTemizlenecekOda_Click);
             // 
             // btnBosOdalar
             // 
@@ -303,15 +287,7 @@
             this.btnBosOdalar.TabIndex = 1;
             this.btnBosOdalar.Text = "Boş Odaları Listele";
             this.btnBosOdalar.UseVisualStyleBackColor = true;
-            // 
-            // lvBosOdalarListesi
-            // 
-            this.lvBosOdalarListesi.HideSelection = false;
-            this.lvBosOdalarListesi.Location = new System.Drawing.Point(19, 57);
-            this.lvBosOdalarListesi.Name = "lvBosOdalarListesi";
-            this.lvBosOdalarListesi.Size = new System.Drawing.Size(160, 370);
-            this.lvBosOdalarListesi.TabIndex = 0;
-            this.lvBosOdalarListesi.UseCompatibleStateImageBehavior = false;
+            this.btnBosOdalar.Click += new System.EventHandler(this.btnBosOdalar_Click);
             // 
             // pnlAyarlar
             // 
@@ -354,7 +330,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 65);
+            this.textBox1.Location = new System.Drawing.Point(157, 66);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(143, 21);
@@ -390,6 +366,7 @@
             // pnlMusteriler
             // 
             this.pnlMusteriler.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlMusteriler.Controls.Add(this.btnMusteriSil);
             this.pnlMusteriler.Controls.Add(this.txtMusteriAciklama);
             this.pnlMusteriler.Controls.Add(this.label20);
             this.pnlMusteriler.Controls.Add(this.cbMusteriAktifMi);
@@ -425,11 +402,47 @@
             this.pnlMusteriler.Size = new System.Drawing.Size(640, 447);
             this.pnlMusteriler.TabIndex = 1;
             // 
+            // txtMusteriAciklama
+            // 
+            this.txtMusteriAciklama.Location = new System.Drawing.Point(469, 179);
+            this.txtMusteriAciklama.Multiline = true;
+            this.txtMusteriAciklama.Name = "txtMusteriAciklama";
+            this.txtMusteriAciklama.Size = new System.Drawing.Size(121, 109);
+            this.txtMusteriAciklama.TabIndex = 57;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(402, 179);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 13);
+            this.label20.TabIndex = 56;
+            this.label20.Text = "Açıklama:";
+            // 
+            // cbMusteriAktifMi
+            // 
+            this.cbMusteriAktifMi.AutoSize = true;
+            this.cbMusteriAktifMi.Location = new System.Drawing.Point(107, 370);
+            this.cbMusteriAktifMi.Name = "cbMusteriAktifMi";
+            this.cbMusteriAktifMi.Size = new System.Drawing.Size(47, 17);
+            this.cbMusteriAktifMi.TabIndex = 55;
+            this.cbMusteriAktifMi.Text = "Aktif";
+            this.cbMusteriAktifMi.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(19, 371);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 13);
+            this.label19.TabIndex = 54;
+            this.label19.Text = "Müşteri Aktif Mi:";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(384, 37);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 23);
+            this.button2.Size = new System.Drawing.Size(73, 23);
             this.button2.TabIndex = 53;
             this.button2.Text = "GÜNCELLE";
             this.button2.UseVisualStyleBackColor = true;
@@ -437,9 +450,9 @@
             // 
             // btnMusteriKaydet
             // 
-            this.btnMusteriKaydet.Location = new System.Drawing.Point(483, 37);
+            this.btnMusteriKaydet.Location = new System.Drawing.Point(466, 37);
             this.btnMusteriKaydet.Name = "btnMusteriKaydet";
-            this.btnMusteriKaydet.Size = new System.Drawing.Size(74, 23);
+            this.btnMusteriKaydet.Size = new System.Drawing.Size(64, 23);
             this.btnMusteriKaydet.TabIndex = 52;
             this.btnMusteriKaydet.Text = "KAYDET";
             this.btnMusteriKaydet.UseVisualStyleBackColor = true;
@@ -692,41 +705,39 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Müşteri Adı:";
             // 
-            // label19
+            // btnMusteriSil
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(19, 371);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 13);
-            this.label19.TabIndex = 54;
-            this.label19.Text = "Müşteri Aktif Mi:";
+            this.btnMusteriSil.Location = new System.Drawing.Point(541, 37);
+            this.btnMusteriSil.Name = "btnMusteriSil";
+            this.btnMusteriSil.Size = new System.Drawing.Size(45, 23);
+            this.btnMusteriSil.TabIndex = 58;
+            this.btnMusteriSil.Text = "SİL";
+            this.btnMusteriSil.UseVisualStyleBackColor = true;
+            this.btnMusteriSil.Click += new System.EventHandler(this.btnMusteriSil_Click);
             // 
-            // cbMusteriAktifMi
+            // lbBosOdalar
             // 
-            this.cbMusteriAktifMi.AutoSize = true;
-            this.cbMusteriAktifMi.Location = new System.Drawing.Point(107, 370);
-            this.cbMusteriAktifMi.Name = "cbMusteriAktifMi";
-            this.cbMusteriAktifMi.Size = new System.Drawing.Size(47, 17);
-            this.cbMusteriAktifMi.TabIndex = 55;
-            this.cbMusteriAktifMi.Text = "Aktif";
-            this.cbMusteriAktifMi.UseVisualStyleBackColor = true;
+            this.lbBosOdalar.FormattingEnabled = true;
+            this.lbBosOdalar.Location = new System.Drawing.Point(22, 58);
+            this.lbBosOdalar.Name = "lbBosOdalar";
+            this.lbBosOdalar.Size = new System.Drawing.Size(167, 368);
+            this.lbBosOdalar.TabIndex = 6;
             // 
-            // label20
+            // lbTemizlenecekOdalar
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(402, 179);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(53, 13);
-            this.label20.TabIndex = 56;
-            this.label20.Text = "Açıklama:";
+            this.lbTemizlenecekOdalar.FormattingEnabled = true;
+            this.lbTemizlenecekOdalar.Location = new System.Drawing.Point(236, 58);
+            this.lbTemizlenecekOdalar.Name = "lbTemizlenecekOdalar";
+            this.lbTemizlenecekOdalar.Size = new System.Drawing.Size(167, 368);
+            this.lbTemizlenecekOdalar.TabIndex = 7;
             // 
-            // txtMusteriAciklama
+            // lbCikisYapacakOdalar
             // 
-            this.txtMusteriAciklama.Location = new System.Drawing.Point(469, 179);
-            this.txtMusteriAciklama.Multiline = true;
-            this.txtMusteriAciklama.Name = "txtMusteriAciklama";
-            this.txtMusteriAciklama.Size = new System.Drawing.Size(121, 109);
-            this.txtMusteriAciklama.TabIndex = 57;
+            this.lbCikisYapacakOdalar.FormattingEnabled = true;
+            this.lbCikisYapacakOdalar.Location = new System.Drawing.Point(451, 58);
+            this.lbCikisYapacakOdalar.Name = "lbCikisYapacakOdalar";
+            this.lbCikisYapacakOdalar.Size = new System.Drawing.Size(167, 368);
+            this.lbCikisYapacakOdalar.TabIndex = 8;
             // 
             // FrmResepsiyon
             // 
@@ -734,10 +745,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 449);
             this.Controls.Add(this.tsResepsiyon);
-            this.Controls.Add(this.pnlMusteriler);
-            this.Controls.Add(this.pnlRezervasyon);
             this.Controls.Add(this.pnlAyarlar);
             this.Controls.Add(this.pnlROdalar);
+            this.Controls.Add(this.pnlMusteriler);
+            this.Controls.Add(this.pnlRezervasyon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmResepsiyon";
             this.Text = "Resepsiyon";
@@ -774,11 +785,8 @@
         private System.Windows.Forms.ToolStripButton tsYeniRezervasyon;
         private System.Windows.Forms.Panel pnlROdalar;
         private System.Windows.Forms.Button btnCikisYapacakOdalar;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnTemizlenecekOda;
         private System.Windows.Forms.Button btnBosOdalar;
-        private System.Windows.Forms.ListView lvBosOdalarListesi;
         private System.Windows.Forms.ToolStripButton tsAyarlar;
         private System.Windows.Forms.Panel pnlAyarlar;
         private System.Windows.Forms.Label label3;
@@ -824,5 +832,9 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtMusteriAciklama;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btnMusteriSil;
+        private System.Windows.Forms.ListBox lbBosOdalar;
+        private System.Windows.Forms.ListBox lbCikisYapacakOdalar;
+        private System.Windows.Forms.ListBox lbTemizlenecekOdalar;
     }
 }

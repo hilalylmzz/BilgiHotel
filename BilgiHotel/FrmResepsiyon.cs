@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
@@ -145,8 +146,8 @@ namespace BilgiHotel
                 txtMusteriAdres.Text = reader["musteriAdres"].ToString();
                 txtFirmaAdi.Text = reader["musteriFirmaAd"].ToString();
                 txtVergiNo.Text = reader["firmaVergiNo"].ToString();
-               // cmbCinsiyet.SelectedValue = (int)reader["cinsiyetID"];
-                if ((bool) reader["musteriSirketMi"])
+                // cmbCinsiyet.SelectedValue = (int)reader["cinsiyetID"];
+                if ((bool)reader["musteriSirketMi"])
                 {
                     cbSirketMi.Checked = true;
                 }
@@ -180,7 +181,7 @@ namespace BilgiHotel
             cmd.Parameters.AddWithValue("@musteriAciklama", txtMusteriAciklama.Text);
             cmd.Parameters.AddWithValue("@musteriAktifMi", cbMusteriAktifMi.Checked);
 
-            if (cmd.ExecuteNonQuery() >0)
+            if (cmd.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Müşteri Eklendi");
             }
@@ -188,14 +189,24 @@ namespace BilgiHotel
             {
                 MessageBox.Show("Müşteri Eklenemedi");
             }
-         
             con.Close();
+            txtMusteriAd.Clear();
+            txtMusteriSoyad.Clear();
+            txtMusteriAdres.Clear();
+            txtFirmaAdi.Clear();
+            txtVergiNo.Clear();
+            txtMusteriEPosta.Clear();
+            txtMusteriAciklama.Clear();
+            txtTCKimlik.Clear();
+            txtMusteriTelNo.Clear();
+            cbMusteriAktifMi.Checked = false;
+            cbSirketMi.Checked = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_MusteriGüncelleme", con);
+            SqlCommand cmd = new SqlCommand("sp_MusteriGuncelleme", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@musteriAd", txtMusteriAd.Text);
             cmd.Parameters.AddWithValue("@musteriSoyad", txtMusteriSoyad.Text);
@@ -221,6 +232,82 @@ namespace BilgiHotel
             {
                 MessageBox.Show("Müşteri bilgileri güncellenemedi");
             }
+            con.Close();
+
+            txtMusteriAd.Clear();
+            txtMusteriSoyad.Clear();
+            txtMusteriAdres.Clear();
+            txtFirmaAdi.Clear();
+            txtVergiNo.Clear();
+            txtMusteriEPosta.Clear();
+            txtMusteriAciklama.Clear();
+            txtTCKimlik.Clear();
+            txtMusteriTelNo.Clear();
+            cbMusteriAktifMi.Checked = false;
+            cbSirketMi.Checked = false;
+
+        }
+
+        private void btnMusteriSil_Click(object sender, EventArgs e)
+        {
+            string musteriTC = txtTCKimlik.Text;
+            SqlCommand cmd = new SqlCommand($"Delete from Musteriler where musteriTC='{musteriTC}'", con);
+     
+            try
+            {
+                con.Open();
+
+                MessageBox.Show(cmd.ExecuteNonQuery() + "Müşteri Bilgileri Silindi");
+
+            }
+            catch (Exception hata)
+            {
+
+                MessageBox.Show("Müşteri Bilgileri Silinemedi" + hata.Message.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            txtMusteriAd.Clear();
+            txtMusteriSoyad.Clear();
+            txtMusteriAdres.Clear();
+            txtFirmaAdi.Clear();
+            txtVergiNo.Clear();
+            txtMusteriEPosta.Clear();
+            txtMusteriAciklama.Clear();
+            txtTCKimlik.Clear();
+            txtMusteriTelNo.Clear();
+            cbMusteriAktifMi.Checked = false;
+            cbSirketMi.Checked = false;
+        }
+
+        private void btnBosOdalar_Click(object sender, EventArgs e)
+        {
+            lbBosOdalar.Items.Clear();
+            SqlCommand cmd = new SqlCommand("Select odaNo From Odalar Where odaBosMu=1", con);
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                lbBosOdalar.Items.Add(reader[0].ToString());
+            }
+            reader.Close();
+            con.Close();
+
+        }
+
+        private void btnTemizlenecekOda_Click(object sender, EventArgs e)
+        {
+            lbTemizlenecekOdalar.Items.Clear();
+            SqlCommand cmd = new SqlCommand("Select odaNo From Odalar Where odaTemizMi=0", con);
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                lbTemizlenecekOdalar.Items.Add(reader[0].ToString());
+            }
+            reader.Close();
             con.Close();
         }
     }
