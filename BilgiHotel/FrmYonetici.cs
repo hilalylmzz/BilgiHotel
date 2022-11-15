@@ -146,5 +146,34 @@ namespace BilgiHotel
             cmbOdaKat.DisplayMember = "Value";
 
         }
+
+        private void btnCalisanAra_Click(object sender, EventArgs e)
+        {
+            /*string tcKimlik = txtCalisanTC.Text;
+            SqlCommand cmd = new SqlCommand($"Select musteriAd, musteriSoyad, musteriTelNo, musteriEposta, musteriAdres, musteriFirmaAd, firmaVergiNo, cinsiyetID, musteriSirketMi from Calisanlar Where musteriTC = '{tcKimlik}'", con);
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                txtMusteriAd.Text = reader["musteriAd"].ToString();
+                txtMusteriSoyad.Text = reader["musteriSoyad"].ToString();
+                txtMusteriTelNo.Text = reader["musteriTelNo"].ToString();
+                txtMusteriEPosta.Text = reader["musteriEPosta"].ToString();
+                txtMusteriAdres.Text = reader["musteriAdres"].ToString();
+                txtFirmaAdi.Text = reader["musteriFirmaAd"].ToString();
+                txtVergiNo.Text = reader["firmaVergiNo"].ToString();
+                // cmbCinsiyet.SelectedValue = (int)reader["cinsiyetID"];
+                if ((bool)reader["musteriSirketMi"])
+                {
+                    cbSirketMi.Checked = true;
+                }
+                else
+                {
+                    cbSirketMi.Checked = false;
+                }
+            }
+            reader.Close();
+            con.Close();*/
+        }
     }
 }
