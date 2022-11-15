@@ -36,16 +36,12 @@
             this.tsAyarlar = new System.Windows.Forms.ToolStripButton();
             this.pnlRezervasyon = new System.Windows.Forms.Panel();
             this.btnRzvKaydet = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtRzvAciklama = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.cbRzvAktifMi = new System.Windows.Forms.CheckBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtRzvIndirim = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.btnIDAra = new System.Windows.Forms.Button();
             this.txtMusteriID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -109,6 +105,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tsResepsiyon.SuspendLayout();
             this.pnlRezervasyon.SuspendLayout();
             this.gbGirisCikisTarihleri.SuspendLayout();
@@ -193,16 +191,12 @@
             // pnlRezervasyon
             // 
             this.pnlRezervasyon.Controls.Add(this.btnRzvKaydet);
-            this.pnlRezervasyon.Controls.Add(this.textBox4);
+            this.pnlRezervasyon.Controls.Add(this.txtRzvAciklama);
             this.pnlRezervasyon.Controls.Add(this.label27);
             this.pnlRezervasyon.Controls.Add(this.cbRzvAktifMi);
             this.pnlRezervasyon.Controls.Add(this.label26);
-            this.pnlRezervasyon.Controls.Add(this.textBox3);
+            this.pnlRezervasyon.Controls.Add(this.txtRzvIndirim);
             this.pnlRezervasyon.Controls.Add(this.label25);
-            this.pnlRezervasyon.Controls.Add(this.dateTimePicker1);
-            this.pnlRezervasyon.Controls.Add(this.dateTimePicker2);
-            this.pnlRezervasyon.Controls.Add(this.label23);
-            this.pnlRezervasyon.Controls.Add(this.label24);
             this.pnlRezervasyon.Controls.Add(this.btnIDAra);
             this.pnlRezervasyon.Controls.Add(this.txtMusteriID);
             this.pnlRezervasyon.Controls.Add(this.label22);
@@ -216,25 +210,26 @@
             // 
             // btnRzvKaydet
             // 
-            this.btnRzvKaydet.Location = new System.Drawing.Point(434, 337);
+            this.btnRzvKaydet.Location = new System.Drawing.Point(249, 395);
             this.btnRzvKaydet.Name = "btnRzvKaydet";
             this.btnRzvKaydet.Size = new System.Drawing.Size(75, 23);
             this.btnRzvKaydet.TabIndex = 16;
             this.btnRzvKaydet.Text = "KAYDET";
             this.btnRzvKaydet.UseVisualStyleBackColor = true;
+            this.btnRzvKaydet.Click += new System.EventHandler(this.btnRzvKaydet_Click);
             // 
-            // textBox4
+            // txtRzvAciklama
             // 
-            this.textBox4.Location = new System.Drawing.Point(410, 245);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(195, 56);
-            this.textBox4.TabIndex = 15;
+            this.txtRzvAciklama.Location = new System.Drawing.Point(129, 314);
+            this.txtRzvAciklama.Multiline = true;
+            this.txtRzvAciklama.Name = "txtRzvAciklama";
+            this.txtRzvAciklama.Size = new System.Drawing.Size(195, 56);
+            this.txtRzvAciklama.TabIndex = 15;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(287, 252);
+            this.label27.Location = new System.Drawing.Point(6, 321);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(118, 13);
             this.label27.TabIndex = 14;
@@ -243,7 +238,7 @@
             // cbRzvAktifMi
             // 
             this.cbRzvAktifMi.AutoSize = true;
-            this.cbRzvAktifMi.Location = new System.Drawing.Point(410, 216);
+            this.cbRzvAktifMi.Location = new System.Drawing.Point(129, 285);
             this.cbRzvAktifMi.Name = "cbRzvAktifMi";
             this.cbRzvAktifMi.Size = new System.Drawing.Size(47, 17);
             this.cbRzvAktifMi.TabIndex = 13;
@@ -253,63 +248,31 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(295, 220);
+            this.label26.Location = new System.Drawing.Point(14, 289);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(110, 13);
             this.label26.TabIndex = 12;
             this.label26.Text = "Rezervasyon Aktif Mi:";
             // 
-            // textBox3
+            // txtRzvIndirim
             // 
-            this.textBox3.Location = new System.Drawing.Point(410, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtRzvIndirim.Location = new System.Drawing.Point(129, 250);
+            this.txtRzvIndirim.Name = "txtRzvIndirim";
+            this.txtRzvIndirim.Size = new System.Drawing.Size(100, 20);
+            this.txtRzvIndirim.TabIndex = 11;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(337, 188);
+            this.label25.Location = new System.Drawing.Point(56, 257);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(68, 13);
             this.label25.TabIndex = 10;
             this.label25.Text = "İndirim Oranı:";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(68, 278);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 9;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(68, 244);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 8;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(2, 285);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(61, 13);
-            this.label23.TabIndex = 7;
-            this.label23.Text = "Çıkış Tarihi:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(4, 251);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 13);
-            this.label24.TabIndex = 6;
-            this.label24.Text = "Giriş Tarihi:";
-            // 
             // btnIDAra
             // 
-            this.btnIDAra.Location = new System.Drawing.Point(182, 183);
+            this.btnIDAra.Location = new System.Drawing.Point(235, 190);
             this.btnIDAra.Name = "btnIDAra";
             this.btnIDAra.Size = new System.Drawing.Size(86, 23);
             this.btnIDAra.TabIndex = 5;
@@ -319,7 +282,7 @@
             // 
             // txtMusteriID
             // 
-            this.txtMusteriID.Location = new System.Drawing.Point(68, 208);
+            this.txtMusteriID.Location = new System.Drawing.Point(129, 220);
             this.txtMusteriID.Name = "txtMusteriID";
             this.txtMusteriID.Size = new System.Drawing.Size(100, 20);
             this.txtMusteriID.TabIndex = 4;
@@ -327,7 +290,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(5, 215);
+            this.label22.Location = new System.Drawing.Point(66, 223);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(58, 13);
             this.label22.TabIndex = 3;
@@ -335,7 +298,7 @@
             // 
             // txtMusteriTC
             // 
-            this.txtMusteriTC.Location = new System.Drawing.Point(68, 181);
+            this.txtMusteriTC.Location = new System.Drawing.Point(129, 193);
             this.txtMusteriTC.Name = "txtMusteriTC";
             this.txtMusteriTC.Size = new System.Drawing.Size(100, 20);
             this.txtMusteriTC.TabIndex = 2;
@@ -343,7 +306,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(2, 188);
+            this.label21.Location = new System.Drawing.Point(63, 196);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 13);
             this.label21.TabIndex = 1;
@@ -366,12 +329,18 @@
             // 
             // lvUygunOdalar
             // 
+            this.lvUygunOdalar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.lvUygunOdalar.FullRowSelect = true;
             this.lvUygunOdalar.HideSelection = false;
             this.lvUygunOdalar.Location = new System.Drawing.Point(296, 18);
+            this.lvUygunOdalar.MultiSelect = false;
             this.lvUygunOdalar.Name = "lvUygunOdalar";
             this.lvUygunOdalar.Size = new System.Drawing.Size(299, 102);
             this.lvUygunOdalar.TabIndex = 1;
             this.lvUygunOdalar.UseCompatibleStateImageBehavior = false;
+            this.lvUygunOdalar.View = System.Windows.Forms.View.Details;
             // 
             // btnBosOdaListele
             // 
@@ -909,16 +878,26 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Müşteri Adı:";
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Oda Numarası";
+            this.columnHeader1.Width = 95;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Oda Kapasite";
+            this.columnHeader2.Width = 78;
+            // 
             // FrmResepsiyon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 449);
             this.Controls.Add(this.tsResepsiyon);
+            this.Controls.Add(this.pnlMusteriler);
             this.Controls.Add(this.pnlRezervasyon);
             this.Controls.Add(this.pnlAyarlar);
             this.Controls.Add(this.pnlROdalar);
-            this.Controls.Add(this.pnlMusteriler);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmResepsiyon";
             this.Text = "Resepsiyon";
@@ -1007,21 +986,19 @@
         private System.Windows.Forms.ListBox lbBosOdalar;
         private System.Windows.Forms.ListBox lbCikisYapacakOdalar;
         private System.Windows.Forms.ListBox lbTemizlenecekOdalar;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtRzvAciklama;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.CheckBox cbRzvAktifMi;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtRzvIndirim;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnIDAra;
         private System.Windows.Forms.TextBox txtMusteriID;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtMusteriTC;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnRzvKaydet;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

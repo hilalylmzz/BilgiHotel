@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsCalisanlar = new System.Windows.Forms.ToolStripButton();
+            this.tsMusteriler = new System.Windows.Forms.ToolStripButton();
+            this.tsOdalar = new System.Windows.Forms.ToolStripButton();
+            this.tsKampanyalar = new System.Windows.Forms.ToolStripButton();
             this.pnlOdalar = new System.Windows.Forms.Panel();
             this.nudOdaNo = new System.Windows.Forms.NumericUpDown();
             this.cmbOdaKat = new System.Windows.Forms.ComboBox();
@@ -71,10 +75,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.txtCalisanGorev = new System.Windows.Forms.TextBox();
-            this.txtCalisanCinsiyet = new System.Windows.Forms.TextBox();
-            this.txtCalisanIl = new System.Windows.Forms.TextBox();
-            this.txtCalisanUlke = new System.Windows.Forms.TextBox();
             this.txtCalisanAdres = new System.Windows.Forms.TextBox();
             this.txtCalisanEPosta = new System.Windows.Forms.TextBox();
             this.txtCalisanTel = new System.Windows.Forms.TextBox();
@@ -114,10 +114,10 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.tsCalisanlar = new System.Windows.Forms.ToolStripButton();
-            this.tsMusteriler = new System.Windows.Forms.ToolStripButton();
-            this.tsOdalar = new System.Windows.Forms.ToolStripButton();
-            this.tsKampanyalar = new System.Windows.Forms.ToolStripButton();
+            this.cmbUlkeler = new System.Windows.Forms.ComboBox();
+            this.cmbSehirler = new System.Windows.Forms.ComboBox();
+            this.cmbCinsiyet = new System.Windows.Forms.ComboBox();
+            this.cmbGorevler = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             this.pnlOdalar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).BeginInit();
@@ -131,6 +131,7 @@
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.toolStrip1.BackgroundImage = global::BilgiHotel.Properties.Resources._25_Free_Beautiful_Vector_Gradients_For_Your_Next_Design_Project;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsCalisanlar,
             this.tsMusteriler,
@@ -142,6 +143,63 @@
             this.toolStrip1.Size = new System.Drawing.Size(145, 509);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsCalisanlar
+            // 
+            this.tsCalisanlar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsCalisanlar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsCalisanlar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tsCalisanlar.Image = global::BilgiHotel.Properties.Resources.personel;
+            this.tsCalisanlar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsCalisanlar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsCalisanlar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsCalisanlar.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.tsCalisanlar.Name = "tsCalisanlar";
+            this.tsCalisanlar.Size = new System.Drawing.Size(144, 54);
+            this.tsCalisanlar.Text = "ÇALIŞANLAR";
+            this.tsCalisanlar.Click += new System.EventHandler(this.tsCalisanlar_Click);
+            // 
+            // tsMusteriler
+            // 
+            this.tsMusteriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsMusteriler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsMusteriler.Image = global::BilgiHotel.Properties.Resources.musteriler;
+            this.tsMusteriler.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsMusteriler.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsMusteriler.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsMusteriler.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.tsMusteriler.Name = "tsMusteriler";
+            this.tsMusteriler.Size = new System.Drawing.Size(144, 36);
+            this.tsMusteriler.Text = "MÜŞTERİLER";
+            this.tsMusteriler.Click += new System.EventHandler(this.tsMusteriler_Click);
+            // 
+            // tsOdalar
+            // 
+            this.tsOdalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsOdalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsOdalar.Image = global::BilgiHotel.Properties.Resources.oda;
+            this.tsOdalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsOdalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsOdalar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsOdalar.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.tsOdalar.Name = "tsOdalar";
+            this.tsOdalar.Size = new System.Drawing.Size(144, 54);
+            this.tsOdalar.Text = "ODALAR";
+            this.tsOdalar.Click += new System.EventHandler(this.tsOdalar_Click);
+            // 
+            // tsKampanyalar
+            // 
+            this.tsKampanyalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsKampanyalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsKampanyalar.Image = global::BilgiHotel.Properties.Resources.kampanya;
+            this.tsKampanyalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsKampanyalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsKampanyalar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsKampanyalar.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.tsKampanyalar.Name = "tsKampanyalar";
+            this.tsKampanyalar.Size = new System.Drawing.Size(144, 54);
+            this.tsKampanyalar.Text = "KAMPANYALAR";
+            this.tsKampanyalar.Click += new System.EventHandler(this.tsKampanyalar_Click);
             // 
             // pnlOdalar
             // 
@@ -361,6 +419,10 @@
             // 
             // pnlCalisanlar
             // 
+            this.pnlCalisanlar.Controls.Add(this.cmbGorevler);
+            this.pnlCalisanlar.Controls.Add(this.cmbCinsiyet);
+            this.pnlCalisanlar.Controls.Add(this.cmbSehirler);
+            this.pnlCalisanlar.Controls.Add(this.cmbUlkeler);
             this.pnlCalisanlar.Controls.Add(this.textBox6);
             this.pnlCalisanlar.Controls.Add(this.label30);
             this.pnlCalisanlar.Controls.Add(this.cbCalisanAktifMi);
@@ -379,10 +441,6 @@
             this.pnlCalisanlar.Controls.Add(this.label23);
             this.pnlCalisanlar.Controls.Add(this.textBox5);
             this.pnlCalisanlar.Controls.Add(this.label22);
-            this.pnlCalisanlar.Controls.Add(this.txtCalisanGorev);
-            this.pnlCalisanlar.Controls.Add(this.txtCalisanCinsiyet);
-            this.pnlCalisanlar.Controls.Add(this.txtCalisanIl);
-            this.pnlCalisanlar.Controls.Add(this.txtCalisanUlke);
             this.pnlCalisanlar.Controls.Add(this.txtCalisanAdres);
             this.pnlCalisanlar.Controls.Add(this.txtCalisanEPosta);
             this.pnlCalisanlar.Controls.Add(this.txtCalisanTel);
@@ -562,34 +620,6 @@
             this.label22.TabIndex = 27;
             this.label22.Text = "MAAŞ:";
             // 
-            // txtCalisanGorev
-            // 
-            this.txtCalisanGorev.Location = new System.Drawing.Point(109, 313);
-            this.txtCalisanGorev.Name = "txtCalisanGorev";
-            this.txtCalisanGorev.Size = new System.Drawing.Size(100, 20);
-            this.txtCalisanGorev.TabIndex = 26;
-            // 
-            // txtCalisanCinsiyet
-            // 
-            this.txtCalisanCinsiyet.Location = new System.Drawing.Point(109, 286);
-            this.txtCalisanCinsiyet.Name = "txtCalisanCinsiyet";
-            this.txtCalisanCinsiyet.Size = new System.Drawing.Size(100, 20);
-            this.txtCalisanCinsiyet.TabIndex = 25;
-            // 
-            // txtCalisanIl
-            // 
-            this.txtCalisanIl.Location = new System.Drawing.Point(109, 259);
-            this.txtCalisanIl.Name = "txtCalisanIl";
-            this.txtCalisanIl.Size = new System.Drawing.Size(100, 20);
-            this.txtCalisanIl.TabIndex = 24;
-            // 
-            // txtCalisanUlke
-            // 
-            this.txtCalisanUlke.Location = new System.Drawing.Point(109, 233);
-            this.txtCalisanUlke.Name = "txtCalisanUlke";
-            this.txtCalisanUlke.Size = new System.Drawing.Size(100, 20);
-            this.txtCalisanUlke.TabIndex = 23;
-            // 
             // txtCalisanAdres
             // 
             this.txtCalisanAdres.Location = new System.Drawing.Point(109, 204);
@@ -613,9 +643,10 @@
             // 
             // dtpCDogumTarihi
             // 
+            this.dtpCDogumTarihi.CustomFormat = "";
             this.dtpCDogumTarihi.Location = new System.Drawing.Point(109, 125);
             this.dtpCDogumTarihi.Name = "dtpCDogumTarihi";
-            this.dtpCDogumTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpCDogumTarihi.Size = new System.Drawing.Size(138, 20);
             this.dtpCDogumTarihi.TabIndex = 19;
             // 
             // txtCalisanTC
@@ -932,62 +963,37 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "KAMPANYA ADI:";
             // 
-            // tsCalisanlar
+            // cmbUlkeler
             // 
-            this.tsCalisanlar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tsCalisanlar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsCalisanlar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tsCalisanlar.Image = global::BilgiHotel.Properties.Resources.personel;
-            this.tsCalisanlar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsCalisanlar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsCalisanlar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsCalisanlar.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
-            this.tsCalisanlar.Name = "tsCalisanlar";
-            this.tsCalisanlar.Size = new System.Drawing.Size(144, 54);
-            this.tsCalisanlar.Text = "ÇALIŞANLAR";
-            this.tsCalisanlar.Click += new System.EventHandler(this.tsCalisanlar_Click);
+            this.cmbUlkeler.FormattingEnabled = true;
+            this.cmbUlkeler.Location = new System.Drawing.Point(107, 232);
+            this.cmbUlkeler.Name = "cmbUlkeler";
+            this.cmbUlkeler.Size = new System.Drawing.Size(121, 21);
+            this.cmbUlkeler.TabIndex = 45;
             // 
-            // tsMusteriler
+            // cmbSehirler
             // 
-            this.tsMusteriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tsMusteriler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsMusteriler.Image = global::BilgiHotel.Properties.Resources.musteriler;
-            this.tsMusteriler.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsMusteriler.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsMusteriler.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsMusteriler.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
-            this.tsMusteriler.Name = "tsMusteriler";
-            this.tsMusteriler.Size = new System.Drawing.Size(144, 36);
-            this.tsMusteriler.Text = "MÜŞTERİLER";
-            this.tsMusteriler.Click += new System.EventHandler(this.tsMusteriler_Click);
+            this.cmbSehirler.FormattingEnabled = true;
+            this.cmbSehirler.Location = new System.Drawing.Point(107, 258);
+            this.cmbSehirler.Name = "cmbSehirler";
+            this.cmbSehirler.Size = new System.Drawing.Size(121, 21);
+            this.cmbSehirler.TabIndex = 46;
             // 
-            // tsOdalar
+            // cmbCinsiyet
             // 
-            this.tsOdalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tsOdalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsOdalar.Image = global::BilgiHotel.Properties.Resources.oda;
-            this.tsOdalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsOdalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsOdalar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsOdalar.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
-            this.tsOdalar.Name = "tsOdalar";
-            this.tsOdalar.Size = new System.Drawing.Size(144, 54);
-            this.tsOdalar.Text = "ODALAR";
-            this.tsOdalar.Click += new System.EventHandler(this.tsOdalar_Click);
+            this.cmbCinsiyet.FormattingEnabled = true;
+            this.cmbCinsiyet.Location = new System.Drawing.Point(107, 285);
+            this.cmbCinsiyet.Name = "cmbCinsiyet";
+            this.cmbCinsiyet.Size = new System.Drawing.Size(121, 21);
+            this.cmbCinsiyet.TabIndex = 47;
             // 
-            // tsKampanyalar
+            // cmbGorevler
             // 
-            this.tsKampanyalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tsKampanyalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsKampanyalar.Image = global::BilgiHotel.Properties.Resources.kampanya;
-            this.tsKampanyalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsKampanyalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsKampanyalar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsKampanyalar.Margin = new System.Windows.Forms.Padding(0, 60, 0, 0);
-            this.tsKampanyalar.Name = "tsKampanyalar";
-            this.tsKampanyalar.Size = new System.Drawing.Size(144, 54);
-            this.tsKampanyalar.Text = "KAMPANYALAR";
-            this.tsKampanyalar.Click += new System.EventHandler(this.tsKampanyalar_Click);
+            this.cmbGorevler.FormattingEnabled = true;
+            this.cmbGorevler.Location = new System.Drawing.Point(107, 311);
+            this.cmbGorevler.Name = "cmbGorevler";
+            this.cmbGorevler.Size = new System.Drawing.Size(121, 21);
+            this.cmbGorevler.TabIndex = 48;
             // 
             // FrmYonetici
             // 
@@ -995,10 +1001,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 509);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.pnlCalisanlar);
             this.Controls.Add(this.pnlOdalar);
             this.Controls.Add(this.pnlMusteriler);
             this.Controls.Add(this.pnlKampanyalar);
-            this.Controls.Add(this.pnlCalisanlar);
             this.Name = "FrmYonetici";
             this.Text = "Yonetici";
             this.Load += new System.EventHandler(this.FrmYonetici_Load);
@@ -1044,10 +1050,6 @@
         private System.Windows.Forms.Button txtAra;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnlCalisanlar;
-        private System.Windows.Forms.TextBox txtCalisanGorev;
-        private System.Windows.Forms.TextBox txtCalisanCinsiyet;
-        private System.Windows.Forms.TextBox txtCalisanIl;
-        private System.Windows.Forms.TextBox txtCalisanUlke;
         private System.Windows.Forms.TextBox txtCalisanAdres;
         private System.Windows.Forms.TextBox txtCalisanEPosta;
         private System.Windows.Forms.TextBox txtCalisanTel;
@@ -1110,5 +1112,9 @@
         private System.Windows.Forms.Button btnOdaEkle;
         private System.Windows.Forms.NumericUpDown nudOdaNo;
         private System.Windows.Forms.ComboBox cmbOdaKat;
+        private System.Windows.Forms.ComboBox cmbGorevler;
+        private System.Windows.Forms.ComboBox cmbCinsiyet;
+        private System.Windows.Forms.ComboBox cmbSehirler;
+        private System.Windows.Forms.ComboBox cmbUlkeler;
     }
 }

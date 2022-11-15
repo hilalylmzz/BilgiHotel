@@ -37,6 +37,7 @@ namespace BilgiHotel
             {
                 panel.Visible = false;
             }
+            ComboboxDoldur();
         }
         private void PanelAc(Panel panelac)
         {
@@ -62,10 +63,8 @@ namespace BilgiHotel
             PanelAc(pnlAyarlar);
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void ComboboxDoldur()
         {
-            PanelAc(pnlMusteriler);
-
             //Ulkeler
             SqlCommand cmd = new SqlCommand("SELECT ulkeID, UlkeAd FROM Ulkeler", con);
 
@@ -76,9 +75,6 @@ namespace BilgiHotel
                 Ulkeler.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
             }
             reader.Close();
-            cmbUlkeler.DataSource = Ulkeler;
-            cmbUlkeler.ValueMember = "Key";
-            cmbUlkeler.DisplayMember = "Value";
 
 
             //Sehirler
@@ -89,9 +85,7 @@ namespace BilgiHotel
                 Sehirler.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
             }
             reader.Close();
-            cmbSehirler.DataSource = Sehirler;
-            cmbSehirler.ValueMember = "Key";
-            cmbSehirler.DisplayMember = "Value";
+            
 
 
             //Diller
@@ -102,9 +96,7 @@ namespace BilgiHotel
                 Diller.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
             }
             reader.Close();
-            cmbMusteriDil.DataSource = Diller;
-            cmbMusteriDil.ValueMember = "Key";
-            cmbMusteriDil.DisplayMember = "Value";
+            
 
             //Cinsiyetler
             cmd = new SqlCommand("SELECT cinsiyetID, cinsiyetAd FROM Cinsiyetler", con);
@@ -114,10 +106,28 @@ namespace BilgiHotel
                 Cinsiyetler.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
             }
             reader.Close();
+            con.Close();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            PanelAc(pnlMusteriler);
+
+            cmbUlkeler.DataSource = Ulkeler;
+            cmbUlkeler.ValueMember = "Key";
+            cmbUlkeler.DisplayMember = "Value";
+
+            cmbSehirler.DataSource = Sehirler;
+            cmbSehirler.ValueMember = "Key";
+            cmbSehirler.DisplayMember = "Value";
+
+            cmbMusteriDil.DataSource = Diller;
+            cmbMusteriDil.ValueMember = "Key";
+            cmbMusteriDil.DisplayMember = "Value";
+
             cmbCinsiyet.DataSource = Cinsiyetler;
             cmbCinsiyet.ValueMember = "Key";
             cmbCinsiyet.DisplayMember = "Value";
-            con.Close();
         }
 
         private void cbSirketMi_CheckedChanged(object sender, EventArgs e)
@@ -333,10 +343,7 @@ namespace BilgiHotel
             con.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
+      
 
         private void btnIDAra_Click(object sender, EventArgs e)
         {
@@ -351,6 +358,35 @@ namespace BilgiHotel
             }
             reader.Close();
             con.Close();
+        }
+
+        private void btnRzvKaydet_Click(object sender, EventArgs e)
+        {
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_RezervasyonKaydet", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@rezervasyonBaslangicTarih", dtpGirisTarihi.Value);
+            cmd.Parameters.AddWithValue("@rezervasyonBitisTarihi", dtpCikisTarihi.Value);
+            cmd.Parameters.AddWithValue("@rezervasyonIndirim", txtRzvIndirim.Text);
+            cmd.Parameters.AddWithValue("@rezervasyonAktifMi", cbRzvAktifMi.Checked);
+            cmd.Parameters.AddWithValue("@rezervasyonAciklama", txtRzvAciklama.Text);
+            cmd.Parameters.AddWithValue("@calisanID", CalisanID);
+            cmd.Parameters.AddWithValue("@musteriID", txtMusteriID.Text);
+            cmd.Parameters.AddWithValue("@odaNo", 100); //lvUygunOdalar.SelectedItems[0].SubItems[0].Text);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Rezervasyon Kaydedildi");
+            }
+            else
+            {
+                MessageBox.Show("Rezervasyon Kaydedilemedi");
+            }
+            con.Close();
+
+
+
         }
     }
 }
