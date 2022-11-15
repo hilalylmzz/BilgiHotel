@@ -13,10 +13,12 @@ namespace BilgiHotel
 {
     public partial class FrmYonetici : Form
     {
+        int YoneticiID;
         List<Panel> panels;
-        public FrmYonetici()
+        public FrmYonetici(int YoneticiID)
         {
             InitializeComponent();
+            this.YoneticiID = YoneticiID;
         }
 
         List<KeyValuePair<int, string>> Katlar = new List<KeyValuePair<int, string>>();

@@ -16,7 +16,7 @@ namespace BilgiHotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmResepsiyon());
+            Application.Run(new login());
         }
     }
 }

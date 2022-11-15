@@ -15,10 +15,12 @@ namespace BilgiHotel
 {
     public partial class FrmResepsiyon : Form
     {
+        int CalisanID;
         List<Panel> panels;
-        public FrmResepsiyon()
+        public FrmResepsiyon(int CalisanID)
         {
             InitializeComponent();
+            this.CalisanID = CalisanID;
         }
 
         List<KeyValuePair<int, string>> Ulkeler = new List<KeyValuePair<int, string>>();
@@ -328,6 +330,26 @@ namespace BilgiHotel
                     MessageBox.Show("Şifre Güncellendi");
                 }
             }
+            con.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnIDAra_Click(object sender, EventArgs e)
+        {
+            string tcKimlik = txtMusteriTC.Text;
+            SqlCommand cmd = new SqlCommand($"Select musteriID from Musteriler Where musteriTC = '{tcKimlik}'", con);
+                
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                txtMusteriID.Text = reader["musteriID"].ToString();
+            }
+            reader.Close();
             con.Close();
         }
     }

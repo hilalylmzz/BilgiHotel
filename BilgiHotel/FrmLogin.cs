@@ -28,26 +28,29 @@ namespace BilgiHotel
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@kullaniciAd",kullanici);
             cmd.Parameters.AddWithValue("@kullaniciSifre", sifre);
-            int yetkidID = (int) cmd.ExecuteScalar();
-
-            switch (yetkidID)
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                case 0:
-                    MessageBox.Show("Kullanıcı adı veya şifre yanlış");
-                    break;
-                case 1:
-                    FrmResepsiyon resepsiyon = new FrmResepsiyon();
-                    resepsiyon.Show();
-                    this.Hide();
-                    break;
-                case 2:
-                    FrmYonetici yonetici = new FrmYonetici();
-                    yonetici.Show();
-                    this.Hide();
-                    break;
-                default:
-                    break;
+                switch (reader[0])
+                {
+                    case 0:
+                        MessageBox.Show("Kullanıcı adı veya şifre yanlış");
+                        break;
+                    case 1:
+                        FrmResepsiyon resepsiyon = new FrmResepsiyon((int)reader[1]);
+                        resepsiyon.Show();
+                        this.Hide();
+                        break;
+                    case 2:
+                        FrmYonetici yonetici = new FrmYonetici((int)reader[2]);
+                        yonetici.Show();
+                        this.Hide();
+                        break;
+                    default:
+                        break;
+                }
             }
+            
         }
     }
 }
