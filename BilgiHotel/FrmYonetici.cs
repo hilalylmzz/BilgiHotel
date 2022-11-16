@@ -221,7 +221,7 @@ namespace BilgiHotel
             cmd.Parameters.AddWithValue("@calisanIstenCikisTarih", dtpIstenAyrilmaTarihi.Value);
             cmd.Parameters.AddWithValue("@calisanAciklama", txtCalisanAciklama.Text);
             cmd.Parameters.AddWithValue("@calisanAktifMi", cbCalisanAktifMi.Checked);
-
+            
             if (cmd.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Çalışan bilgileri güncellendi");
