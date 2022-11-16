@@ -125,7 +125,22 @@ namespace BilgiHotel
                 Cinsiyetler.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
             }
             reader.Close();
+       
+
+
+            //Görevler
+            cmd = new SqlCommand("SELECT gorevID, gorevAd FROM Gorevler", con);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Gorevler.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
+            }
+            reader.Close();
             con.Close();
+
+
+
+
         }
 
         private void tsOdalar_Click(object sender, EventArgs e)
@@ -168,7 +183,7 @@ namespace BilgiHotel
                 txtAcilDurumKisiAd.Text = reader["acilDurumKisiAd"].ToString();
                 txtAcilDurumKisiTel.Text = reader["acilDurumTelefonNo"].ToString();
                 dtpIseBaslamaTarihi.Value= reader.GetDateTime(16);
-                dtpIstenAyrilmaTarihi.Value = reader.GetDateTime(17);
+               // dtpIstenAyrilmaTarihi.Value = reader.GetDateTime(17);
                 cbCalisanAktifMi.Checked = (bool)reader["calisanAktifMi"];
                 txtCalisanAciklama.Text = reader["calisanAciklama"].ToString();
                 cmbCinsiyet.SelectedValue = reader.GetInt32(10);
@@ -178,6 +193,43 @@ namespace BilgiHotel
 
             }
             reader.Close();
+            con.Close();
+        }
+
+        private void btnCalisanGuncelle_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_CalisanBilgiGuncelleme", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@calisanAd", txtCalisanAd.Text);
+            cmd.Parameters.AddWithValue("@calisanSoyad", txtCalisanSoyad.Text);
+            cmd.Parameters.AddWithValue("@calisanTCKimlikNo", txtCalisanTC.Text);
+            cmd.Parameters.AddWithValue("@calisanDogumTarih", dtpCDogumTarihi.Value);
+            cmd.Parameters.AddWithValue("@calisanTelefonNo", txtCalisanTel.Text);
+            cmd.Parameters.AddWithValue("@ulkeID", cmbUlkeler.SelectedValue);
+            cmd.Parameters.AddWithValue("@sehirID", cmbSehirler.SelectedValue);
+            cmd.Parameters.AddWithValue("@cinsiyetID", cmbCinsiyet.SelectedValue);
+            cmd.Parameters.AddWithValue("@gorevID", cmbGorevler.SelectedValue);
+            cmd.Parameters.AddWithValue("@calisanEPosta", txtCalisanEPosta.Text);
+            cmd.Parameters.AddWithValue("@calisanAdres", txtCalisanAdres.Text);
+            cmd.Parameters.AddWithValue("@calisanMaas", txtCalisanMaas.Text);
+            cmd.Parameters.AddWithValue("@calisanSicilNo", txtcalisanSicilNo.Text);
+            cmd.Parameters.AddWithValue("@calisanEngelliMi", cbEngelDurumu.Checked);
+            cmd.Parameters.AddWithValue("@acilDurumKisiAd", txtAcilDurumKisiAd.Text);
+            cmd.Parameters.AddWithValue("@acilDurumTelefonNo", txtAcilDurumKisiTel.Text);
+            cmd.Parameters.AddWithValue("@calisanIseBaslamaTarih", dtpIseBaslamaTarihi.Value);
+            cmd.Parameters.AddWithValue("@calisanIstenCikisTarih", dtpIstenAyrilmaTarihi.Value);
+            cmd.Parameters.AddWithValue("@calisanAciklama", txtCalisanAciklama.Text);
+            cmd.Parameters.AddWithValue("@calisanAktifMi", cbCalisanAktifMi.Checked);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Çalışan bilgileri güncellendi");
+            }
+            else
+            {
+                MessageBox.Show("Çalışan bilgileri güncellenemedi");
+            }
             con.Close();
         }
     }

@@ -708,6 +708,7 @@
             this.btnCalisanGuncelle.TabIndex = 14;
             this.btnCalisanGuncelle.Text = "BİLGİLERİ GÜNCELLE";
             this.btnCalisanGuncelle.UseVisualStyleBackColor = true;
+            this.btnCalisanGuncelle.Click += new System.EventHandler(this.btnCalisanGuncelle_Click);
             // 
             // label21
             // 
