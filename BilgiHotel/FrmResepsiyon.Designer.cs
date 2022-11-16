@@ -901,7 +901,7 @@
             this.Controls.Add(this.pnlROdalar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmResepsiyon";
-            this.Text = "Resepsiyon";
+            this.Text = "RESEPSİYON";
             this.Load += new System.EventHandler(this.FrmResepsiyon_Load);
             this.tsResepsiyon.ResumeLayout(false);
             this.tsResepsiyon.PerformLayout();

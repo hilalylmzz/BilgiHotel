@@ -116,6 +116,8 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.cbCalisiyorMu = new System.Windows.Forms.CheckBox();
+            this.btnCalisanSil = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.pnlOdalar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).BeginInit();
@@ -417,6 +419,8 @@
             // 
             // pnlCalisanlar
             // 
+            this.pnlCalisanlar.Controls.Add(this.btnCalisanSil);
+            this.pnlCalisanlar.Controls.Add(this.cbCalisiyorMu);
             this.pnlCalisanlar.Controls.Add(this.cmbGorevler);
             this.pnlCalisanlar.Controls.Add(this.cmbCinsiyet);
             this.pnlCalisanlar.Controls.Add(this.cmbSehirler);
@@ -693,16 +697,17 @@
             // 
             // btnCalisanEkle
             // 
-            this.btnCalisanEkle.Location = new System.Drawing.Point(321, 368);
+            this.btnCalisanEkle.Location = new System.Drawing.Point(531, 12);
             this.btnCalisanEkle.Name = "btnCalisanEkle";
-            this.btnCalisanEkle.Size = new System.Drawing.Size(141, 23);
+            this.btnCalisanEkle.Size = new System.Drawing.Size(101, 23);
             this.btnCalisanEkle.TabIndex = 15;
             this.btnCalisanEkle.Text = "YENİ ÇALIŞAN";
             this.btnCalisanEkle.UseVisualStyleBackColor = true;
+            this.btnCalisanEkle.Click += new System.EventHandler(this.btnCalisanEkle_Click);
             // 
             // btnCalisanGuncelle
             // 
-            this.btnCalisanGuncelle.Location = new System.Drawing.Point(456, 9);
+            this.btnCalisanGuncelle.Location = new System.Drawing.Point(396, 12);
             this.btnCalisanGuncelle.Name = "btnCalisanGuncelle";
             this.btnCalisanGuncelle.Size = new System.Drawing.Size(129, 23);
             this.btnCalisanGuncelle.TabIndex = 14;
@@ -802,7 +807,7 @@
             // 
             // btnCalisanAra
             // 
-            this.btnCalisanAra.Location = new System.Drawing.Point(376, 10);
+            this.btnCalisanAra.Location = new System.Drawing.Point(316, 12);
             this.btnCalisanAra.Name = "btnCalisanAra";
             this.btnCalisanAra.Size = new System.Drawing.Size(46, 23);
             this.btnCalisanAra.TabIndex = 2;
@@ -812,7 +817,7 @@
             // 
             // txtCalisanTC
             // 
-            this.txtCalisanTC.Location = new System.Drawing.Point(253, 12);
+            this.txtCalisanTC.Location = new System.Drawing.Point(193, 15);
             this.txtCalisanTC.Name = "txtCalisanTC";
             this.txtCalisanTC.Size = new System.Drawing.Size(100, 20);
             this.txtCalisanTC.TabIndex = 1;
@@ -820,7 +825,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(175, 15);
+            this.label10.Location = new System.Drawing.Point(115, 22);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 13);
             this.label10.TabIndex = 0;
@@ -977,6 +982,26 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "KAMPANYA ADI:";
             // 
+            // cbCalisiyorMu
+            // 
+            this.cbCalisiyorMu.AutoSize = true;
+            this.cbCalisiyorMu.Location = new System.Drawing.Point(732, 180);
+            this.cbCalisiyorMu.Name = "cbCalisiyorMu";
+            this.cbCalisiyorMu.Size = new System.Drawing.Size(15, 14);
+            this.cbCalisiyorMu.TabIndex = 49;
+            this.cbCalisiyorMu.UseVisualStyleBackColor = true;
+            this.cbCalisiyorMu.CheckedChanged += new System.EventHandler(this.cbCalisiyorMu_CheckedChanged);
+            // 
+            // btnCalisanSil
+            // 
+            this.btnCalisanSil.Location = new System.Drawing.Point(638, 12);
+            this.btnCalisanSil.Name = "btnCalisanSil";
+            this.btnCalisanSil.Size = new System.Drawing.Size(75, 23);
+            this.btnCalisanSil.TabIndex = 50;
+            this.btnCalisanSil.Text = "SİL";
+            this.btnCalisanSil.UseVisualStyleBackColor = true;
+            this.btnCalisanSil.Click += new System.EventHandler(this.btnCalisanSil_Click);
+            // 
             // FrmYonetici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1096,5 +1121,7 @@
         private System.Windows.Forms.ComboBox cmbCinsiyet;
         private System.Windows.Forms.ComboBox cmbSehirler;
         private System.Windows.Forms.ComboBox cmbUlkeler;
+        private System.Windows.Forms.CheckBox cbCalisiyorMu;
+        private System.Windows.Forms.Button btnCalisanSil;
     }
 }
