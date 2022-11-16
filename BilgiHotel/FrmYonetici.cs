@@ -149,31 +149,36 @@ namespace BilgiHotel
 
         private void btnCalisanAra_Click(object sender, EventArgs e)
         {
-            /*string tcKimlik = txtCalisanTC.Text;
-            SqlCommand cmd = new SqlCommand($"Select musteriAd, musteriSoyad, musteriTelNo, musteriEposta, musteriAdres, musteriFirmaAd, firmaVergiNo, cinsiyetID, musteriSirketMi from Calisanlar Where musteriTC = '{tcKimlik}'", con);
+            string tcKimlik = txtCalisanTC.Text;
+            SqlCommand cmd = new SqlCommand($"Select calisanAd, calisanSoyad, calisanTCKimlikNo, calisanDogumTarih, calisanTelefonNo, calisanEposta, calisanAdres, ulkeId, sehirId, gorevID, cinsiyetID,calisanMaas,calisanSicilNo, calisanEngelliMi, acilDurumKisiAd, acilDurumTelefonNo,calisanIseBaslamaTarih, calisanIstenCikisTarih, calisanAktifMi, calisanAciklama from Calisanlar Where calisanTCKimlikNo = '{tcKimlik}'", con);
             con.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                txtMusteriAd.Text = reader["musteriAd"].ToString();
-                txtMusteriSoyad.Text = reader["musteriSoyad"].ToString();
-                txtMusteriTelNo.Text = reader["musteriTelNo"].ToString();
-                txtMusteriEPosta.Text = reader["musteriEPosta"].ToString();
-                txtMusteriAdres.Text = reader["musteriAdres"].ToString();
-                txtFirmaAdi.Text = reader["musteriFirmaAd"].ToString();
-                txtVergiNo.Text = reader["firmaVergiNo"].ToString();
-                // cmbCinsiyet.SelectedValue = (int)reader["cinsiyetID"];
-                if ((bool)reader["musteriSirketMi"])
-                {
-                    cbSirketMi.Checked = true;
-                }
-                else
-                {
-                    cbSirketMi.Checked = false;
-                }
+                txtCalisanAd.Text = reader["calisanAd"].ToString();
+                txtCalisanSoyad.Text = reader["calisanSoyad"].ToString();
+                txtCalisanTC.Text = reader["calisanTCKimlikNo"].ToString();
+                dtpCDogumTarihi.Value = reader.GetDateTime(3);
+                txtCalisanTel.Text = reader["calisanTelefonNo"].ToString();
+                txtCalisanEPosta.Text = reader["calisanEPosta"].ToString();
+                txtCalisanAdres.Text = reader["calisanAdres"].ToString();
+                txtCalisanMaas.Text = reader["calisanMaas"].ToString();
+                txtcalisanSicilNo.Text = reader["calisanSicilNo"].ToString();
+                cbEngelDurumu.Checked = (bool)reader["calisanEngelliMi"];
+                txtAcilDurumKisiAd.Text = reader["acilDurumKisiAd"].ToString();
+                txtAcilDurumKisiTel.Text = reader["acilDurumTelefonNo"].ToString();
+                dtpIseBaslamaTarihi.Value= reader.GetDateTime(16);
+                dtpIstenAyrilmaTarihi.Value = reader.GetDateTime(17);
+                cbCalisanAktifMi.Checked = (bool)reader["calisanAktifMi"];
+                txtCalisanAciklama.Text = reader["calisanAciklama"].ToString();
+                cmbCinsiyet.SelectedValue = reader.GetInt32(10);
+                cmbUlkeler.SelectedValue = reader.GetInt32(7);
+                cmbSehirler.SelectedValue= reader.GetInt32(8);
+                cmbGorevler.SelectedValue = reader.GetInt32(9);
+
             }
             reader.Close();
-            con.Close();*/
+            con.Close();
         }
     }
 }

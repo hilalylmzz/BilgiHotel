@@ -61,23 +61,23 @@
             this.cmbCinsiyet = new System.Windows.Forms.ComboBox();
             this.cmbSehirler = new System.Windows.Forms.ComboBox();
             this.cmbUlkeler = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCalisanAciklama = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.cbCalisanAktifMi = new System.Windows.Forms.CheckBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dtpIstenAyrilmaTarihi = new System.Windows.Forms.DateTimePicker();
+            this.dtpIseBaslamaTarihi = new System.Windows.Forms.DateTimePicker();
+            this.txtAcilDurumKisiTel = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAcilDurumKisiAd = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.cbEngelDurumu = new System.Windows.Forms.CheckBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtcalisanSicilNo = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCalisanMaas = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtCalisanAdres = new System.Windows.Forms.TextBox();
             this.txtCalisanEPosta = new System.Windows.Forms.TextBox();
@@ -421,23 +421,23 @@
             this.pnlCalisanlar.Controls.Add(this.cmbCinsiyet);
             this.pnlCalisanlar.Controls.Add(this.cmbSehirler);
             this.pnlCalisanlar.Controls.Add(this.cmbUlkeler);
-            this.pnlCalisanlar.Controls.Add(this.textBox6);
+            this.pnlCalisanlar.Controls.Add(this.txtCalisanAciklama);
             this.pnlCalisanlar.Controls.Add(this.label30);
             this.pnlCalisanlar.Controls.Add(this.cbCalisanAktifMi);
             this.pnlCalisanlar.Controls.Add(this.label29);
             this.pnlCalisanlar.Controls.Add(this.label28);
             this.pnlCalisanlar.Controls.Add(this.label27);
-            this.pnlCalisanlar.Controls.Add(this.dateTimePicker2);
-            this.pnlCalisanlar.Controls.Add(this.dateTimePicker1);
-            this.pnlCalisanlar.Controls.Add(this.textBox4);
+            this.pnlCalisanlar.Controls.Add(this.dtpIstenAyrilmaTarihi);
+            this.pnlCalisanlar.Controls.Add(this.dtpIseBaslamaTarihi);
+            this.pnlCalisanlar.Controls.Add(this.txtAcilDurumKisiTel);
             this.pnlCalisanlar.Controls.Add(this.label26);
-            this.pnlCalisanlar.Controls.Add(this.textBox3);
+            this.pnlCalisanlar.Controls.Add(this.txtAcilDurumKisiAd);
             this.pnlCalisanlar.Controls.Add(this.label25);
             this.pnlCalisanlar.Controls.Add(this.cbEngelDurumu);
             this.pnlCalisanlar.Controls.Add(this.label24);
-            this.pnlCalisanlar.Controls.Add(this.textBox2);
+            this.pnlCalisanlar.Controls.Add(this.txtcalisanSicilNo);
             this.pnlCalisanlar.Controls.Add(this.label23);
-            this.pnlCalisanlar.Controls.Add(this.textBox5);
+            this.pnlCalisanlar.Controls.Add(this.txtCalisanMaas);
             this.pnlCalisanlar.Controls.Add(this.label22);
             this.pnlCalisanlar.Controls.Add(this.txtCalisanAdres);
             this.pnlCalisanlar.Controls.Add(this.txtCalisanEPosta);
@@ -497,13 +497,13 @@
             this.cmbUlkeler.Size = new System.Drawing.Size(121, 21);
             this.cmbUlkeler.TabIndex = 45;
             // 
-            // textBox6
+            // txtCalisanAciklama
             // 
-            this.textBox6.Location = new System.Drawing.Point(526, 262);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(200, 71);
-            this.textBox6.TabIndex = 44;
+            this.txtCalisanAciklama.Location = new System.Drawing.Point(526, 262);
+            this.txtCalisanAciklama.Multiline = true;
+            this.txtCalisanAciklama.Name = "txtCalisanAciklama";
+            this.txtCalisanAciklama.Size = new System.Drawing.Size(200, 71);
+            this.txtCalisanAciklama.TabIndex = 44;
             // 
             // label30
             // 
@@ -551,26 +551,26 @@
             this.label27.TabIndex = 39;
             this.label27.Text = "İŞE BAŞLAMA TARİHİ:";
             // 
-            // dateTimePicker2
+            // dtpIstenAyrilmaTarihi
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(526, 205);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 38;
+            this.dtpIstenAyrilmaTarihi.Location = new System.Drawing.Point(526, 205);
+            this.dtpIstenAyrilmaTarihi.Name = "dtpIstenAyrilmaTarihi";
+            this.dtpIstenAyrilmaTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpIstenAyrilmaTarihi.TabIndex = 38;
             // 
-            // dateTimePicker1
+            // dtpIseBaslamaTarihi
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(526, 177);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 37;
+            this.dtpIseBaslamaTarihi.Location = new System.Drawing.Point(526, 177);
+            this.dtpIseBaslamaTarihi.Name = "dtpIseBaslamaTarihi";
+            this.dtpIseBaslamaTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpIseBaslamaTarihi.TabIndex = 37;
             // 
-            // textBox4
+            // txtAcilDurumKisiTel
             // 
-            this.textBox4.Location = new System.Drawing.Point(526, 150);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 36;
+            this.txtAcilDurumKisiTel.Location = new System.Drawing.Point(526, 150);
+            this.txtAcilDurumKisiTel.Name = "txtAcilDurumKisiTel";
+            this.txtAcilDurumKisiTel.Size = new System.Drawing.Size(100, 20);
+            this.txtAcilDurumKisiTel.TabIndex = 36;
             // 
             // label26
             // 
@@ -581,12 +581,12 @@
             this.label26.TabIndex = 35;
             this.label26.Text = "ACİL DURUM İLETİŞİM NO:";
             // 
-            // textBox3
+            // txtAcilDurumKisiAd
             // 
-            this.textBox3.Location = new System.Drawing.Point(526, 124);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 34;
+            this.txtAcilDurumKisiAd.Location = new System.Drawing.Point(526, 124);
+            this.txtAcilDurumKisiAd.Name = "txtAcilDurumKisiAd";
+            this.txtAcilDurumKisiAd.Size = new System.Drawing.Size(100, 20);
+            this.txtAcilDurumKisiAd.TabIndex = 34;
             // 
             // label25
             // 
@@ -616,12 +616,12 @@
             this.label24.TabIndex = 31;
             this.label24.Text = "ENGELİ VAR MI?";
             // 
-            // textBox2
+            // txtcalisanSicilNo
             // 
-            this.textBox2.Location = new System.Drawing.Point(526, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 30;
+            this.txtcalisanSicilNo.Location = new System.Drawing.Point(526, 79);
+            this.txtcalisanSicilNo.Name = "txtcalisanSicilNo";
+            this.txtcalisanSicilNo.Size = new System.Drawing.Size(100, 20);
+            this.txtcalisanSicilNo.TabIndex = 30;
             // 
             // label23
             // 
@@ -632,12 +632,12 @@
             this.label23.TabIndex = 29;
             this.label23.Text = "SİCİL NO:";
             // 
-            // textBox5
+            // txtCalisanMaas
             // 
-            this.textBox5.Location = new System.Drawing.Point(526, 53);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 28;
+            this.txtCalisanMaas.Location = new System.Drawing.Point(526, 53);
+            this.txtCalisanMaas.Name = "txtCalisanMaas";
+            this.txtCalisanMaas.Size = new System.Drawing.Size(100, 20);
+            this.txtCalisanMaas.TabIndex = 28;
             // 
             // label22
             // 
@@ -1052,21 +1052,21 @@
         private System.Windows.Forms.Button btnCalisanAra;
         private System.Windows.Forms.TextBox txtCalisanTC;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtAcilDurumKisiTel;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAcilDurumKisiAd;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.CheckBox cbEngelDurumu;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtcalisanSicilNo;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCalisanMaas;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.DateTimePicker dtpIstenAyrilmaTarihi;
+        private System.Windows.Forms.DateTimePicker dtpIseBaslamaTarihi;
+        private System.Windows.Forms.TextBox txtCalisanAciklama;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.CheckBox cbCalisanAktifMi;
         private System.Windows.Forms.Label label29;

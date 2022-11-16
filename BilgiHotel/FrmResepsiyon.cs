@@ -388,5 +388,10 @@ namespace BilgiHotel
 
 
         }
+
+        private void pnlMusteriler_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

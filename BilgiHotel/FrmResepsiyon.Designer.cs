@@ -49,6 +49,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.gbGirisCikisTarihleri = new System.Windows.Forms.GroupBox();
             this.lvUygunOdalar = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnBosOdaListele = new System.Windows.Forms.Button();
             this.dtpCikisTarihi = new System.Windows.Forms.DateTimePicker();
             this.dtpGirisTarihi = new System.Windows.Forms.DateTimePicker();
@@ -105,8 +107,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tsResepsiyon.SuspendLayout();
             this.pnlRezervasyon.SuspendLayout();
             this.gbGirisCikisTarihleri.SuspendLayout();
@@ -342,6 +342,16 @@
             this.lvUygunOdalar.UseCompatibleStateImageBehavior = false;
             this.lvUygunOdalar.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Oda Numarası";
+            this.columnHeader1.Width = 95;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Oda Kapasite";
+            this.columnHeader2.Width = 78;
+            // 
             // btnBosOdaListele
             // 
             this.btnBosOdaListele.Location = new System.Drawing.Point(115, 98);
@@ -564,6 +574,7 @@
             this.pnlMusteriler.Name = "pnlMusteriler";
             this.pnlMusteriler.Size = new System.Drawing.Size(640, 447);
             this.pnlMusteriler.TabIndex = 1;
+            this.pnlMusteriler.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMusteriler_Paint);
             // 
             // btnMusteriSil
             // 
@@ -877,16 +888,6 @@
             this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 28;
             this.label6.Text = "Müşteri Adı:";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Oda Numarası";
-            this.columnHeader1.Width = 95;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Oda Kapasite";
-            this.columnHeader2.Width = 78;
             // 
             // FrmResepsiyon
             // 
