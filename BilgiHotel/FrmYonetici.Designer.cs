@@ -883,6 +883,7 @@
             this.btnYeniKampanya.TabIndex = 14;
             this.btnYeniKampanya.Text = "YENİ KAMPYANYA EKLE";
             this.btnYeniKampanya.UseVisualStyleBackColor = true;
+            this.btnYeniKampanya.Click += new System.EventHandler(this.btnYeniKampanya_Click);
             // 
             // btnKampanyaGuncelle
             // 

@@ -400,5 +400,37 @@ namespace BilgiHotel
 
            
         }
+
+        private void btnYeniKampanya_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_KampanyaEkle", con);
+            cmd.CommandType= CommandType.StoredProcedure;
+
+
+            cmd.Parameters.AddWithValue("@kampanyaAd", txtKampanyaAdi.Text);
+            cmd.Parameters.AddWithValue("@kampanyaIndirim", Convert.ToInt32(txtIndirimOrani.Text));
+            cmd.Parameters.AddWithValue("@kampanyaBaslangicTarihi", dtpKBaslangicTarihi.Value);
+            cmd.Parameters.AddWithValue("kampanyaBitisTarihi", dtpKBitisTarihi.Value);
+            cmd.Parameters.AddWithValue("kampanyaAktifMi", cbKampanyaAktifMi.Checked);
+            cmd.Parameters.AddWithValue("kampanyaAciklama", txtKampanyaAciklama.Text);
+
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Yeni Kampanya Eklendi");
+            }
+            else
+            {
+                MessageBox.Show("Kampanya Eklenemedi");
+            }
+            con.Close();
+
+            txtKampanyaAdi.Clear();
+            txtIndirimOrani.Clear();
+            cbKampanyaAktifMi.Checked = false;
+            txtKampanyaAciklama.Clear();
+
+        }
     }
 }

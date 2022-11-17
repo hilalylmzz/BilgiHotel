@@ -397,5 +397,5 @@ Create Proc sp_KampanyaEkle
    ,@kampanyaAciklama nvarchar(400))
 AS
 BEGIN
-
+Insert into Kampanyalar ([kampanyaAd], [kampanyaIndirim], [kampanyaBaslangicTarihi], [kampanyaBitisTarihi], [kampanyaAktifMi], [kampanyaAciklama]) Values (@kampanyaAd, @kampanyaIndirim, @kampanyaBaslangicTarihi, @kampanyaBitisTarihi, @kampanyaAktifMi ,@kampanyaAciklama) 
 END
