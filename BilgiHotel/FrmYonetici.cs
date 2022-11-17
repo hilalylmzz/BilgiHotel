@@ -28,10 +28,11 @@ namespace BilgiHotel
         List<KeyValuePair<int, string>> Cinsiyetler = new List<KeyValuePair<int, string>>();
         List<KeyValuePair<int, string>> Katlar = new List<KeyValuePair<int, string>>();
         List<KeyValuePair<int, string>> Gorevler = new List<KeyValuePair<int, string>>();
+        List<KeyValuePair<int, string>> Kampanyalar = new List<KeyValuePair<int, string>>();
 
         SqlConnection con = new SqlConnection("Server=.;Database=DB_BilgiHotel;Trusted_Connection=True;");
 
-        public object DBNULL { get; private set; }
+      
 
         private void FrmYonetici_Load(object sender, EventArgs e)
         {
@@ -83,6 +84,21 @@ namespace BilgiHotel
         private void tsKampanyalar_Click(object sender, EventArgs e)
         {
             PanelAc(pnlKampanyalar);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT kampanyaID, kampanyaAd FROM Kampanyalar", con);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Kampanyalar.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
+            }
+            cmbKampanyalar.DataSource = Kampanyalar;
+            cmbKampanyalar.ValueMember = "Key";
+            cmbKampanyalar.DisplayMember = "Value";
+            reader.Close();
+            con.Close();
+
+
         }
 
         private void ComboboxDoldur()
@@ -328,27 +344,6 @@ namespace BilgiHotel
             }
         }
 
-        private void btnKampanyaBul_Click(object sender, EventArgs e)
-        {
-            string kampanya = txtKampanyaAdi.Text;
-            SqlCommand cmd = new SqlCommand($"Select kampanyaAd, kampanyaIndirim, kampanyaBaslangicTarihi, kampanyaBitisTarihi, kampanyaAktifMi, kampanyaAciklama  From Kampanyalar Where kampanyaAd='{kampanya}'", con);
-            con.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                txtKampanyaAdi.Text = reader["kampanyaAd"].ToString();
-                txtIndirimOrani.Text = reader["kampanyaIndirim"].ToString();
-                dtpKBaslangicTarihi.Value = reader.GetDateTime(2);
-                dtpKBitisTarihi.Value = reader.GetDateTime(3);
-                cbKampanyaAktifMi.Checked = reader.GetBoolean(4);
-                txtKampanyaAciklama.Text = reader["kampanyaAciklama"].ToString();
-
-            }
-            reader.Close();
-            con.Close();
-
-        }
-
         private void btnKampanyaGuncelle_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -373,6 +368,37 @@ namespace BilgiHotel
             }
             con.Close();
 
+        }
+
+        private void cmbKampanyalar_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int kampanya = (int)cmbKampanyalar.SelectedValue;
+            SqlCommand cmd = new SqlCommand($"Select kampanyaAd, kampanyaIndirim, kampanyaBaslangicTarihi, kampanyaBitisTarihi, kampanyaAktifMi, kampanyaAciklama  From Kampanyalar Where kampanyaID={kampanya}", con);
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+        
+                txtKampanyaAdi.Text = reader["kampanyaAd"].ToString();
+                txtIndirimOrani.Text = reader["kampanyaIndirim"].ToString();
+                dtpKBaslangicTarihi.Value = reader.GetDateTime(2);
+                dtpKBitisTarihi.Value = reader.GetDateTime(3);
+                cbKampanyaAktifMi.Checked = reader.GetBoolean(4);
+                txtKampanyaAciklama.Text = reader["kampanyaAciklama"].ToString();
+
+            }
+           /* değiştiğinde veriler temizlensin
+            * 
+            * txtKampanyaAdi.Clear();
+            txtIndirimOrani.Clear();
+            cbKampanyaAktifMi.Checked = false;
+            txtKampanyaAciklama.Clear();
+           */
+
+            reader.Close();
+            con.Close();
+
+           
         }
     }
 }

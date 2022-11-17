@@ -105,7 +105,6 @@
             this.pnlKampanyalar = new System.Windows.Forms.Panel();
             this.btnYeniKampanya = new System.Windows.Forms.Button();
             this.btnKampanyaGuncelle = new System.Windows.Forms.Button();
-            this.btnKampanyaBul = new System.Windows.Forms.Button();
             this.txtKampanyaAciklama = new System.Windows.Forms.TextBox();
             this.cbKampanyaAktifMi = new System.Windows.Forms.CheckBox();
             this.dtpKBitisTarihi = new System.Windows.Forms.DateTimePicker();
@@ -119,6 +118,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.cmbKampanyalar = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             this.pnlOdalar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).BeginInit();
@@ -854,10 +854,10 @@
             // 
             // pnlKampanyalar
             // 
+            this.pnlKampanyalar.Controls.Add(this.cmbKampanyalar);
             this.pnlKampanyalar.Controls.Add(this.label13);
             this.pnlKampanyalar.Controls.Add(this.btnYeniKampanya);
             this.pnlKampanyalar.Controls.Add(this.btnKampanyaGuncelle);
-            this.pnlKampanyalar.Controls.Add(this.btnKampanyaBul);
             this.pnlKampanyalar.Controls.Add(this.txtKampanyaAciklama);
             this.pnlKampanyalar.Controls.Add(this.cbKampanyaAktifMi);
             this.pnlKampanyalar.Controls.Add(this.dtpKBitisTarihi);
@@ -877,7 +877,7 @@
             // 
             // btnYeniKampanya
             // 
-            this.btnYeniKampanya.Location = new System.Drawing.Point(582, 45);
+            this.btnYeniKampanya.Location = new System.Drawing.Point(491, 45);
             this.btnYeniKampanya.Name = "btnYeniKampanya";
             this.btnYeniKampanya.Size = new System.Drawing.Size(153, 23);
             this.btnYeniKampanya.TabIndex = 14;
@@ -886,23 +886,13 @@
             // 
             // btnKampanyaGuncelle
             // 
-            this.btnKampanyaGuncelle.Location = new System.Drawing.Point(491, 45);
+            this.btnKampanyaGuncelle.Location = new System.Drawing.Point(400, 45);
             this.btnKampanyaGuncelle.Name = "btnKampanyaGuncelle";
             this.btnKampanyaGuncelle.Size = new System.Drawing.Size(75, 23);
             this.btnKampanyaGuncelle.TabIndex = 13;
             this.btnKampanyaGuncelle.Text = "GÜNCELLE";
             this.btnKampanyaGuncelle.UseVisualStyleBackColor = true;
             this.btnKampanyaGuncelle.Click += new System.EventHandler(this.btnKampanyaGuncelle_Click);
-            // 
-            // btnKampanyaBul
-            // 
-            this.btnKampanyaBul.Location = new System.Drawing.Point(396, 45);
-            this.btnKampanyaBul.Name = "btnKampanyaBul";
-            this.btnKampanyaBul.Size = new System.Drawing.Size(76, 23);
-            this.btnKampanyaBul.TabIndex = 12;
-            this.btnKampanyaBul.Text = "BUL";
-            this.btnKampanyaBul.UseVisualStyleBackColor = true;
-            this.btnKampanyaBul.Click += new System.EventHandler(this.btnKampanyaBul_Click);
             // 
             // txtKampanyaAciklama
             // 
@@ -1009,11 +999,20 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(60, 57);
+            this.label13.Location = new System.Drawing.Point(60, 55);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 13);
             this.label13.TabIndex = 15;
             this.label13.Text = "KAMPANYALAR:";
+            // 
+            // cmbKampanyalar
+            // 
+            this.cmbKampanyalar.FormattingEnabled = true;
+            this.cmbKampanyalar.Location = new System.Drawing.Point(170, 47);
+            this.cmbKampanyalar.Name = "cmbKampanyalar";
+            this.cmbKampanyalar.Size = new System.Drawing.Size(200, 21);
+            this.cmbKampanyalar.TabIndex = 16;
+            this.cmbKampanyalar.SelectionChangeCommitted += new System.EventHandler(this.cmbKampanyalar_SelectionChangeCommitted);
             // 
             // FrmYonetici
             // 
@@ -1125,7 +1124,6 @@
         private System.Windows.Forms.CheckBox cbKampanyaAktifMi;
         private System.Windows.Forms.Button btnYeniKampanya;
         private System.Windows.Forms.Button btnKampanyaGuncelle;
-        private System.Windows.Forms.Button btnKampanyaBul;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button btnOdaEkle;
         private System.Windows.Forms.NumericUpDown nudOdaNo;
@@ -1137,5 +1135,6 @@
         private System.Windows.Forms.CheckBox cbCalisiyorMu;
         private System.Windows.Forms.Button btnCalisanSil;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmbKampanyalar;
     }
 }

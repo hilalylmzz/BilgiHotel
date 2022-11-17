@@ -385,4 +385,17 @@ Alter Trigger tgr_CalisanSilme
   END
 
 
-  --
+  --KampanyaEkle
+
+Create Proc sp_KampanyaEkle
+(
+    @kampanyaAd nvarchar(20)
+   ,@kampanyaIndirim int
+   ,@kampanyaBaslangicTarihi datetime
+   ,@kampanyaBitisTarihi datetime
+   ,@kampanyaAktifMi bit
+   ,@kampanyaAciklama nvarchar(400))
+AS
+BEGIN
+
+END
