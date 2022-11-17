@@ -327,5 +327,52 @@ namespace BilgiHotel
                 con.Close();
             }
         }
+
+        private void btnKampanyaBul_Click(object sender, EventArgs e)
+        {
+            string kampanya = txtKampanyaAdi.Text;
+            SqlCommand cmd = new SqlCommand($"Select kampanyaAd, kampanyaIndirim, kampanyaBaslangicTarihi, kampanyaBitisTarihi, kampanyaAktifMi, kampanyaAciklama  From Kampanyalar Where kampanyaAd='{kampanya}'", con);
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                txtKampanyaAdi.Text = reader["kampanyaAd"].ToString();
+                txtIndirimOrani.Text = reader["kampanyaIndirim"].ToString();
+                dtpKBaslangicTarihi.Value = reader.GetDateTime(2);
+                dtpKBitisTarihi.Value = reader.GetDateTime(3);
+                cbKampanyaAktifMi.Checked = reader.GetBoolean(4);
+                txtKampanyaAciklama.Text = reader["kampanyaAciklama"].ToString();
+
+            }
+            reader.Close();
+            con.Close();
+
+        }
+
+        private void btnKampanyaGuncelle_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_KampanyaGuncelle", con);
+            cmd.CommandType= CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@kampanyaAd", txtKampanyaAdi.Text);
+            cmd.Parameters.AddWithValue("@kampanyaIndirim", Convert.ToInt32(txtIndirimOrani.Text));
+            cmd.Parameters.AddWithValue("@kampanyaBaslangicTarihi", dtpKBaslangicTarihi.Value);
+            cmd.Parameters.AddWithValue("kampanyaBitisTarihi", dtpKBitisTarihi.Value);
+            cmd.Parameters.AddWithValue("kampanyaAktifMi", cbKampanyaAktifMi.Checked);
+            cmd.Parameters.AddWithValue("kampanyaAciklama", txtKampanyaAciklama.Text);
+
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Kampanya Bilgileri Güncellendi");
+            }
+            else
+            {
+                MessageBox.Show("Kampanya Bilgileri Güncellenemedi");
+            }
+            con.Close();
+
+        }
     }
 }

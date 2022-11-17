@@ -57,6 +57,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lbMusteriListele = new System.Windows.Forms.ListBox();
             this.pnlCalisanlar = new System.Windows.Forms.Panel();
+            this.btnCalisanSil = new System.Windows.Forms.Button();
+            this.cbCalisiyorMu = new System.Windows.Forms.CheckBox();
             this.cmbGorevler = new System.Windows.Forms.ComboBox();
             this.cmbCinsiyet = new System.Windows.Forms.ComboBox();
             this.cmbSehirler = new System.Windows.Forms.ComboBox();
@@ -101,23 +103,22 @@
             this.txtCalisanTC = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pnlKampanyalar = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnYeniKampanya = new System.Windows.Forms.Button();
             this.btnKampanyaGuncelle = new System.Windows.Forms.Button();
             this.btnKampanyaBul = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtKampanyaAciklama = new System.Windows.Forms.TextBox();
             this.cbKampanyaAktifMi = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.dtpKBitisTarihi = new System.Windows.Forms.DateTimePicker();
+            this.dtpKBaslangicTarihi = new System.Windows.Forms.DateTimePicker();
+            this.txtIndirimOrani = new System.Windows.Forms.TextBox();
+            this.txtKampanyaAdi = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.cbCalisiyorMu = new System.Windows.Forms.CheckBox();
-            this.btnCalisanSil = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.pnlOdalar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).BeginInit();
@@ -466,13 +467,33 @@
             this.pnlCalisanlar.Controls.Add(this.label10);
             this.pnlCalisanlar.Location = new System.Drawing.Point(146, 0);
             this.pnlCalisanlar.Name = "pnlCalisanlar";
-            this.pnlCalisanlar.Size = new System.Drawing.Size(819, 500);
+            this.pnlCalisanlar.Size = new System.Drawing.Size(805, 500);
             this.pnlCalisanlar.TabIndex = 4;
+            // 
+            // btnCalisanSil
+            // 
+            this.btnCalisanSil.Location = new System.Drawing.Point(644, 72);
+            this.btnCalisanSil.Name = "btnCalisanSil";
+            this.btnCalisanSil.Size = new System.Drawing.Size(75, 23);
+            this.btnCalisanSil.TabIndex = 50;
+            this.btnCalisanSil.Text = "SİL";
+            this.btnCalisanSil.UseVisualStyleBackColor = true;
+            this.btnCalisanSil.Click += new System.EventHandler(this.btnCalisanSil_Click);
+            // 
+            // cbCalisiyorMu
+            // 
+            this.cbCalisiyorMu.AutoSize = true;
+            this.cbCalisiyorMu.Location = new System.Drawing.Point(738, 240);
+            this.cbCalisiyorMu.Name = "cbCalisiyorMu";
+            this.cbCalisiyorMu.Size = new System.Drawing.Size(15, 14);
+            this.cbCalisiyorMu.TabIndex = 49;
+            this.cbCalisiyorMu.UseVisualStyleBackColor = true;
+            this.cbCalisiyorMu.CheckedChanged += new System.EventHandler(this.cbCalisiyorMu_CheckedChanged);
             // 
             // cmbGorevler
             // 
             this.cmbGorevler.FormattingEnabled = true;
-            this.cmbGorevler.Location = new System.Drawing.Point(108, 290);
+            this.cmbGorevler.Location = new System.Drawing.Point(114, 350);
             this.cmbGorevler.Name = "cmbGorevler";
             this.cmbGorevler.Size = new System.Drawing.Size(121, 21);
             this.cmbGorevler.TabIndex = 48;
@@ -480,7 +501,7 @@
             // cmbCinsiyet
             // 
             this.cmbCinsiyet.FormattingEnabled = true;
-            this.cmbCinsiyet.Location = new System.Drawing.Point(108, 264);
+            this.cmbCinsiyet.Location = new System.Drawing.Point(114, 324);
             this.cmbCinsiyet.Name = "cmbCinsiyet";
             this.cmbCinsiyet.Size = new System.Drawing.Size(121, 21);
             this.cmbCinsiyet.TabIndex = 47;
@@ -488,7 +509,7 @@
             // cmbSehirler
             // 
             this.cmbSehirler.FormattingEnabled = true;
-            this.cmbSehirler.Location = new System.Drawing.Point(108, 237);
+            this.cmbSehirler.Location = new System.Drawing.Point(114, 297);
             this.cmbSehirler.Name = "cmbSehirler";
             this.cmbSehirler.Size = new System.Drawing.Size(121, 21);
             this.cmbSehirler.TabIndex = 46;
@@ -496,14 +517,14 @@
             // cmbUlkeler
             // 
             this.cmbUlkeler.FormattingEnabled = true;
-            this.cmbUlkeler.Location = new System.Drawing.Point(108, 211);
+            this.cmbUlkeler.Location = new System.Drawing.Point(114, 271);
             this.cmbUlkeler.Name = "cmbUlkeler";
             this.cmbUlkeler.Size = new System.Drawing.Size(121, 21);
             this.cmbUlkeler.TabIndex = 45;
             // 
             // txtCalisanAciklama
             // 
-            this.txtCalisanAciklama.Location = new System.Drawing.Point(526, 262);
+            this.txtCalisanAciklama.Location = new System.Drawing.Point(532, 322);
             this.txtCalisanAciklama.Multiline = true;
             this.txtCalisanAciklama.Name = "txtCalisanAciklama";
             this.txtCalisanAciklama.Size = new System.Drawing.Size(200, 71);
@@ -512,7 +533,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(401, 262);
+            this.label30.Location = new System.Drawing.Point(407, 322);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(111, 13);
             this.label30.TabIndex = 43;
@@ -521,7 +542,7 @@
             // cbCalisanAktifMi
             // 
             this.cbCalisanAktifMi.AutoSize = true;
-            this.cbCalisanAktifMi.Location = new System.Drawing.Point(526, 236);
+            this.cbCalisanAktifMi.Location = new System.Drawing.Point(532, 296);
             this.cbCalisanAktifMi.Name = "cbCalisanAktifMi";
             this.cbCalisanAktifMi.Size = new System.Drawing.Size(56, 17);
             this.cbCalisanAktifMi.TabIndex = 42;
@@ -531,7 +552,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(403, 240);
+            this.label29.Location = new System.Drawing.Point(409, 300);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(109, 13);
             this.label29.TabIndex = 41;
@@ -540,7 +561,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(381, 211);
+            this.label28.Location = new System.Drawing.Point(387, 271);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(131, 13);
             this.label28.TabIndex = 40;
@@ -549,7 +570,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(393, 184);
+            this.label27.Location = new System.Drawing.Point(399, 244);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(119, 13);
             this.label27.TabIndex = 39;
@@ -557,21 +578,21 @@
             // 
             // dtpIstenAyrilmaTarihi
             // 
-            this.dtpIstenAyrilmaTarihi.Location = new System.Drawing.Point(526, 205);
+            this.dtpIstenAyrilmaTarihi.Location = new System.Drawing.Point(532, 265);
             this.dtpIstenAyrilmaTarihi.Name = "dtpIstenAyrilmaTarihi";
             this.dtpIstenAyrilmaTarihi.Size = new System.Drawing.Size(200, 20);
             this.dtpIstenAyrilmaTarihi.TabIndex = 38;
             // 
             // dtpIseBaslamaTarihi
             // 
-            this.dtpIseBaslamaTarihi.Location = new System.Drawing.Point(526, 177);
+            this.dtpIseBaslamaTarihi.Location = new System.Drawing.Point(532, 237);
             this.dtpIseBaslamaTarihi.Name = "dtpIseBaslamaTarihi";
             this.dtpIseBaslamaTarihi.Size = new System.Drawing.Size(200, 20);
             this.dtpIseBaslamaTarihi.TabIndex = 37;
             // 
             // txtAcilDurumKisiTel
             // 
-            this.txtAcilDurumKisiTel.Location = new System.Drawing.Point(526, 150);
+            this.txtAcilDurumKisiTel.Location = new System.Drawing.Point(532, 210);
             this.txtAcilDurumKisiTel.Name = "txtAcilDurumKisiTel";
             this.txtAcilDurumKisiTel.Size = new System.Drawing.Size(100, 20);
             this.txtAcilDurumKisiTel.TabIndex = 36;
@@ -579,7 +600,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(368, 157);
+            this.label26.Location = new System.Drawing.Point(374, 217);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(144, 13);
             this.label26.TabIndex = 35;
@@ -587,7 +608,7 @@
             // 
             // txtAcilDurumKisiAd
             // 
-            this.txtAcilDurumKisiAd.Location = new System.Drawing.Point(526, 124);
+            this.txtAcilDurumKisiAd.Location = new System.Drawing.Point(532, 184);
             this.txtAcilDurumKisiAd.Name = "txtAcilDurumKisiAd";
             this.txtAcilDurumKisiAd.Size = new System.Drawing.Size(100, 20);
             this.txtAcilDurumKisiAd.TabIndex = 34;
@@ -595,7 +616,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(394, 131);
+            this.label25.Location = new System.Drawing.Point(400, 191);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(118, 13);
             this.label25.TabIndex = 33;
@@ -604,7 +625,7 @@
             // cbEngelDurumu
             // 
             this.cbEngelDurumu.AutoSize = true;
-            this.cbEngelDurumu.Location = new System.Drawing.Point(526, 106);
+            this.cbEngelDurumu.Location = new System.Drawing.Point(532, 166);
             this.cbEngelDurumu.Name = "cbEngelDurumu";
             this.cbEngelDurumu.Size = new System.Drawing.Size(54, 17);
             this.cbEngelDurumu.TabIndex = 32;
@@ -614,7 +635,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(420, 108);
+            this.label24.Location = new System.Drawing.Point(426, 168);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(92, 13);
             this.label24.TabIndex = 31;
@@ -622,7 +643,7 @@
             // 
             // txtcalisanSicilNo
             // 
-            this.txtcalisanSicilNo.Location = new System.Drawing.Point(526, 79);
+            this.txtcalisanSicilNo.Location = new System.Drawing.Point(532, 139);
             this.txtcalisanSicilNo.Name = "txtcalisanSicilNo";
             this.txtcalisanSicilNo.Size = new System.Drawing.Size(100, 20);
             this.txtcalisanSicilNo.TabIndex = 30;
@@ -630,7 +651,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(457, 82);
+            this.label23.Location = new System.Drawing.Point(463, 142);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(55, 13);
             this.label23.TabIndex = 29;
@@ -638,7 +659,7 @@
             // 
             // txtCalisanMaas
             // 
-            this.txtCalisanMaas.Location = new System.Drawing.Point(526, 53);
+            this.txtCalisanMaas.Location = new System.Drawing.Point(532, 113);
             this.txtCalisanMaas.Name = "txtCalisanMaas";
             this.txtCalisanMaas.Size = new System.Drawing.Size(100, 20);
             this.txtCalisanMaas.TabIndex = 28;
@@ -646,7 +667,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(472, 56);
+            this.label22.Location = new System.Drawing.Point(478, 116);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(40, 13);
             this.label22.TabIndex = 27;
@@ -654,21 +675,21 @@
             // 
             // txtCalisanAdres
             // 
-            this.txtCalisanAdres.Location = new System.Drawing.Point(108, 183);
+            this.txtCalisanAdres.Location = new System.Drawing.Point(114, 243);
             this.txtCalisanAdres.Name = "txtCalisanAdres";
             this.txtCalisanAdres.Size = new System.Drawing.Size(100, 20);
             this.txtCalisanAdres.TabIndex = 22;
             // 
             // txtCalisanEPosta
             // 
-            this.txtCalisanEPosta.Location = new System.Drawing.Point(108, 157);
+            this.txtCalisanEPosta.Location = new System.Drawing.Point(114, 217);
             this.txtCalisanEPosta.Name = "txtCalisanEPosta";
             this.txtCalisanEPosta.Size = new System.Drawing.Size(100, 20);
             this.txtCalisanEPosta.TabIndex = 21;
             // 
             // txtCalisanTel
             // 
-            this.txtCalisanTel.Location = new System.Drawing.Point(108, 129);
+            this.txtCalisanTel.Location = new System.Drawing.Point(114, 189);
             this.txtCalisanTel.Name = "txtCalisanTel";
             this.txtCalisanTel.Size = new System.Drawing.Size(100, 20);
             this.txtCalisanTel.TabIndex = 20;
@@ -676,28 +697,28 @@
             // dtpCDogumTarihi
             // 
             this.dtpCDogumTarihi.CustomFormat = "";
-            this.dtpCDogumTarihi.Location = new System.Drawing.Point(108, 104);
+            this.dtpCDogumTarihi.Location = new System.Drawing.Point(114, 164);
             this.dtpCDogumTarihi.Name = "dtpCDogumTarihi";
             this.dtpCDogumTarihi.Size = new System.Drawing.Size(138, 20);
             this.dtpCDogumTarihi.TabIndex = 19;
             // 
             // txtCalisanSoyad
             // 
-            this.txtCalisanSoyad.Location = new System.Drawing.Point(108, 75);
+            this.txtCalisanSoyad.Location = new System.Drawing.Point(114, 135);
             this.txtCalisanSoyad.Name = "txtCalisanSoyad";
             this.txtCalisanSoyad.Size = new System.Drawing.Size(100, 20);
             this.txtCalisanSoyad.TabIndex = 17;
             // 
             // txtCalisanAd
             // 
-            this.txtCalisanAd.Location = new System.Drawing.Point(108, 49);
+            this.txtCalisanAd.Location = new System.Drawing.Point(114, 109);
             this.txtCalisanAd.Name = "txtCalisanAd";
             this.txtCalisanAd.Size = new System.Drawing.Size(100, 20);
             this.txtCalisanAd.TabIndex = 16;
             // 
             // btnCalisanEkle
             // 
-            this.btnCalisanEkle.Location = new System.Drawing.Point(531, 12);
+            this.btnCalisanEkle.Location = new System.Drawing.Point(533, 72);
             this.btnCalisanEkle.Name = "btnCalisanEkle";
             this.btnCalisanEkle.Size = new System.Drawing.Size(101, 23);
             this.btnCalisanEkle.TabIndex = 15;
@@ -707,7 +728,7 @@
             // 
             // btnCalisanGuncelle
             // 
-            this.btnCalisanGuncelle.Location = new System.Drawing.Point(396, 12);
+            this.btnCalisanGuncelle.Location = new System.Drawing.Point(392, 72);
             this.btnCalisanGuncelle.Name = "btnCalisanGuncelle";
             this.btnCalisanGuncelle.Size = new System.Drawing.Size(129, 23);
             this.btnCalisanGuncelle.TabIndex = 14;
@@ -718,7 +739,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(42, 299);
+            this.label21.Location = new System.Drawing.Point(48, 359);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(62, 13);
             this.label21.TabIndex = 13;
@@ -727,7 +748,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(31, 272);
+            this.label20.Location = new System.Drawing.Point(37, 332);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(73, 13);
             this.label20.TabIndex = 12;
@@ -736,7 +757,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(71, 245);
+            this.label19.Location = new System.Drawing.Point(77, 305);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(33, 13);
             this.label19.TabIndex = 11;
@@ -745,7 +766,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(52, 219);
+            this.label18.Location = new System.Drawing.Point(58, 279);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(52, 13);
             this.label18.TabIndex = 10;
@@ -754,7 +775,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(57, 190);
+            this.label17.Location = new System.Drawing.Point(63, 250);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(47, 13);
             this.label17.TabIndex = 9;
@@ -763,7 +784,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(48, 164);
+            this.label16.Location = new System.Drawing.Point(54, 224);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(56, 13);
             this.label16.TabIndex = 8;
@@ -772,7 +793,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(26, 136);
+            this.label15.Location = new System.Drawing.Point(32, 196);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 13);
             this.label15.TabIndex = 7;
@@ -781,7 +802,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 110);
+            this.label14.Location = new System.Drawing.Point(20, 170);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(90, 13);
             this.label14.TabIndex = 6;
@@ -790,7 +811,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(56, 82);
+            this.label12.Location = new System.Drawing.Point(62, 142);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 13);
             this.label12.TabIndex = 4;
@@ -799,7 +820,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(78, 56);
+            this.label11.Location = new System.Drawing.Point(84, 116);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(25, 13);
             this.label11.TabIndex = 3;
@@ -807,7 +828,7 @@
             // 
             // btnCalisanAra
             // 
-            this.btnCalisanAra.Location = new System.Drawing.Point(316, 12);
+            this.btnCalisanAra.Location = new System.Drawing.Point(322, 72);
             this.btnCalisanAra.Name = "btnCalisanAra";
             this.btnCalisanAra.Size = new System.Drawing.Size(46, 23);
             this.btnCalisanAra.TabIndex = 2;
@@ -817,7 +838,7 @@
             // 
             // txtCalisanTC
             // 
-            this.txtCalisanTC.Location = new System.Drawing.Point(193, 15);
+            this.txtCalisanTC.Location = new System.Drawing.Point(199, 75);
             this.txtCalisanTC.Name = "txtCalisanTC";
             this.txtCalisanTC.Size = new System.Drawing.Size(100, 20);
             this.txtCalisanTC.TabIndex = 1;
@@ -825,7 +846,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(115, 22);
+            this.label10.Location = new System.Drawing.Point(121, 82);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 13);
             this.label10.TabIndex = 0;
@@ -833,15 +854,16 @@
             // 
             // pnlKampanyalar
             // 
-            this.pnlKampanyalar.Controls.Add(this.button1);
+            this.pnlKampanyalar.Controls.Add(this.label13);
+            this.pnlKampanyalar.Controls.Add(this.btnYeniKampanya);
             this.pnlKampanyalar.Controls.Add(this.btnKampanyaGuncelle);
             this.pnlKampanyalar.Controls.Add(this.btnKampanyaBul);
-            this.pnlKampanyalar.Controls.Add(this.textBox9);
+            this.pnlKampanyalar.Controls.Add(this.txtKampanyaAciklama);
             this.pnlKampanyalar.Controls.Add(this.cbKampanyaAktifMi);
-            this.pnlKampanyalar.Controls.Add(this.dateTimePicker4);
-            this.pnlKampanyalar.Controls.Add(this.dateTimePicker3);
-            this.pnlKampanyalar.Controls.Add(this.textBox8);
-            this.pnlKampanyalar.Controls.Add(this.textBox7);
+            this.pnlKampanyalar.Controls.Add(this.dtpKBitisTarihi);
+            this.pnlKampanyalar.Controls.Add(this.dtpKBaslangicTarihi);
+            this.pnlKampanyalar.Controls.Add(this.txtIndirimOrani);
+            this.pnlKampanyalar.Controls.Add(this.txtKampanyaAdi);
             this.pnlKampanyalar.Controls.Add(this.label36);
             this.pnlKampanyalar.Controls.Add(this.label35);
             this.pnlKampanyalar.Controls.Add(this.label34);
@@ -853,14 +875,14 @@
             this.pnlKampanyalar.Size = new System.Drawing.Size(802, 506);
             this.pnlKampanyalar.TabIndex = 23;
             // 
-            // button1
+            // btnYeniKampanya
             // 
-            this.button1.Location = new System.Drawing.Point(582, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "YENİ KAMPYANYA EKLE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnYeniKampanya.Location = new System.Drawing.Point(582, 45);
+            this.btnYeniKampanya.Name = "btnYeniKampanya";
+            this.btnYeniKampanya.Size = new System.Drawing.Size(153, 23);
+            this.btnYeniKampanya.TabIndex = 14;
+            this.btnYeniKampanya.Text = "YENİ KAMPYANYA EKLE";
+            this.btnYeniKampanya.UseVisualStyleBackColor = true;
             // 
             // btnKampanyaGuncelle
             // 
@@ -870,6 +892,7 @@
             this.btnKampanyaGuncelle.TabIndex = 13;
             this.btnKampanyaGuncelle.Text = "GÜNCELLE";
             this.btnKampanyaGuncelle.UseVisualStyleBackColor = true;
+            this.btnKampanyaGuncelle.Click += new System.EventHandler(this.btnKampanyaGuncelle_Click);
             // 
             // btnKampanyaBul
             // 
@@ -879,59 +902,60 @@
             this.btnKampanyaBul.TabIndex = 12;
             this.btnKampanyaBul.Text = "BUL";
             this.btnKampanyaBul.UseVisualStyleBackColor = true;
+            this.btnKampanyaBul.Click += new System.EventHandler(this.btnKampanyaBul_Click);
             // 
-            // textBox9
+            // txtKampanyaAciklama
             // 
-            this.textBox9.Location = new System.Drawing.Point(174, 278);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(200, 129);
-            this.textBox9.TabIndex = 11;
+            this.txtKampanyaAciklama.Location = new System.Drawing.Point(170, 314);
+            this.txtKampanyaAciklama.Multiline = true;
+            this.txtKampanyaAciklama.Name = "txtKampanyaAciklama";
+            this.txtKampanyaAciklama.Size = new System.Drawing.Size(200, 129);
+            this.txtKampanyaAciklama.TabIndex = 11;
             // 
             // cbKampanyaAktifMi
             // 
             this.cbKampanyaAktifMi.AutoSize = true;
-            this.cbKampanyaAktifMi.Location = new System.Drawing.Point(174, 232);
+            this.cbKampanyaAktifMi.Location = new System.Drawing.Point(170, 268);
             this.cbKampanyaAktifMi.Name = "cbKampanyaAktifMi";
             this.cbKampanyaAktifMi.Size = new System.Drawing.Size(56, 17);
             this.cbKampanyaAktifMi.TabIndex = 10;
             this.cbKampanyaAktifMi.Text = "AKTİF";
             this.cbKampanyaAktifMi.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker4
+            // dtpKBitisTarihi
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(174, 187);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker4.TabIndex = 9;
+            this.dtpKBitisTarihi.Location = new System.Drawing.Point(170, 223);
+            this.dtpKBitisTarihi.Name = "dtpKBitisTarihi";
+            this.dtpKBitisTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpKBitisTarihi.TabIndex = 9;
             // 
-            // dateTimePicker3
+            // dtpKBaslangicTarihi
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(174, 142);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 8;
+            this.dtpKBaslangicTarihi.Location = new System.Drawing.Point(170, 178);
+            this.dtpKBaslangicTarihi.Name = "dtpKBaslangicTarihi";
+            this.dtpKBaslangicTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpKBaslangicTarihi.TabIndex = 8;
             // 
-            // textBox8
+            // txtIndirimOrani
             // 
-            this.textBox8.Location = new System.Drawing.Point(174, 96);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 20);
-            this.textBox8.TabIndex = 7;
+            this.txtIndirimOrani.Location = new System.Drawing.Point(170, 132);
+            this.txtIndirimOrani.Multiline = true;
+            this.txtIndirimOrani.Name = "txtIndirimOrani";
+            this.txtIndirimOrani.Size = new System.Drawing.Size(200, 20);
+            this.txtIndirimOrani.TabIndex = 7;
             // 
-            // textBox7
+            // txtKampanyaAdi
             // 
-            this.textBox7.Location = new System.Drawing.Point(174, 50);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(200, 20);
-            this.textBox7.TabIndex = 6;
+            this.txtKampanyaAdi.Location = new System.Drawing.Point(170, 86);
+            this.txtKampanyaAdi.Multiline = true;
+            this.txtKampanyaAdi.Name = "txtKampanyaAdi";
+            this.txtKampanyaAdi.Size = new System.Drawing.Size(200, 20);
+            this.txtKampanyaAdi.TabIndex = 6;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(34, 282);
+            this.label36.Location = new System.Drawing.Point(25, 318);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(125, 13);
             this.label36.TabIndex = 5;
@@ -940,7 +964,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(42, 237);
+            this.label35.Location = new System.Drawing.Point(33, 273);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(117, 13);
             this.label35.TabIndex = 4;
@@ -949,7 +973,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(83, 193);
+            this.label34.Location = new System.Drawing.Point(74, 229);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(76, 13);
             this.label34.TabIndex = 3;
@@ -958,7 +982,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(50, 150);
+            this.label33.Location = new System.Drawing.Point(41, 186);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(109, 13);
             this.label33.TabIndex = 2;
@@ -967,7 +991,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(70, 103);
+            this.label32.Location = new System.Drawing.Point(61, 139);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(89, 13);
             this.label32.TabIndex = 1;
@@ -976,31 +1000,20 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(69, 55);
+            this.label31.Location = new System.Drawing.Point(60, 91);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(90, 13);
             this.label31.TabIndex = 0;
             this.label31.Text = "KAMPANYA ADI:";
             // 
-            // cbCalisiyorMu
+            // label13
             // 
-            this.cbCalisiyorMu.AutoSize = true;
-            this.cbCalisiyorMu.Location = new System.Drawing.Point(732, 180);
-            this.cbCalisiyorMu.Name = "cbCalisiyorMu";
-            this.cbCalisiyorMu.Size = new System.Drawing.Size(15, 14);
-            this.cbCalisiyorMu.TabIndex = 49;
-            this.cbCalisiyorMu.UseVisualStyleBackColor = true;
-            this.cbCalisiyorMu.CheckedChanged += new System.EventHandler(this.cbCalisiyorMu_CheckedChanged);
-            // 
-            // btnCalisanSil
-            // 
-            this.btnCalisanSil.Location = new System.Drawing.Point(638, 12);
-            this.btnCalisanSil.Name = "btnCalisanSil";
-            this.btnCalisanSil.Size = new System.Drawing.Size(75, 23);
-            this.btnCalisanSil.TabIndex = 50;
-            this.btnCalisanSil.Text = "SİL";
-            this.btnCalisanSil.UseVisualStyleBackColor = true;
-            this.btnCalisanSil.Click += new System.EventHandler(this.btnCalisanSil_Click);
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(60, 57);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "KAMPANYALAR:";
             // 
             // FrmYonetici
             // 
@@ -1008,10 +1021,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 509);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.pnlKampanyalar);
             this.Controls.Add(this.pnlCalisanlar);
             this.Controls.Add(this.pnlOdalar);
             this.Controls.Add(this.pnlMusteriler);
-            this.Controls.Add(this.pnlKampanyalar);
             this.Name = "FrmYonetici";
             this.Text = "Yonetici";
             this.Load += new System.EventHandler(this.FrmYonetici_Load);
@@ -1104,13 +1117,13 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.DateTimePicker dtpKBitisTarihi;
+        private System.Windows.Forms.DateTimePicker dtpKBaslangicTarihi;
+        private System.Windows.Forms.TextBox txtIndirimOrani;
+        private System.Windows.Forms.TextBox txtKampanyaAdi;
+        private System.Windows.Forms.TextBox txtKampanyaAciklama;
         private System.Windows.Forms.CheckBox cbKampanyaAktifMi;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnYeniKampanya;
         private System.Windows.Forms.Button btnKampanyaGuncelle;
         private System.Windows.Forms.Button btnKampanyaBul;
         private System.Windows.Forms.TextBox textBox10;
@@ -1123,5 +1136,6 @@
         private System.Windows.Forms.ComboBox cmbUlkeler;
         private System.Windows.Forms.CheckBox cbCalisiyorMu;
         private System.Windows.Forms.Button btnCalisanSil;
+        private System.Windows.Forms.Label label13;
     }
 }

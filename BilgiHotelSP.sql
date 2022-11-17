@@ -243,8 +243,7 @@ END
   on Musteriler Instead of Delete
   As
   Begin 
-  declare @musteriTC nvarchar(11)
-   Update Musteriler set musteriAktifMi=0 Where @musteriTC=(select @musteriTC from deleted)
+   Update Musteriler set musteriAktifMi=0 Where musteriTC=(select musteriTC from deleted)
   End
 
 Create Proc sp_MusteriSilme
@@ -329,7 +328,7 @@ BEGIN
 END
 
 
-Alter Proc sp_CalisanKaydet
+Create Proc sp_CalisanKaydet
  (
    @calisanAd nvarchar(20)
   ,@calisanSoyad nvarchar(20)
@@ -357,14 +356,33 @@ BEGIN
 INSERT INTO Calisanlar([calisanAd], [calisanSoyad], [calisanTCKimlikNo], [calisanDogumTarih], [calisanTelefonNo], [calisanEposta], [calisanAdres], [ulkeId], [sehirId], [gorevID], [cinsiyetID], [calisanMaas], [calisanSicilNo], [calisanEngelliMi], [acilDurumKisiAd],[acilDurumTelefonNo], [calisanIseBaslamaTarih], [calisanIstenCikisTarih], [calisanAktifMi], [calisanAciklama])VALUES (@calisanAd,@calisanSoyad, @calisanTCKimlikNo, @calisanDogumTarih, @calisanTelefonNo,@calisanEposta, @calisanAdres, @ulkeId,@sehirId, @gorevID, @cinsiyetID, @calisanMaas, @calisanSicilNo, @calisanEngelliMi, @acilDurumKisiAd, @acilDurumTelefonNo, @calisanIseBaslamaTarih, @calisanIstenCikisTarih ,@calisanAktifMi ,@calisanAciklama)
 END
 
+
+
 --Çalýþan Pasife Çekme(Sil butonu)
 
 Alter Trigger tgr_CalisanSilme
   on Calisanlar Instead of Delete
   As
   Begin 
-  declare @calisanTCKimlikNo nvarchar(11)
-   Update Calisanlar set calisanAktifMi=0 Where @calisanTCKimlikNo=(select @calisanTCKimlikNo from deleted)
+   Update Calisanlar set calisanAktifMi=0 Where calisanTCKimlikNo=(select calisanTCKimlikNo from deleted)
   End
 
 
+  --Kampanya Güncelle
+
+  Create Proc sp_KampanyaGuncelle
+  (
+    @kampanyaAd nvarchar(20)
+   ,@kampanyaIndirim int
+   ,@kampanyaBaslangicTarihi datetime
+   ,@kampanyaBitisTarihi datetime
+   ,@kampanyaAktifMi bit
+   ,@kampanyaAciklama nvarchar(400)
+  )
+  AS
+  BEGIN
+  Update Kampanyalar SET kampanyaAd=@kampanyaAd, kampanyaIndirim=@kampanyaIndirim, kampanyaBaslangicTarihi=@kampanyaBaslangicTarihi, kampanyaBitisTarihi=@kampanyaBitisTarihi, kampanyaAktifMi=@kampanyaAktifMi, kampanyaAciklama=@kampanyaAciklama Where kampanyaAd=@kampanyaAd
+  END
+
+
+  --
