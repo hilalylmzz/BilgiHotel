@@ -193,6 +193,7 @@ namespace BilgiHotel
             cmd.Parameters.AddWithValue("@musteriAciklama", txtMusteriAciklama.Text);
             cmd.Parameters.AddWithValue("@musteriAktifMi", cbMusteriAktifMi.Checked);
 
+
             if (cmd.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Müşteri Eklendi");
