@@ -387,14 +387,6 @@ namespace BilgiHotel
                 txtKampanyaAciklama.Text = reader["kampanyaAciklama"].ToString();
 
             }
-           /* değiştiğinde veriler temizlensin
-            * 
-            * txtKampanyaAdi.Clear();
-            txtIndirimOrani.Clear();
-            cbKampanyaAktifMi.Checked = false;
-            txtKampanyaAciklama.Clear();
-           */
-
             reader.Close();
             con.Close();
 
@@ -430,6 +422,11 @@ namespace BilgiHotel
             txtIndirimOrani.Clear();
             cbKampanyaAktifMi.Checked = false;
             txtKampanyaAciklama.Clear();
+
+        }
+
+        private void btnOdaEkle_Click(object sender, EventArgs e)
+        {
 
         }
     }

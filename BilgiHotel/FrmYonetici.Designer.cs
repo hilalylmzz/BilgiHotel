@@ -103,6 +103,8 @@
             this.txtCalisanTC = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pnlKampanyalar = new System.Windows.Forms.Panel();
+            this.cmbKampanyalar = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.btnYeniKampanya = new System.Windows.Forms.Button();
             this.btnKampanyaGuncelle = new System.Windows.Forms.Button();
             this.txtKampanyaAciklama = new System.Windows.Forms.TextBox();
@@ -117,8 +119,8 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cmbKampanyalar = new System.Windows.Forms.ComboBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.odaNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1.SuspendLayout();
             this.pnlOdalar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).BeginInit();
@@ -204,6 +206,7 @@
             // 
             // pnlOdalar
             // 
+            this.pnlOdalar.Controls.Add(this.listView1);
             this.pnlOdalar.Controls.Add(this.nudOdaNo);
             this.pnlOdalar.Controls.Add(this.cmbOdaKat);
             this.pnlOdalar.Controls.Add(this.textBox10);
@@ -221,9 +224,9 @@
             this.pnlOdalar.Controls.Add(this.label3);
             this.pnlOdalar.Controls.Add(this.label2);
             this.pnlOdalar.Controls.Add(this.label1);
-            this.pnlOdalar.Location = new System.Drawing.Point(149, 0);
+            this.pnlOdalar.Location = new System.Drawing.Point(148, 3);
             this.pnlOdalar.Name = "pnlOdalar";
-            this.pnlOdalar.Size = new System.Drawing.Size(802, 509);
+            this.pnlOdalar.Size = new System.Drawing.Size(802, 506);
             this.pnlOdalar.TabIndex = 2;
             // 
             // nudOdaNo
@@ -257,6 +260,7 @@
             this.btnOdaEkle.TabIndex = 23;
             this.btnOdaEkle.Text = "ODA EKLE";
             this.btnOdaEkle.UseVisualStyleBackColor = true;
+            this.btnOdaEkle.Click += new System.EventHandler(this.btnOdaEkle_Click);
             // 
             // checkedListBox1
             // 
@@ -380,9 +384,9 @@
             this.pnlMusteriler.Controls.Add(this.txtAra);
             this.pnlMusteriler.Controls.Add(this.label9);
             this.pnlMusteriler.Controls.Add(this.lbMusteriListele);
-            this.pnlMusteriler.Location = new System.Drawing.Point(145, 3);
+            this.pnlMusteriler.Location = new System.Drawing.Point(144, 3);
             this.pnlMusteriler.Name = "pnlMusteriler";
-            this.pnlMusteriler.Size = new System.Drawing.Size(829, 503);
+            this.pnlMusteriler.Size = new System.Drawing.Size(829, 448);
             this.pnlMusteriler.TabIndex = 24;
             // 
             // txtMusteriTC
@@ -465,9 +469,9 @@
             this.pnlCalisanlar.Controls.Add(this.btnCalisanAra);
             this.pnlCalisanlar.Controls.Add(this.txtCalisanTC);
             this.pnlCalisanlar.Controls.Add(this.label10);
-            this.pnlCalisanlar.Location = new System.Drawing.Point(146, 0);
+            this.pnlCalisanlar.Location = new System.Drawing.Point(145, 0);
             this.pnlCalisanlar.Name = "pnlCalisanlar";
-            this.pnlCalisanlar.Size = new System.Drawing.Size(805, 500);
+            this.pnlCalisanlar.Size = new System.Drawing.Size(805, 445);
             this.pnlCalisanlar.TabIndex = 4;
             // 
             // btnCalisanSil
@@ -870,10 +874,28 @@
             this.pnlKampanyalar.Controls.Add(this.label33);
             this.pnlKampanyalar.Controls.Add(this.label32);
             this.pnlKampanyalar.Controls.Add(this.label31);
-            this.pnlKampanyalar.Location = new System.Drawing.Point(144, 0);
+            this.pnlKampanyalar.Location = new System.Drawing.Point(143, 0);
             this.pnlKampanyalar.Name = "pnlKampanyalar";
-            this.pnlKampanyalar.Size = new System.Drawing.Size(802, 506);
+            this.pnlKampanyalar.Size = new System.Drawing.Size(802, 451);
             this.pnlKampanyalar.TabIndex = 23;
+            // 
+            // cmbKampanyalar
+            // 
+            this.cmbKampanyalar.FormattingEnabled = true;
+            this.cmbKampanyalar.Location = new System.Drawing.Point(170, 47);
+            this.cmbKampanyalar.Name = "cmbKampanyalar";
+            this.cmbKampanyalar.Size = new System.Drawing.Size(200, 21);
+            this.cmbKampanyalar.TabIndex = 16;
+            this.cmbKampanyalar.SelectionChangeCommitted += new System.EventHandler(this.cmbKampanyalar_SelectionChangeCommitted);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(60, 55);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "KAMPANYALAR:";
             // 
             // btnYeniKampanya
             // 
@@ -997,23 +1019,22 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "KAMPANYA ADI:";
             // 
-            // label13
+            // listView1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(60, 55);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(90, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "KAMPANYALAR:";
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.odaNo});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(338, 35);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(391, 255);
+            this.listView1.TabIndex = 27;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // cmbKampanyalar
+            // odaNo
             // 
-            this.cmbKampanyalar.FormattingEnabled = true;
-            this.cmbKampanyalar.Location = new System.Drawing.Point(170, 47);
-            this.cmbKampanyalar.Name = "cmbKampanyalar";
-            this.cmbKampanyalar.Size = new System.Drawing.Size(200, 21);
-            this.cmbKampanyalar.TabIndex = 16;
-            this.cmbKampanyalar.SelectionChangeCommitted += new System.EventHandler(this.cmbKampanyalar_SelectionChangeCommitted);
+            this.odaNo.Text = "Oda Numarası";
+            this.odaNo.Width = 85;
             // 
             // FrmYonetici
             // 
@@ -1021,10 +1042,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 509);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.pnlKampanyalar);
-            this.Controls.Add(this.pnlCalisanlar);
             this.Controls.Add(this.pnlOdalar);
             this.Controls.Add(this.pnlMusteriler);
+            this.Controls.Add(this.pnlKampanyalar);
+            this.Controls.Add(this.pnlCalisanlar);
             this.Name = "FrmYonetici";
             this.Text = "Yonetici";
             this.Load += new System.EventHandler(this.FrmYonetici_Load);
@@ -1137,5 +1158,7 @@
         private System.Windows.Forms.Button btnCalisanSil;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbKampanyalar;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader odaNo;
     }
 }

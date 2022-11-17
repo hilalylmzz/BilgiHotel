@@ -82,65 +82,6 @@ END
 Go
 
 
-Create Proc sp_AdaGorePersonelListesi
-(
- @personelAd
-)
-AS
-Begin
-End
-
-Go
-
-Create Proc sp_IDyeGorePersonelListesi
-(
-)
-AS
-Begin
-End
-
-Go
-
-
-Create Proc sp_GorevlerineGorePersonelListesi
-(
-)
-AS
-Begin
-End
-
-Go
-
-Create Proc sp_VardiyaSaatlerineGorePersonelListesi
-(
-)
-AS
-Begin
-End
-
-Go
-
-Create Proc sp_MaasaGorePersonelListesi
-(
-)
-AS
-Begin
-End
-
-Go
-
-Create Proc sp_RezervasyonTanýmýnaGore
-(
- 
-)
-AS
-Begin
-End
-
-
-
-
-
 Create Proc sp_OdaEkleme
 ( 
   @odaNo int
@@ -239,7 +180,7 @@ BEGIN
 END
 
 --Müþteri Pasife Çekme(Sil butonu)
- Create Trigger tgr_MusteriSilme
+ Alter Trigger tgr_MusteriSilme
   on Musteriler Instead of Delete
   As
   Begin 
