@@ -425,8 +425,12 @@ namespace BilgiHotel
 
         }
 
-        private void btnOdaEkle_Click(object sender, EventArgs e)
+        private void btnTemizle_Click(object sender, EventArgs e)
         {
+            txtKampanyaAdi.Clear();
+            txtIndirimOrani.Clear();
+            cbKampanyaAktifMi.Checked = false;
+            txtKampanyaAciklama.Clear();
 
         }
     }
