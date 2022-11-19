@@ -35,8 +35,7 @@ Go
   on tbl_Kullanici Instead of Delete
   As
   Begin 
-  declare @KullaniciEposta nvarchar(250)
-   Update tbl_Kullanici set KullaniciAktifMi=0 Where KullaniciEposta=(select @KullaniciEposta from deleted)
+   Update tbl_Kullanici set KullaniciAktifMi=0 Where KullaniciEposta=(select KullaniciEposta from deleted)
   End
  
 Go
