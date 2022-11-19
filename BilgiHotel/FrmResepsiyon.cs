@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BilgiHotel
@@ -85,7 +78,7 @@ namespace BilgiHotel
                 Sehirler.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
             }
             reader.Close();
-            
+
 
 
             //Diller
@@ -96,7 +89,7 @@ namespace BilgiHotel
                 Diller.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
             }
             reader.Close();
-            
+
 
             //Cinsiyetler
             cmd = new SqlCommand("SELECT cinsiyetID, cinsiyetAd FROM Cinsiyetler", con);
@@ -265,7 +258,7 @@ namespace BilgiHotel
         {
             string musteriTC = txtTCKimlik.Text;
             SqlCommand cmd = new SqlCommand($"Delete from Musteriler where musteriTC='{musteriTC}'", con);
-     
+
             try
             {
                 con.Open();
@@ -326,17 +319,17 @@ namespace BilgiHotel
 
         private void btnSifreGuncelle_Click(object sender, EventArgs e)
         {
-            
+
             SqlCommand cmd = new SqlCommand($"Select kullaniciID from Kullanicilar Where kullaniciSifre='{txtEskiSifre.Text}' and kullaniciEPosta='{txtKullaniciEPosta.Text}'", con);
             con.Open();
             SqlDataReader reader = cmd.ExecuteReader();
 
-            if(reader.Read())
+            if (reader.Read())
             {
                 reader.Close();
-                SqlCommand komut = new SqlCommand($"Update Kullanicilar SET kullaniciSifre='{txtYeniSifre.Text}' where kullaniciEPosta='{txtKullaniciEPosta.Text}'",con);
+                SqlCommand komut = new SqlCommand($"Update Kullanicilar SET kullaniciSifre='{txtYeniSifre.Text}' where kullaniciEPosta='{txtKullaniciEPosta.Text}'", con);
 
-                if(komut.ExecuteNonQuery() >0)
+                if (komut.ExecuteNonQuery() > 0)
                 {
                     MessageBox.Show("Şifre Güncellendi");
                 }
@@ -344,13 +337,13 @@ namespace BilgiHotel
             con.Close();
         }
 
-      
+
 
         private void btnIDAra_Click(object sender, EventArgs e)
         {
             string tcKimlik = txtMusteriTC.Text;
             SqlCommand cmd = new SqlCommand($"Select musteriID from Musteriler Where musteriTC = '{tcKimlik}'", con);
-                
+
             con.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())

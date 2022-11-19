@@ -34,16 +34,15 @@
             this.tsOdalar = new System.Windows.Forms.ToolStripButton();
             this.tsKampanyalar = new System.Windows.Forms.ToolStripButton();
             this.pnlOdalar = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvOdaListesi = new System.Windows.Forms.ListView();
             this.odaNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.odaKat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.odaFiyat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nudOdaNo = new System.Windows.Forms.NumericUpDown();
             this.cmbOdaKat = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtOdaAciklama = new System.Windows.Forms.TextBox();
             this.btnOdaEkle = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.cmbOdaKapasite = new System.Windows.Forms.ComboBox();
-            this.dudCiftKisilikYatak = new System.Windows.Forms.DomainUpDown();
-            this.dudTekKisilikYatak = new System.Windows.Forms.DomainUpDown();
             this.txtOdaFiyat = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMusteriler = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtMusteriTC = new System.Windows.Forms.TextBox();
             this.txtAra = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -105,6 +105,7 @@
             this.txtCalisanTC = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pnlKampanyalar = new System.Windows.Forms.Panel();
+            this.btnTemizle = new System.Windows.Forms.Button();
             this.cmbKampanyalar = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnYeniKampanya = new System.Windows.Forms.Button();
@@ -121,16 +122,26 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnTemizle = new System.Windows.Forms.Button();
-            this.odaKat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.odaFiyat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.odaKapasite = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnOdaSec = new System.Windows.Forms.Button();
+            this.txtOdaKapasite = new System.Windows.Forms.TextBox();
+            this.nudTekKisilikYatak = new System.Windows.Forms.NumericUpDown();
+            this.nudCiftKisilikYatak = new System.Windows.Forms.NumericUpDown();
+            this.label37 = new System.Windows.Forms.Label();
+            this.cbOdaBosMU = new System.Windows.Forms.CheckBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.cbOdaTemizMi = new System.Windows.Forms.CheckBox();
+            this.bntOdaBilgiGuncelle = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.cbOdaAktifMi = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.pnlOdalar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNo)).BeginInit();
             this.pnlMusteriler.SuspendLayout();
             this.pnlCalisanlar.SuspendLayout();
             this.pnlKampanyalar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTekKisilikYatak)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCiftKisilikYatak)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -210,15 +221,23 @@
             // 
             // pnlOdalar
             // 
-            this.pnlOdalar.Controls.Add(this.listView1);
+            this.pnlOdalar.Controls.Add(this.cbOdaAktifMi);
+            this.pnlOdalar.Controls.Add(this.label39);
+            this.pnlOdalar.Controls.Add(this.bntOdaBilgiGuncelle);
+            this.pnlOdalar.Controls.Add(this.cbOdaTemizMi);
+            this.pnlOdalar.Controls.Add(this.label38);
+            this.pnlOdalar.Controls.Add(this.cbOdaBosMU);
+            this.pnlOdalar.Controls.Add(this.label37);
+            this.pnlOdalar.Controls.Add(this.nudCiftKisilikYatak);
+            this.pnlOdalar.Controls.Add(this.nudTekKisilikYatak);
+            this.pnlOdalar.Controls.Add(this.txtOdaKapasite);
+            this.pnlOdalar.Controls.Add(this.btnOdaSec);
+            this.pnlOdalar.Controls.Add(this.lvOdaListesi);
             this.pnlOdalar.Controls.Add(this.nudOdaNo);
             this.pnlOdalar.Controls.Add(this.cmbOdaKat);
-            this.pnlOdalar.Controls.Add(this.textBox10);
+            this.pnlOdalar.Controls.Add(this.txtOdaAciklama);
             this.pnlOdalar.Controls.Add(this.btnOdaEkle);
             this.pnlOdalar.Controls.Add(this.checkedListBox1);
-            this.pnlOdalar.Controls.Add(this.cmbOdaKapasite);
-            this.pnlOdalar.Controls.Add(this.dudCiftKisilikYatak);
-            this.pnlOdalar.Controls.Add(this.dudTekKisilikYatak);
             this.pnlOdalar.Controls.Add(this.txtOdaFiyat);
             this.pnlOdalar.Controls.Add(this.label8);
             this.pnlOdalar.Controls.Add(this.label7);
@@ -233,28 +252,47 @@
             this.pnlOdalar.Size = new System.Drawing.Size(792, 506);
             this.pnlOdalar.TabIndex = 2;
             // 
-            // listView1
+            // lvOdaListesi
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvOdaListesi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.odaNo,
             this.odaKat,
-            this.odaFiyat});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(403, 25);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(268, 255);
-            this.listView1.TabIndex = 27;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.odaFiyat,
+            this.odaKapasite});
+            this.lvOdaListesi.FullRowSelect = true;
+            this.lvOdaListesi.HideSelection = false;
+            this.lvOdaListesi.Location = new System.Drawing.Point(403, 25);
+            this.lvOdaListesi.MultiSelect = false;
+            this.lvOdaListesi.Name = "lvOdaListesi";
+            this.lvOdaListesi.Size = new System.Drawing.Size(367, 255);
+            this.lvOdaListesi.TabIndex = 27;
+            this.lvOdaListesi.UseCompatibleStateImageBehavior = false;
+            this.lvOdaListesi.View = System.Windows.Forms.View.Details;
+            this.lvOdaListesi.DoubleClick += new System.EventHandler(this.lvOdaListesi_DoubleClick);
             // 
             // odaNo
             // 
             this.odaNo.Text = "Oda Numarası";
-            this.odaNo.Width = 85;
+            this.odaNo.Width = 79;
+            // 
+            // odaKat
+            // 
+            this.odaKat.Text = "Kat Numarası";
+            this.odaKat.Width = 76;
+            // 
+            // odaFiyat
+            // 
+            this.odaFiyat.Text = "Fiyat";
+            this.odaFiyat.Width = 91;
             // 
             // nudOdaNo
             // 
             this.nudOdaNo.Location = new System.Drawing.Point(141, 56);
+            this.nudOdaNo.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudOdaNo.Name = "nudOdaNo";
             this.nudOdaNo.Size = new System.Drawing.Size(132, 20);
             this.nudOdaNo.TabIndex = 26;
@@ -267,19 +305,19 @@
             this.cmbOdaKat.Size = new System.Drawing.Size(133, 21);
             this.cmbOdaKat.TabIndex = 25;
             // 
-            // textBox10
+            // txtOdaAciklama
             // 
-            this.textBox10.Location = new System.Drawing.Point(141, 340);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(132, 71);
-            this.textBox10.TabIndex = 24;
+            this.txtOdaAciklama.Location = new System.Drawing.Point(141, 313);
+            this.txtOdaAciklama.Multiline = true;
+            this.txtOdaAciklama.Name = "txtOdaAciklama";
+            this.txtOdaAciklama.Size = new System.Drawing.Size(132, 71);
+            this.txtOdaAciklama.TabIndex = 24;
             // 
             // btnOdaEkle
             // 
-            this.btnOdaEkle.Location = new System.Drawing.Point(141, 430);
+            this.btnOdaEkle.Location = new System.Drawing.Point(676, 290);
             this.btnOdaEkle.Name = "btnOdaEkle";
-            this.btnOdaEkle.Size = new System.Drawing.Size(132, 23);
+            this.btnOdaEkle.Size = new System.Drawing.Size(77, 23);
             this.btnOdaEkle.TabIndex = 23;
             this.btnOdaEkle.Text = "ODA EKLE";
             this.btnOdaEkle.UseVisualStyleBackColor = true;
@@ -294,32 +332,10 @@
             "Kablosuz İnternet",
             "Klima",
             "Balkon"});
-            this.checkedListBox1.Location = new System.Drawing.Point(141, 221);
+            this.checkedListBox1.Location = new System.Drawing.Point(141, 209);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(133, 94);
             this.checkedListBox1.TabIndex = 22;
-            // 
-            // cmbOdaKapasite
-            // 
-            this.cmbOdaKapasite.FormattingEnabled = true;
-            this.cmbOdaKapasite.Location = new System.Drawing.Point(141, 118);
-            this.cmbOdaKapasite.Name = "cmbOdaKapasite";
-            this.cmbOdaKapasite.Size = new System.Drawing.Size(133, 21);
-            this.cmbOdaKapasite.TabIndex = 21;
-            // 
-            // dudCiftKisilikYatak
-            // 
-            this.dudCiftKisilikYatak.Location = new System.Drawing.Point(141, 180);
-            this.dudCiftKisilikYatak.Name = "dudCiftKisilikYatak";
-            this.dudCiftKisilikYatak.Size = new System.Drawing.Size(133, 20);
-            this.dudCiftKisilikYatak.TabIndex = 13;
-            // 
-            // dudTekKisilikYatak
-            // 
-            this.dudTekKisilikYatak.Location = new System.Drawing.Point(141, 149);
-            this.dudTekKisilikYatak.Name = "dudTekKisilikYatak";
-            this.dudTekKisilikYatak.Size = new System.Drawing.Size(133, 20);
-            this.dudTekKisilikYatak.TabIndex = 12;
             // 
             // txtOdaFiyat
             // 
@@ -331,7 +347,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 336);
+            this.label8.Location = new System.Drawing.Point(48, 309);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 7;
@@ -340,7 +356,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 217);
+            this.label7.Location = new System.Drawing.Point(47, 205);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 6;
@@ -349,7 +365,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 183);
+            this.label6.Location = new System.Drawing.Point(9, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 13);
             this.label6.TabIndex = 5;
@@ -358,7 +374,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 152);
+            this.label5.Location = new System.Drawing.Point(5, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 13);
             this.label5.TabIndex = 4;
@@ -367,7 +383,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 94);
+            this.label4.Location = new System.Drawing.Point(67, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 3;
@@ -376,7 +392,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 123);
+            this.label3.Location = new System.Drawing.Point(43, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 2;
@@ -385,7 +401,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 64);
+            this.label2.Location = new System.Drawing.Point(47, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 1;
@@ -394,7 +410,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 33);
+            this.label1.Location = new System.Drawing.Point(75, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
@@ -411,6 +427,15 @@
             this.pnlMusteriler.Name = "pnlMusteriler";
             this.pnlMusteriler.Size = new System.Drawing.Size(792, 506);
             this.pnlMusteriler.TabIndex = 24;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(668, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // txtMusteriTC
             // 
@@ -903,6 +928,16 @@
             this.pnlKampanyalar.Size = new System.Drawing.Size(787, 506);
             this.pnlKampanyalar.TabIndex = 23;
             // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Location = new System.Drawing.Point(657, 45);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(75, 23);
+            this.btnTemizle.TabIndex = 17;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
             // cmbKampanyalar
             // 
             this.cmbKampanyalar.FormattingEnabled = true;
@@ -1043,33 +1078,108 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "KAMPANYA ADI:";
             // 
-            // button1
+            // odaKapasite
             // 
-            this.button1.Location = new System.Drawing.Point(668, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.odaKapasite.Text = "Oda Kapasitesi";
+            this.odaKapasite.Width = 86;
             // 
-            // btnTemizle
+            // btnOdaSec
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(657, 45);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(75, 23);
-            this.btnTemizle.TabIndex = 17;
-            this.btnTemizle.Text = "TEMİZLE";
-            this.btnTemizle.UseVisualStyleBackColor = true;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            this.btnOdaSec.Location = new System.Drawing.Point(429, 290);
+            this.btnOdaSec.Name = "btnOdaSec";
+            this.btnOdaSec.Size = new System.Drawing.Size(75, 23);
+            this.btnOdaSec.TabIndex = 28;
+            this.btnOdaSec.Text = "ODA SEÇ";
+            this.btnOdaSec.UseVisualStyleBackColor = true;
+            this.btnOdaSec.Click += new System.EventHandler(this.btnOdaSec_Click);
             // 
-            // odaKat
+            // txtOdaKapasite
             // 
-            this.odaKat.Text = "Kat Numarası";
-            this.odaKat.Width = 104;
+            this.txtOdaKapasite.Location = new System.Drawing.Point(141, 120);
+            this.txtOdaKapasite.Name = "txtOdaKapasite";
+            this.txtOdaKapasite.Size = new System.Drawing.Size(133, 20);
+            this.txtOdaKapasite.TabIndex = 29;
             // 
-            // odaFiyat
+            // nudTekKisilikYatak
             // 
-            this.odaFiyat.Text = "Fiyat";
+            this.nudTekKisilikYatak.Location = new System.Drawing.Point(141, 144);
+            this.nudTekKisilikYatak.Name = "nudTekKisilikYatak";
+            this.nudTekKisilikYatak.Size = new System.Drawing.Size(132, 20);
+            this.nudTekKisilikYatak.TabIndex = 30;
+            // 
+            // nudCiftKisilikYatak
+            // 
+            this.nudCiftKisilikYatak.Location = new System.Drawing.Point(141, 176);
+            this.nudCiftKisilikYatak.Name = "nudCiftKisilikYatak";
+            this.nudCiftKisilikYatak.Size = new System.Drawing.Size(132, 20);
+            this.nudCiftKisilikYatak.TabIndex = 31;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(55, 431);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(69, 13);
+            this.label37.TabIndex = 32;
+            this.label37.Text = "Oda Boş Mu:";
+            // 
+            // cbOdaBosMU
+            // 
+            this.cbOdaBosMU.AutoSize = true;
+            this.cbOdaBosMU.Location = new System.Drawing.Point(141, 427);
+            this.cbOdaBosMU.Name = "cbOdaBosMU";
+            this.cbOdaBosMU.Size = new System.Drawing.Size(44, 17);
+            this.cbOdaBosMU.TabIndex = 33;
+            this.cbOdaBosMU.Text = "Boş";
+            this.cbOdaBosMU.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(49, 459);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(75, 13);
+            this.label38.TabIndex = 34;
+            this.label38.Text = "Oda Temiz Mi:";
+            // 
+            // cbOdaTemizMi
+            // 
+            this.cbOdaTemizMi.AutoSize = true;
+            this.cbOdaTemizMi.Location = new System.Drawing.Point(141, 455);
+            this.cbOdaTemizMi.Name = "cbOdaTemizMi";
+            this.cbOdaTemizMi.Size = new System.Drawing.Size(54, 17);
+            this.cbOdaTemizMi.TabIndex = 35;
+            this.cbOdaTemizMi.Text = "Temiz";
+            this.cbOdaTemizMi.UseVisualStyleBackColor = true;
+            // 
+            // bntOdaBilgiGuncelle
+            // 
+            this.bntOdaBilgiGuncelle.Location = new System.Drawing.Point(557, 290);
+            this.bntOdaBilgiGuncelle.Name = "bntOdaBilgiGuncelle";
+            this.bntOdaBilgiGuncelle.Size = new System.Drawing.Size(77, 23);
+            this.bntOdaBilgiGuncelle.TabIndex = 36;
+            this.bntOdaBilgiGuncelle.Text = "GÜNCELLE";
+            this.bntOdaBilgiGuncelle.UseVisualStyleBackColor = true;
+            this.bntOdaBilgiGuncelle.Click += new System.EventHandler(this.bntOdaBilgiGuncelle_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(49, 401);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(68, 13);
+            this.label39.TabIndex = 37;
+            this.label39.Text = "Oda Aktif Mi:";
+            // 
+            // cbOdaAktifMi
+            // 
+            this.cbOdaAktifMi.AutoSize = true;
+            this.cbOdaAktifMi.Location = new System.Drawing.Point(141, 397);
+            this.cbOdaAktifMi.Name = "cbOdaAktifMi";
+            this.cbOdaAktifMi.Size = new System.Drawing.Size(47, 17);
+            this.cbOdaAktifMi.TabIndex = 38;
+            this.cbOdaAktifMi.Text = "Aktif";
+            this.cbOdaAktifMi.UseVisualStyleBackColor = true;
             // 
             // FrmYonetici
             // 
@@ -1095,6 +1205,8 @@
             this.pnlCalisanlar.PerformLayout();
             this.pnlKampanyalar.ResumeLayout(false);
             this.pnlKampanyalar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTekKisilikYatak)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCiftKisilikYatak)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1107,8 +1219,6 @@
         private System.Windows.Forms.ToolStripButton tsMusteriler;
         private System.Windows.Forms.ToolStripButton tsOdalar;
         private System.Windows.Forms.Panel pnlOdalar;
-        private System.Windows.Forms.DomainUpDown dudCiftKisilikYatak;
-        private System.Windows.Forms.DomainUpDown dudTekKisilikYatak;
         private System.Windows.Forms.TextBox txtOdaFiyat;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -1118,7 +1228,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbOdaKapasite;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Panel pnlMusteriler;
         private System.Windows.Forms.ListBox lbMusteriListele;
@@ -1181,7 +1290,7 @@
         private System.Windows.Forms.CheckBox cbKampanyaAktifMi;
         private System.Windows.Forms.Button btnYeniKampanya;
         private System.Windows.Forms.Button btnKampanyaGuncelle;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtOdaAciklama;
         private System.Windows.Forms.Button btnOdaEkle;
         private System.Windows.Forms.NumericUpDown nudOdaNo;
         private System.Windows.Forms.ComboBox cmbOdaKat;
@@ -1193,11 +1302,23 @@
         private System.Windows.Forms.Button btnCalisanSil;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbKampanyalar;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvOdaListesi;
         private System.Windows.Forms.ColumnHeader odaNo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnTemizle;
         private System.Windows.Forms.ColumnHeader odaKat;
         private System.Windows.Forms.ColumnHeader odaFiyat;
+        private System.Windows.Forms.ColumnHeader odaKapasite;
+        private System.Windows.Forms.Button btnOdaSec;
+        private System.Windows.Forms.TextBox txtOdaKapasite;
+        private System.Windows.Forms.NumericUpDown nudCiftKisilikYatak;
+        private System.Windows.Forms.NumericUpDown nudTekKisilikYatak;
+        private System.Windows.Forms.CheckBox cbOdaTemizMi;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.CheckBox cbOdaBosMU;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button bntOdaBilgiGuncelle;
+        private System.Windows.Forms.CheckBox cbOdaAktifMi;
+        private System.Windows.Forms.Label label39;
     }
 }

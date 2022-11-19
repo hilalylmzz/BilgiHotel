@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BilgiHotel
@@ -29,15 +24,16 @@ namespace BilgiHotel
         List<KeyValuePair<int, string>> Katlar = new List<KeyValuePair<int, string>>();
         List<KeyValuePair<int, string>> Gorevler = new List<KeyValuePair<int, string>>();
         List<KeyValuePair<int, string>> Kampanyalar = new List<KeyValuePair<int, string>>();
+        List<KeyValuePair<int, string>> OdaTipi = new List<KeyValuePair<int, string>>();
 
         SqlConnection con = new SqlConnection("Server=.;Database=DB_BilgiHotel;Trusted_Connection=True;");
 
-      
+
 
         private void FrmYonetici_Load(object sender, EventArgs e)
         {
-            panels = new List<Panel>(){pnlCalisanlar,pnlOdalar,pnlMusteriler, pnlKampanyalar};
-            foreach(Panel panel in panels)
+            panels = new List<Panel>() { pnlCalisanlar, pnlOdalar, pnlMusteriler, pnlKampanyalar };
+            foreach (Panel panel in panels)
             {
                 panel.Visible = false;
             }
@@ -46,9 +42,9 @@ namespace BilgiHotel
 
         private void PanelAc(Panel panelac)
         {
-            foreach(Panel panel in panels)
+            foreach (Panel panel in panels)
             {
-                panel.Visible=false;
+                panel.Visible = false;
             }
             panelac.Visible = true;
         }
@@ -144,7 +140,7 @@ namespace BilgiHotel
                 Cinsiyetler.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
             }
             reader.Close();
-       
+
 
 
             //Görevler
@@ -166,8 +162,8 @@ namespace BilgiHotel
         {
             PanelAc(pnlOdalar);
 
+            //Katlar
             SqlCommand cmd = new SqlCommand("SELECT katID, katNumarasi FROM Katlar", con);
-
             con.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -179,6 +175,42 @@ namespace BilgiHotel
             cmbOdaKat.ValueMember = "Key";
             cmbOdaKat.DisplayMember = "Value";
             con.Close();
+
+            //Oda tipleri
+            /* cmd = new SqlCommand("SELECT odaTipiID, odaTipiOzellik FROM OdaTipleri", con);
+             con.Open();
+             reader = cmd.ExecuteReader();
+             while (reader.Read())
+             {
+                 OdaTipi.Add(new KeyValuePair<int, string>((int)reader[0], reader[1].ToString()));
+             }
+             reader.Close();
+             cmbOdaTipi.DataSource = OdaTipi;
+             cmbOdaTipi.ValueMember = "Key";
+             cmbOdaTipi.DisplayMember = "Value";
+             con.Close();*/
+
+
+            lvOdaListesi.Items.Clear();
+            con.Open();
+            cmd = new SqlCommand("Select odaNo, k.katNumarasi, odaFiyat, odaKisiSayisi from Odalar as o Join Katlar as k on o.katID = k.katID", con);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string[] satir = { reader["odaNo"].ToString(), reader["katNumarasi"].ToString(), reader["odaFiyat"].ToString(), reader["odaKisiSayisi"].ToString() };
+                var listviewItem = new ListViewItem(satir);
+
+                lvOdaListesi.Items.Add(listviewItem);
+            }
+
+            reader.Close();
+            con.Close();
+
+
+
+
+
+
         }
 
         private void btnCalisanAra_Click(object sender, EventArgs e)
@@ -211,7 +243,7 @@ namespace BilgiHotel
                 txtCalisanAciklama.Text = reader["calisanAciklama"].ToString();
                 cmbCinsiyet.SelectedValue = reader.GetInt32(10);
                 cmbUlkeler.SelectedValue = reader.GetInt32(7);
-                cmbSehirler.SelectedValue= reader.GetInt32(8);
+                cmbSehirler.SelectedValue = reader.GetInt32(8);
                 cmbGorevler.SelectedValue = reader.GetInt32(9);
 
             }
@@ -241,7 +273,7 @@ namespace BilgiHotel
             cmd.Parameters.AddWithValue("@acilDurumKisiAd", txtAcilDurumKisiAd.Text);
             cmd.Parameters.AddWithValue("@acilDurumKisiTel", txtAcilDurumKisiTel.Text);
             cmd.Parameters.AddWithValue("@calisanIseBaslamaTarih", dtpIseBaslamaTarihi.Value);
-            if (cbCalisiyorMu.Checked==true)
+            if (cbCalisiyorMu.Checked == true)
             {
                 cmd.Parameters.AddWithValue("@calisanIstenCikisTarih", DBNull.Value);
             }
@@ -252,7 +284,7 @@ namespace BilgiHotel
             cmd.Parameters.AddWithValue("@calisanAciklama", txtCalisanAciklama.Text);
             cmd.Parameters.AddWithValue("@calisanAktifMi", cbCalisanAktifMi.Checked);
 
-            
+
             if (cmd.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Çalışan bilgileri güncellendi");
@@ -348,7 +380,7 @@ namespace BilgiHotel
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("sp_KampanyaGuncelle", con);
-            cmd.CommandType= CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@kampanyaAd", txtKampanyaAdi.Text);
             cmd.Parameters.AddWithValue("@kampanyaIndirim", Convert.ToInt32(txtIndirimOrani.Text));
@@ -378,7 +410,7 @@ namespace BilgiHotel
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-        
+
                 txtKampanyaAdi.Text = reader["kampanyaAd"].ToString();
                 txtIndirimOrani.Text = reader["kampanyaIndirim"].ToString();
                 dtpKBaslangicTarihi.Value = reader.GetDateTime(2);
@@ -390,14 +422,14 @@ namespace BilgiHotel
             reader.Close();
             con.Close();
 
-           
+
         }
 
         private void btnYeniKampanya_Click(object sender, EventArgs e)
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("sp_KampanyaEkle", con);
-            cmd.CommandType= CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;
 
 
             cmd.Parameters.AddWithValue("@kampanyaAd", txtKampanyaAdi.Text);
@@ -432,6 +464,89 @@ namespace BilgiHotel
             cbKampanyaAktifMi.Checked = false;
             txtKampanyaAciklama.Clear();
 
+        }
+
+        private void btnOdaSec_Click(object sender, EventArgs e)
+        {
+            if (lvOdaListesi.SelectedItems.Count != 1)
+            {
+                MessageBox.Show("Oda Seçiniz");
+                return;
+            }
+
+            int odaID = 0;
+            string odaNumara = lvOdaListesi.SelectedItems[0].SubItems[0].Text;
+            SqlCommand cmd = new SqlCommand($"Select odaID, odaNo, k.katNumarasi, odaFiyat, odaKisiSayisi, odaAciklama, odaBosMu, odaTemizMi from Odalar as o Join Katlar as k on o.katID = k.katID where odaNo= '{odaNumara}'", con);
+            con.Open();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                odaID = (int)reader["odaID"];
+                nudOdaNo.Value = (int)reader["odaNo"];
+                cmbOdaKat.SelectedIndex = (int)reader["katNumarasi"] - 1;
+                txtOdaFiyat.Text = reader["odaFiyat"].ToString();
+                txtOdaKapasite.Text = reader["odaKisiSayisi"].ToString();
+                cbOdaBosMU.Checked = (bool)reader["odaBosMu"];
+                cbOdaTemizMi.Checked = (bool)reader["odaTemizMi"];
+            }
+
+            reader.Close();
+            con.Close();
+
+            //Yatak sayıları yazdırma
+            cmd = new SqlCommand($"Select odaID, yatakTipiID, yatakAdet from OdalarYatakTipleri where odaID={odaID}", con);
+            con.Open();
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                switch ((int)reader["yatakTipiID"])
+                {
+                    case 1:
+                        nudTekKisilikYatak.Value = Convert.ToDecimal(reader["yatakAdet"]);
+                        break;
+                    case 2:
+                        nudCiftKisilikYatak.Value = Convert.ToDecimal(reader["yatakAdet"]);
+                        break;
+                }
+            }
+            reader.Close();
+
+            con.Close();
+
+        }
+
+        private void lvOdaListesi_DoubleClick(object sender, EventArgs e)
+        {
+            btnOdaSec.PerformClick();
+        }
+
+        private void bntOdaBilgiGuncelle_Click(object sender, EventArgs e)
+        {   
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_OdaBilgiGuncelleme", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("odaNo", nudOdaNo.Value);
+            cmd.Parameters.AddWithValue("odaFiyat", Convert.ToDecimal(txtOdaFiyat.Text));
+            cmd.Parameters.AddWithValue("odaKisiSayisi", Convert.ToInt32(txtOdaKapasite.Text));
+            cmd.Parameters.AddWithValue("katID", cmbOdaKat.SelectedValue);
+            cmd.Parameters.AddWithValue("odaBosMu", cbOdaBosMU.Checked);
+            cmd.Parameters.AddWithValue("odaTemizMi", cbOdaTemizMi.Checked);
+            cmd.Parameters.AddWithValue("odaAktifMi", cbOdaAktifMi.Checked);
+            cmd.Parameters.AddWithValue("odaAciklama", txtOdaAciklama.Text);
+
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Oda Bilgileri Güncellendi");
+            }
+            else
+            {
+                MessageBox.Show("Oda Bilgileri Güncellenemedi");
+            }
+            con.Close();
         }
     }
 }
