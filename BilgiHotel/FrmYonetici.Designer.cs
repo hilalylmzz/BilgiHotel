@@ -42,7 +42,7 @@
             this.cmbOdaKat = new System.Windows.Forms.ComboBox();
             this.txtOdaAciklama = new System.Windows.Forms.TextBox();
             this.btnOdaEkle = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.clOdaOzellikleri = new System.Windows.Forms.CheckedListBox();
             this.txtOdaFiyat = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,7 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMusteriler = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtMusteriTC = new System.Windows.Forms.TextBox();
             this.txtAra = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -237,7 +236,7 @@
             this.pnlOdalar.Controls.Add(this.cmbOdaKat);
             this.pnlOdalar.Controls.Add(this.txtOdaAciklama);
             this.pnlOdalar.Controls.Add(this.btnOdaEkle);
-            this.pnlOdalar.Controls.Add(this.checkedListBox1);
+            this.pnlOdalar.Controls.Add(this.clOdaOzellikleri);
             this.pnlOdalar.Controls.Add(this.txtOdaFiyat);
             this.pnlOdalar.Controls.Add(this.label8);
             this.pnlOdalar.Controls.Add(this.label7);
@@ -322,20 +321,20 @@
             this.btnOdaEkle.Text = "ODA EKLE";
             this.btnOdaEkle.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox1
+            // clOdaOzellikleri
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.clOdaOzellikleri.FormattingEnabled = true;
+            this.clOdaOzellikleri.Items.AddRange(new object[] {
             "Saç Kurutma Makinesi",
-            "Televizyon",
             "Minibar",
+            "Televizyon",
             "Kablosuz İnternet",
             "Klima",
             "Balkon"});
-            this.checkedListBox1.Location = new System.Drawing.Point(141, 209);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(133, 94);
-            this.checkedListBox1.TabIndex = 22;
+            this.clOdaOzellikleri.Location = new System.Drawing.Point(141, 209);
+            this.clOdaOzellikleri.Name = "clOdaOzellikleri";
+            this.clOdaOzellikleri.Size = new System.Drawing.Size(133, 94);
+            this.clOdaOzellikleri.TabIndex = 22;
             // 
             // txtOdaFiyat
             // 
@@ -418,7 +417,6 @@
             // 
             // pnlMusteriler
             // 
-            this.pnlMusteriler.Controls.Add(this.button1);
             this.pnlMusteriler.Controls.Add(this.txtMusteriTC);
             this.pnlMusteriler.Controls.Add(this.txtAra);
             this.pnlMusteriler.Controls.Add(this.label9);
@@ -427,15 +425,6 @@
             this.pnlMusteriler.Name = "pnlMusteriler";
             this.pnlMusteriler.Size = new System.Drawing.Size(792, 506);
             this.pnlMusteriler.TabIndex = 24;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(668, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // txtMusteriTC
             // 
@@ -452,6 +441,7 @@
             this.txtAra.TabIndex = 1;
             this.txtAra.Text = "ARA";
             this.txtAra.UseVisualStyleBackColor = true;
+            this.txtAra.Click += new System.EventHandler(this.txtAra_Click);
             // 
             // label9
             // 
@@ -466,6 +456,7 @@
             // 
             this.lbMusteriListele.FormattingEnabled = true;
             this.lbMusteriListele.Location = new System.Drawing.Point(30, 78);
+            this.lbMusteriListele.MultiColumn = true;
             this.lbMusteriListele.Name = "lbMusteriListele";
             this.lbMusteriListele.Size = new System.Drawing.Size(740, 290);
             this.lbMusteriListele.TabIndex = 3;
@@ -1228,7 +1219,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox clOdaOzellikleri;
         private System.Windows.Forms.Panel pnlMusteriler;
         private System.Windows.Forms.ListBox lbMusteriListele;
         private System.Windows.Forms.TextBox txtMusteriTC;
@@ -1304,7 +1295,6 @@
         private System.Windows.Forms.ComboBox cmbKampanyalar;
         private System.Windows.Forms.ListView lvOdaListesi;
         private System.Windows.Forms.ColumnHeader odaNo;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnTemizle;
         private System.Windows.Forms.ColumnHeader odaKat;
         private System.Windows.Forms.ColumnHeader odaFiyat;

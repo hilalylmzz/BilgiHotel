@@ -515,6 +515,43 @@ namespace BilgiHotel
 
             con.Close();
 
+
+            //Oda Özellikleri Yazdırma
+            cmd = new SqlCommand($"Select odaOzellikleriID from OdalarOdaOzellikleri where odaID={odaID}", con);
+            con.Open();
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                switch ((int)reader["odaOzellikleriID"])
+                {
+                    case 1:
+                        clOdaOzellikleri.SetItemChecked(0 ,true);
+                        break;
+                    case 2:
+                        clOdaOzellikleri.SetItemChecked(1, true);
+                        break;
+                    case 3:
+                        clOdaOzellikleri.SetItemChecked(2, true);
+                        break;
+                    case 4:
+                        clOdaOzellikleri.SetItemChecked(3, true);
+                        break;
+                    case 5:
+                        clOdaOzellikleri.SetItemChecked(4, true);
+                        break;
+                    case 6:
+                        clOdaOzellikleri.SetItemChecked(5, true);
+                        break;
+                        default:
+                        break;
+                }
+            }
+            reader.Close();
+
+            con.Close();
+
+
         }
 
         private void lvOdaListesi_DoubleClick(object sender, EventArgs e)
@@ -547,6 +584,18 @@ namespace BilgiHotel
                 MessageBox.Show("Oda Bilgileri Güncellenemedi");
             }
             con.Close();
+        }
+
+        private void txtAra_Click(object sender, EventArgs e)
+        {
+            string tcKimlik = txtMusteriTC.Text;
+            SqlCommand cmd = new SqlCommand($"Select musteriAd, musteriSoyad, musteriTelNo, musteriEposta, musteriAdres, musteriFirmaAd, firmaVergiNo, cinsiyetID, musteriSirketMi from Musteriler Where musteriTC = '{tcKimlik}'", con);
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                lbMusteriListele.Items.Add(reader["musteriAd"].ToString() +" " + reader["musteriSoyad"].ToString()+ " "+ reader[2].ToString());
+            }
         }
     }
 }
