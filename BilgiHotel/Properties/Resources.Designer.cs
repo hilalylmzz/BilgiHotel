@@ -63,6 +63,16 @@ namespace BilgiHotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2017_otel_pazarlama_trend {
+            get {
+                object obj = ResourceManager.GetObject("2017-otel-pazarlama-trend", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _25_Free_Beautiful_Vector_Gradients_For_Your_Next_Design_Project {
             get {
                 object obj = ResourceManager.GetObject("25 Free Beautiful Vector Gradients For Your Next Design Project", resourceCulture);
@@ -183,6 +193,16 @@ namespace BilgiHotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap metaseach_600x600 {
+            get {
+                object obj = ResourceManager.GetObject("metaseach-600x600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap musteriler {
             get {
                 object obj = ResourceManager.GetObject("musteriler", resourceCulture);
@@ -206,6 +226,16 @@ namespace BilgiHotel.Properties {
         internal static System.Drawing.Bitmap odalar {
             get {
                 object obj = ResourceManager.GetObject("odalar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap otel_pazarlama_stratejileri {
+            get {
+                object obj = ResourceManager.GetObject("otel-pazarlama-stratejileri", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
