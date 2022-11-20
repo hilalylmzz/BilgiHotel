@@ -575,6 +575,7 @@ namespace BilgiHotel
             cmd.Parameters.AddWithValue("odaAciklama", txtOdaAciklama.Text);
 
 
+
             if (cmd.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Oda Bilgileri Güncellendi");
