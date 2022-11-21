@@ -44,6 +44,7 @@ namespace BilgiHotel
                         break;
                 }
             }
+            con.Close();
 
         }
     }

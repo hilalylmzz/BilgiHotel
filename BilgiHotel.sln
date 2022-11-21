@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiHotel", "BilgiHotel\BilgiHotel.csproj", "{F963909D-7A68-46CD-AD3A-256A79190332}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiHotelEntity", "BilgiHotelEntity\BilgiHotelEntity.csproj", "{ADE143AA-C8AB-4F74-9E3B-9125CEE1DDD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F963909D-7A68-46CD-AD3A-256A79190332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F963909D-7A68-46CD-AD3A-256A79190332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F963909D-7A68-46CD-AD3A-256A79190332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE143AA-C8AB-4F74-9E3B-9125CEE1DDD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE143AA-C8AB-4F74-9E3B-9125CEE1DDD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE143AA-C8AB-4F74-9E3B-9125CEE1DDD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE143AA-C8AB-4F74-9E3B-9125CEE1DDD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

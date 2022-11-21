@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace BilgiHotel
@@ -550,7 +551,7 @@ namespace BilgiHotel
             //Yatak sayıları yazdırma
             cmd = new SqlCommand($"Select odaID, yatakTipiID, yatakAdet from OdalarYatakTipleri where odaID={odaID}", con);
             con.Open();
-
+            
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -711,11 +712,30 @@ namespace BilgiHotel
             }
 
             string odaNumara = lvOdaListesi.SelectedItems[0].SubItems[0].Text;
-        
-            cmd = new SqlCommand("Insert Into OdalarOdaOzellikleri (odaID , odaOzellikleriID) Values ()");
+            string commandString = $"SELECT odaID FROM Odalar WHERE odaNo = {odaNumara}";
 
+            cmd = new SqlCommand(commandString, con);
+            int odaID = (int)cmd.ExecuteScalar();
 
+            foreach (int indis in clOdaOzellikleri.CheckedIndices)
+            {
+                commandString = $"INSERT INTO OdalarOdaOzellikleri (odaID,odaOzellikleriID) VALUES ({odaID},{indis + 1})";
+                cmd = new SqlCommand(commandString, con);
+                cmd.ExecuteNonQuery();
+            }
+            if (nudTekKisilikYatak.Value > 0)
+            {
+                commandString = $"INSERT INTO OdalarYatakTipleri (odaID,yatakTipiID, yatakAdet) VALUES ({odaID},1,{nudTekKisilikYatak.Value})";
+                cmd = new SqlCommand(commandString, con);
+                cmd.ExecuteNonQuery();
+            }
 
+            if (nudCiftKisilikYatak.Value > 0)
+            {
+                commandString = $"INSERT INTO OdalarYatakTipleri (odaID,yatakTipiID, yatakAdet) VALUES ({odaID},2,{nudCiftKisilikYatak.Value})";
+                cmd = new SqlCommand(commandString, con);
+                cmd.ExecuteNonQuery();
+            }
 
 
             con.Close();
@@ -725,25 +745,29 @@ namespace BilgiHotel
         private void btnOdaSil_Click(object sender, EventArgs e)
         {
             con.Open();
-            string odaNumara = lvOdaListesi.SelectedItems[0].SubItems[0].Text;
-            SqlCommand cmd = new SqlCommand($"Delete From Odalar Where odaNo= '{odaNumara}'", con);
-            cmd.ExecuteNonQuery();
-            cmd = new SqlCommand($"Delete From OdalarOdaOzellikleri Where odaID=(Select odaID from Odalar Where odaNo={odaNumara})", con);
-            cmd.ExecuteNonQuery();
-            cmd = new SqlCommand($"Delete From OdalarYatakTipleri Where odaID=(Select odaID from Odalar Where odaNo={odaNumara})", con);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                string odaNumara = lvOdaListesi.SelectedItems[0].SubItems[0].Text;
+                SqlCommand cmd = new SqlCommand($"Delete From Odalar Where odaNo= '{odaNumara}'", con);
+                cmd.ExecuteNonQuery();
+                cmd = new SqlCommand($"Delete From OdalarOdaOzellikleri Where odaID=(Select odaID from Odalar Where odaNo={odaNumara})", con);
+                cmd.ExecuteNonQuery();
+                cmd = new SqlCommand($"Delete From OdalarYatakTipleri Where odaID=(Select odaID from Odalar Where odaNo={odaNumara})", con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Seçilen Oda Silindi");
+            }
+            catch
+            {
+                MessageBox.Show("Seçilen Oda Silinemedi");
+            }
+            finally
+            {
+                con.Close();
 
-            con.Close();
+            }
 
-            /*    if (cmd.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Seçilen Oda Silindi");
-                }
-                else
-                {
-                    MessageBox.Show("Seçilen Oda Silinemedi");
-                }
-            */
+
+        
 
         }
     }

@@ -211,7 +211,7 @@ namespace BilgiHotel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            con.Open();
+             con.Open();
             SqlCommand cmd = new SqlCommand("sp_MusteriGuncelleme", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@musteriAd", txtMusteriAd.Text);
