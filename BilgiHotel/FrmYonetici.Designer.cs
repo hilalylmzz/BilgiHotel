@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsCalisanlar = new System.Windows.Forms.ToolStripButton();
-            this.tsMusteriler = new System.Windows.Forms.ToolStripButton();
-            this.tsOdalar = new System.Windows.Forms.ToolStripButton();
-            this.tsKampanyalar = new System.Windows.Forms.ToolStripButton();
             this.pnlOdalar = new System.Windows.Forms.Panel();
             this.btnOdaSil = new System.Windows.Forms.Button();
             this.cbOdaAktifMi = new System.Windows.Forms.CheckBox();
@@ -134,7 +129,12 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsCalisanlar = new System.Windows.Forms.ToolStripButton();
+            this.tsMusteriler = new System.Windows.Forms.ToolStripButton();
+            this.tsOdalar = new System.Windows.Forms.ToolStripButton();
+            this.tsKampanyalar = new System.Windows.Forms.ToolStripButton();
+            this.tsSatislar = new System.Windows.Forms.ToolStripButton();
             this.pnlOdalar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCiftKisilikYatak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTekKisilikYatak)).BeginInit();
@@ -142,82 +142,8 @@
             this.pnlMusteriler.SuspendLayout();
             this.pnlCalisanlar.SuspendLayout();
             this.pnlKampanyalar.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.toolStrip1.BackgroundImage = global::BilgiHotel.Properties.Resources._25_Free_Beautiful_Vector_Gradients_For_Your_Next_Design_Project;
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsCalisanlar,
-            this.tsMusteriler,
-            this.tsOdalar,
-            this.tsKampanyalar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(155, 509);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsCalisanlar
-            // 
-            this.tsCalisanlar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tsCalisanlar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsCalisanlar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tsCalisanlar.Image = global::BilgiHotel.Properties.Resources.personel;
-            this.tsCalisanlar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsCalisanlar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsCalisanlar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsCalisanlar.Margin = new System.Windows.Forms.Padding(10, 60, 0, 0);
-            this.tsCalisanlar.Name = "tsCalisanlar";
-            this.tsCalisanlar.Size = new System.Drawing.Size(144, 54);
-            this.tsCalisanlar.Text = "ÇALIŞANLAR";
-            this.tsCalisanlar.Click += new System.EventHandler(this.tsCalisanlar_Click);
-            // 
-            // tsMusteriler
-            // 
-            this.tsMusteriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tsMusteriler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsMusteriler.Image = global::BilgiHotel.Properties.Resources.musteriler;
-            this.tsMusteriler.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsMusteriler.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsMusteriler.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsMusteriler.Margin = new System.Windows.Forms.Padding(10, 60, 0, 0);
-            this.tsMusteriler.Name = "tsMusteriler";
-            this.tsMusteriler.Size = new System.Drawing.Size(144, 36);
-            this.tsMusteriler.Text = "MÜŞTERİLER";
-            this.tsMusteriler.Click += new System.EventHandler(this.tsMusteriler_Click);
-            // 
-            // tsOdalar
-            // 
-            this.tsOdalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tsOdalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsOdalar.Image = global::BilgiHotel.Properties.Resources.oda;
-            this.tsOdalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsOdalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsOdalar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsOdalar.Margin = new System.Windows.Forms.Padding(10, 60, 0, 0);
-            this.tsOdalar.Name = "tsOdalar";
-            this.tsOdalar.Size = new System.Drawing.Size(144, 54);
-            this.tsOdalar.Text = "ODALAR";
-            this.tsOdalar.Click += new System.EventHandler(this.tsOdalar_Click);
-            // 
-            // tsKampanyalar
-            // 
-            this.tsKampanyalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tsKampanyalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tsKampanyalar.Image = global::BilgiHotel.Properties.Resources.kampanya;
-            this.tsKampanyalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tsKampanyalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsKampanyalar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsKampanyalar.Margin = new System.Windows.Forms.Padding(10, 60, 0, 0);
-            this.tsKampanyalar.Name = "tsKampanyalar";
-            this.tsKampanyalar.Size = new System.Drawing.Size(144, 54);
-            this.tsKampanyalar.Text = "KAMPANYALAR";
-            this.tsKampanyalar.Click += new System.EventHandler(this.tsKampanyalar_Click);
             // 
             // pnlOdalar
             // 
@@ -252,12 +178,12 @@
             this.pnlOdalar.Controls.Add(this.label1);
             this.pnlOdalar.Location = new System.Drawing.Point(154, 1);
             this.pnlOdalar.Name = "pnlOdalar";
-            this.pnlOdalar.Size = new System.Drawing.Size(801, 509);
+            this.pnlOdalar.Size = new System.Drawing.Size(796, 509);
             this.pnlOdalar.TabIndex = 2;
             // 
             // btnOdaSil
             // 
-            this.btnOdaSil.Location = new System.Drawing.Point(298, 397);
+            this.btnOdaSil.Location = new System.Drawing.Point(298, 423);
             this.btnOdaSil.Name = "btnOdaSil";
             this.btnOdaSil.Size = new System.Drawing.Size(77, 23);
             this.btnOdaSil.TabIndex = 39;
@@ -268,7 +194,7 @@
             // cbOdaAktifMi
             // 
             this.cbOdaAktifMi.AutoSize = true;
-            this.cbOdaAktifMi.Location = new System.Drawing.Point(576, 397);
+            this.cbOdaAktifMi.Location = new System.Drawing.Point(576, 423);
             this.cbOdaAktifMi.Name = "cbOdaAktifMi";
             this.cbOdaAktifMi.Size = new System.Drawing.Size(47, 17);
             this.cbOdaAktifMi.TabIndex = 38;
@@ -278,7 +204,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(500, 401);
+            this.label39.Location = new System.Drawing.Point(500, 427);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(68, 13);
             this.label39.TabIndex = 37;
@@ -286,7 +212,7 @@
             // 
             // bntOdaBilgiGuncelle
             // 
-            this.bntOdaBilgiGuncelle.Location = new System.Drawing.Point(117, 397);
+            this.bntOdaBilgiGuncelle.Location = new System.Drawing.Point(117, 423);
             this.bntOdaBilgiGuncelle.Name = "bntOdaBilgiGuncelle";
             this.bntOdaBilgiGuncelle.Size = new System.Drawing.Size(77, 23);
             this.bntOdaBilgiGuncelle.TabIndex = 36;
@@ -297,7 +223,7 @@
             // cbOdaTemizMi
             // 
             this.cbOdaTemizMi.AutoSize = true;
-            this.cbOdaTemizMi.Location = new System.Drawing.Point(576, 450);
+            this.cbOdaTemizMi.Location = new System.Drawing.Point(576, 476);
             this.cbOdaTemizMi.Name = "cbOdaTemizMi";
             this.cbOdaTemizMi.Size = new System.Drawing.Size(54, 17);
             this.cbOdaTemizMi.TabIndex = 35;
@@ -307,7 +233,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(493, 450);
+            this.label38.Location = new System.Drawing.Point(493, 476);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(75, 13);
             this.label38.TabIndex = 34;
@@ -316,7 +242,7 @@
             // cbOdaBosMU
             // 
             this.cbOdaBosMU.AutoSize = true;
-            this.cbOdaBosMU.Location = new System.Drawing.Point(576, 427);
+            this.cbOdaBosMU.Location = new System.Drawing.Point(576, 453);
             this.cbOdaBosMU.Name = "cbOdaBosMU";
             this.cbOdaBosMU.Size = new System.Drawing.Size(44, 17);
             this.cbOdaBosMU.TabIndex = 33;
@@ -326,7 +252,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(499, 426);
+            this.label37.Location = new System.Drawing.Point(499, 452);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(69, 13);
             this.label37.TabIndex = 32;
@@ -334,28 +260,28 @@
             // 
             // nudCiftKisilikYatak
             // 
-            this.nudCiftKisilikYatak.Location = new System.Drawing.Point(576, 182);
+            this.nudCiftKisilikYatak.Location = new System.Drawing.Point(576, 208);
             this.nudCiftKisilikYatak.Name = "nudCiftKisilikYatak";
             this.nudCiftKisilikYatak.Size = new System.Drawing.Size(132, 20);
             this.nudCiftKisilikYatak.TabIndex = 31;
             // 
             // nudTekKisilikYatak
             // 
-            this.nudTekKisilikYatak.Location = new System.Drawing.Point(576, 150);
+            this.nudTekKisilikYatak.Location = new System.Drawing.Point(576, 176);
             this.nudTekKisilikYatak.Name = "nudTekKisilikYatak";
             this.nudTekKisilikYatak.Size = new System.Drawing.Size(132, 20);
             this.nudTekKisilikYatak.TabIndex = 30;
             // 
             // txtOdaKapasite
             // 
-            this.txtOdaKapasite.Location = new System.Drawing.Point(576, 120);
+            this.txtOdaKapasite.Location = new System.Drawing.Point(576, 146);
             this.txtOdaKapasite.Name = "txtOdaKapasite";
             this.txtOdaKapasite.Size = new System.Drawing.Size(133, 20);
             this.txtOdaKapasite.TabIndex = 29;
             // 
             // btnOdaSec
             // 
-            this.btnOdaSec.Location = new System.Drawing.Point(27, 397);
+            this.btnOdaSec.Location = new System.Drawing.Point(27, 423);
             this.btnOdaSec.Name = "btnOdaSec";
             this.btnOdaSec.Size = new System.Drawing.Size(75, 23);
             this.btnOdaSec.TabIndex = 28;
@@ -372,7 +298,7 @@
             this.odaKapasite});
             this.lvOdaListesi.FullRowSelect = true;
             this.lvOdaListesi.HideSelection = false;
-            this.lvOdaListesi.Location = new System.Drawing.Point(19, 36);
+            this.lvOdaListesi.Location = new System.Drawing.Point(19, 62);
             this.lvOdaListesi.MultiSelect = false;
             this.lvOdaListesi.Name = "lvOdaListesi";
             this.lvOdaListesi.Size = new System.Drawing.Size(367, 316);
@@ -403,7 +329,7 @@
             // 
             // nudOdaNo
             // 
-            this.nudOdaNo.Location = new System.Drawing.Point(576, 59);
+            this.nudOdaNo.Location = new System.Drawing.Point(576, 85);
             this.nudOdaNo.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -416,14 +342,14 @@
             // cmbOdaKat
             // 
             this.cmbOdaKat.FormattingEnabled = true;
-            this.cmbOdaKat.Location = new System.Drawing.Point(576, 30);
+            this.cmbOdaKat.Location = new System.Drawing.Point(576, 56);
             this.cmbOdaKat.Name = "cmbOdaKat";
             this.cmbOdaKat.Size = new System.Drawing.Size(133, 21);
             this.cmbOdaKat.TabIndex = 25;
             // 
             // txtOdaAciklama
             // 
-            this.txtOdaAciklama.Location = new System.Drawing.Point(576, 313);
+            this.txtOdaAciklama.Location = new System.Drawing.Point(576, 339);
             this.txtOdaAciklama.Multiline = true;
             this.txtOdaAciklama.Name = "txtOdaAciklama";
             this.txtOdaAciklama.Size = new System.Drawing.Size(132, 71);
@@ -431,7 +357,7 @@
             // 
             // btnOdaEkle
             // 
-            this.btnOdaEkle.Location = new System.Drawing.Point(208, 397);
+            this.btnOdaEkle.Location = new System.Drawing.Point(208, 423);
             this.btnOdaEkle.Name = "btnOdaEkle";
             this.btnOdaEkle.Size = new System.Drawing.Size(77, 23);
             this.btnOdaEkle.TabIndex = 23;
@@ -449,14 +375,14 @@
             "Kablosuz İnternet",
             "Klima",
             "Balkon"});
-            this.clOdaOzellikleri.Location = new System.Drawing.Point(576, 209);
+            this.clOdaOzellikleri.Location = new System.Drawing.Point(576, 237);
             this.clOdaOzellikleri.Name = "clOdaOzellikleri";
             this.clOdaOzellikleri.Size = new System.Drawing.Size(133, 94);
             this.clOdaOzellikleri.TabIndex = 22;
             // 
             // txtOdaFiyat
             // 
-            this.txtOdaFiyat.Location = new System.Drawing.Point(576, 90);
+            this.txtOdaFiyat.Location = new System.Drawing.Point(576, 116);
             this.txtOdaFiyat.Name = "txtOdaFiyat";
             this.txtOdaFiyat.Size = new System.Drawing.Size(133, 20);
             this.txtOdaFiyat.TabIndex = 11;
@@ -464,7 +390,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(492, 309);
+            this.label8.Location = new System.Drawing.Point(492, 340);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 7;
@@ -473,7 +399,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(491, 205);
+            this.label7.Location = new System.Drawing.Point(491, 241);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 6;
@@ -482,7 +408,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(453, 183);
+            this.label6.Location = new System.Drawing.Point(453, 209);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 13);
             this.label6.TabIndex = 5;
@@ -491,7 +417,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(449, 152);
+            this.label5.Location = new System.Drawing.Point(449, 178);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 13);
             this.label5.TabIndex = 4;
@@ -500,7 +426,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(511, 94);
+            this.label4.Location = new System.Drawing.Point(511, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 3;
@@ -509,7 +435,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(487, 123);
+            this.label3.Location = new System.Drawing.Point(487, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 2;
@@ -518,7 +444,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(491, 67);
+            this.label2.Location = new System.Drawing.Point(491, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 1;
@@ -527,7 +453,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(519, 36);
+            this.label1.Location = new System.Drawing.Point(519, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
@@ -1187,6 +1113,96 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "KAMPANYA ADI:";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.toolStrip1.BackgroundImage = global::BilgiHotel.Properties.Resources._25_Free_Beautiful_Vector_Gradients_For_Your_Next_Design_Project;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsCalisanlar,
+            this.tsMusteriler,
+            this.tsOdalar,
+            this.tsKampanyalar,
+            this.tsSatislar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStrip1.Size = new System.Drawing.Size(165, 509);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsCalisanlar
+            // 
+            this.tsCalisanlar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsCalisanlar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsCalisanlar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tsCalisanlar.Image = global::BilgiHotel.Properties.Resources.personel;
+            this.tsCalisanlar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsCalisanlar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsCalisanlar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsCalisanlar.Margin = new System.Windows.Forms.Padding(10, 30, 0, 0);
+            this.tsCalisanlar.Name = "tsCalisanlar";
+            this.tsCalisanlar.Padding = new System.Windows.Forms.Padding(10, 20, 0, 0);
+            this.tsCalisanlar.Size = new System.Drawing.Size(154, 74);
+            this.tsCalisanlar.Text = "ÇALIŞANLAR";
+            this.tsCalisanlar.Click += new System.EventHandler(this.tsCalisanlar_Click);
+            // 
+            // tsMusteriler
+            // 
+            this.tsMusteriler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsMusteriler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsMusteriler.Image = global::BilgiHotel.Properties.Resources.musteriler;
+            this.tsMusteriler.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsMusteriler.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsMusteriler.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsMusteriler.Margin = new System.Windows.Forms.Padding(10, 30, 0, 0);
+            this.tsMusteriler.Name = "tsMusteriler";
+            this.tsMusteriler.Padding = new System.Windows.Forms.Padding(10, 20, 0, 0);
+            this.tsMusteriler.Size = new System.Drawing.Size(154, 56);
+            this.tsMusteriler.Text = "MÜŞTERİLER";
+            this.tsMusteriler.Click += new System.EventHandler(this.tsMusteriler_Click);
+            // 
+            // tsOdalar
+            // 
+            this.tsOdalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsOdalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsOdalar.Image = global::BilgiHotel.Properties.Resources.oda;
+            this.tsOdalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsOdalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsOdalar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsOdalar.Margin = new System.Windows.Forms.Padding(10, 30, 0, 0);
+            this.tsOdalar.Name = "tsOdalar";
+            this.tsOdalar.Padding = new System.Windows.Forms.Padding(10, 20, 0, 0);
+            this.tsOdalar.Size = new System.Drawing.Size(154, 74);
+            this.tsOdalar.Text = "ODALAR";
+            this.tsOdalar.Click += new System.EventHandler(this.tsOdalar_Click);
+            // 
+            // tsKampanyalar
+            // 
+            this.tsKampanyalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tsKampanyalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsKampanyalar.Image = global::BilgiHotel.Properties.Resources.kampanya;
+            this.tsKampanyalar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsKampanyalar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsKampanyalar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsKampanyalar.Margin = new System.Windows.Forms.Padding(10, 30, 0, 0);
+            this.tsKampanyalar.Name = "tsKampanyalar";
+            this.tsKampanyalar.Padding = new System.Windows.Forms.Padding(10, 20, 0, 0);
+            this.tsKampanyalar.Size = new System.Drawing.Size(154, 74);
+            this.tsKampanyalar.Text = "KAMPANYALAR";
+            this.tsKampanyalar.Click += new System.EventHandler(this.tsKampanyalar_Click);
+            // 
+            // tsSatislar
+            // 
+            this.tsSatislar.Image = global::BilgiHotel.Properties.Resources.bill__1_;
+            this.tsSatislar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsSatislar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsSatislar.Name = "tsSatislar";
+            this.tsSatislar.Padding = new System.Windows.Forms.Padding(10, 20, 0, 0);
+            this.tsSatislar.Size = new System.Drawing.Size(164, 88);
+            this.tsSatislar.Text = "SATIŞLAR";
+            // 
             // FrmYonetici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1202,8 +1218,6 @@
             this.Name = "FrmYonetici";
             this.Text = "Yonetici";
             this.Load += new System.EventHandler(this.FrmYonetici_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.pnlOdalar.ResumeLayout(false);
             this.pnlOdalar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCiftKisilikYatak)).EndInit();
@@ -1215,6 +1229,8 @@
             this.pnlCalisanlar.PerformLayout();
             this.pnlKampanyalar.ResumeLayout(false);
             this.pnlKampanyalar.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1328,5 +1344,6 @@
         private System.Windows.Forms.CheckBox cbOdaAktifMi;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Button btnOdaSil;
+        private System.Windows.Forms.ToolStripButton tsSatislar;
     }
 }

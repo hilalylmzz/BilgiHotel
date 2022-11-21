@@ -157,13 +157,19 @@
     <None Include="Resources\25 Free Beautiful Vector Gradients For Your Next Design Project.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\2017-otel-pazarlama-trend.jpg" />
+    <None Include="Resources\bill %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\metaseach-600x600.png" />
+    <None Include="Resources\bill.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\otel-pazarlama-stratejileri.jpg" />
+    <None Include="Resources\bill %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill %281%292.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
