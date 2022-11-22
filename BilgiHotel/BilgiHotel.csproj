@@ -171,5 +171,17 @@
   <ItemGroup>
     <None Include="Resources\bill %281%292.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-receipt-dollar-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

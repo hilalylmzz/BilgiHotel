@@ -131,6 +131,7 @@ namespace BilgiHotel
 
         private void tsKampanyalar_Click(object sender, EventArgs e)
         {
+            
             PanelAc(pnlKampanyalar);
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT kampanyaID, kampanyaAd FROM Kampanyalar", con);
@@ -145,7 +146,7 @@ namespace BilgiHotel
             cmbKampanyalar.DisplayMember = "Value";
             reader.Close();
             con.Close();
-
+            cmbKampanyalar.SelectedIndex = -1;
 
         }
 
